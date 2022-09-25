@@ -1,0 +1,22 @@
+/* ------------------ Header General ------------------ */
+header {
+    background-color: var(--greys-2);
+    display: flex;
+    padding: 20px;
+    clear: both;
+}
+
+#headerImg,
+header a {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------ Title ------------------ */
+#titleDiv {
+    padding: 2% 3%;
+}
+
+h1 {
+    font-size: 2.5em;
+}

@@ -1,0 +1,15 @@
+nav {
+    font-weight: 600;
+}
+
+nav a.btn:hover {
+    background-color: red !important;
+}
+
+.nav-link:hover {
+    color: red !important;
+}
+
+.dropdown-menu {
+    min-width: 50px !important;
+}
