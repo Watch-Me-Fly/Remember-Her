@@ -16,8 +16,9 @@
         <?php include_once('./views/components/navbar.php'); ?>
         <?php include_once('./views/components/header.php'); ?>
         <?php include_once('./views/components/backToTop.php'); ?>
+        <?php include_once('./views/pages/landingPage.php'); ?>
         
-        <?= $pageContent ?>
+        <!-- <?= $pageContent ?> -->
         
         <?php include_once('./views/components/footer.php'); ?>
         <?php include_once('./assets/js/script.php'); ?>
