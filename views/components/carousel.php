@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./../../assets/css/carousel.css">
 
-<h2 id="latest">Latest</h2>
+<!-- <h2 id="latest">Latest</h2> -->
 <div class="container" id="slideshow-container">
     <!-- images are connected to radio buttons as their labels -->
 

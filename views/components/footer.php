@@ -59,8 +59,8 @@
             </div>
             <div class="col-md-5 offset-md-1 col-12">
                 <form>
-                    <h5>Subscribe to newsletter</h5>
-                    <p>Be informed when new posts are published.</p>
+                    <h5>Stay Informed</h5>
+                    <p>Receive an email when new posts are published.</p>
                     <div class="d-flex">
                         <!-- <label for="newsletter">Email Address</label> -->
                         <input type="email" name="newsletter" id="newsletter" class="form-control"

@@ -12,6 +12,7 @@
 }
 
 *:lang(ar) {
+    /* font-family: ; */
     direction: rtl;
 }
 
@@ -25,16 +26,4 @@ body {
 
 a {
     text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-align: center;
-    text-shadow:
-        -3px 2px 8px rgba(0, 0, 0, 0.57),
-        3px 2px 8px rgba(0, 0, 0, 0.57);
 }
