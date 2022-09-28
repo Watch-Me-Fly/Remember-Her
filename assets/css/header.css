@@ -1,6 +1,6 @@
 /* ------------------ Header General ------------------ */
 header {
-    background-color: var(--greys-2);
+    background-color: rgb(198, 198, 198);
     display: flex;
     padding: 20px;
     clear: both;
