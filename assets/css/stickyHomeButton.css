@@ -1,0 +1,17 @@
+#stickySideMenu {
+    position: sticky;
+    top: 90%;
+    width: 40px;
+    height: 40px;
+    float: right;
+    padding: 5px;
+    background-color: var(--primary-bg);
+    border-radius: 3px 0 0 3px;
+    box-shadow: var(--dark-shadow) 0px 2px 8px 0px;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+#stickySideMenu:hover {
+    background-color: var(--greys-1);
+}
