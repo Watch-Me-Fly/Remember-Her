@@ -1,0 +1,105 @@
+/*----------- General page style -----------*/
+/* #addVictimMain {
+    background: url('./../../assets/images/bg.jpg') no-repeat center;
+} */
+
+/*----------- Page container -----------*/
+#addVictimMain .container {
+    background-color: rgb(99, 0, 0);
+    box-shadow: -3px 2px 8px rgba(0, 0, 0, 0.27),
+        3px 2px 8px rgba(0, 0, 0, 0.27);
+    color: rgb(249, 246, 247);
+    width: 80%;
+}
+
+/* ----------- Box of notice before form ----------- */
+#notice {
+    width: 50%;
+    background-color: rgb(77, 1, 21, 0.5);
+}
+
+/* ----------- Form ----------- */
+#addVictimForm {
+    width: 50%;
+}
+
+fieldset {
+    border: 1px solid rgb(249, 246, 247);
+}
+
+.form-group {
+    padding: 0.4em 1em;
+}
+
+/* ----------- Form fields----------- */
+legend {
+    font-weight: 600;
+    float: none !important;
+    width: 50%;
+}
+
+label {
+    width: 40%;
+}
+
+span.required {
+    color: var(--greys-2)
+}
+
+#addVictimForm input[type="text"],
+#addVictimForm input[type="date"],
+#addVictimForm input[type="url"],
+#addVictimForm input[type="file"],
+#addVictimForm select.form-select {
+    width: 60%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px !important;
+    resize: vertical;
+}
+
+#addVictimForm input[type="checkbox"] {
+    margin: 5px 10px 5px 0;
+}
+
+#killerList {
+    width: 60%;
+}
+
+/* ----------- Form Buttons----------- */
+div.buttonContainer {
+    width: 50%;
+}
+
+#addVictimForm input.btn {
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow:
+        -3px 2px 8px rgba(0, 0, 0, 0.27),
+        3px 2px 8px rgba(0, 0, 0, 0.27);
+}
+
+#addVictimForm input.btn:hover {
+    background-color: grey !important;
+    color: white !important;
+}
+
+@media (max-width: 992px) {
+
+    #notice,
+    #addVictimForm {
+        width: 80%;
+    }
+
+    #addVictimForm label,
+    #addVictimForm select {
+        min-width: 100%;
+    }
+
+    #addVictimForm input:not([type="checkbox"], [type="submit"], [type="reset"]) {
+        min-width: 100%;
+    }
+}

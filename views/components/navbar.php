@@ -15,9 +15,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div id="searchbar" class="container col-sm-12 col-md-4">
+            <div id="searchbar" class="container col-sm-12 col-md-3">
                 <form action="" class="d-flex justify-content-center">
-                    <input type="text" name="" id="" class="me-2">
+                    <input type="text" name="" id="" class="form-control me-2">
                     <input type="submit" value="Search" class="btn btn-secondary">
                 </form>
             </div>

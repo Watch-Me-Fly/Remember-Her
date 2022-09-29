@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/landingPage.css">
 
 <div id="about" class="p-3">
-    <h2>About</h2>
+    <h3>About</h3>
     <p>
         To the stolen youths of
         <b>Iman Arshid</b>,
