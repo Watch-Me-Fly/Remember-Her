@@ -1,0 +1,41 @@
+/*----------- Sort & Filter Forms Styles -----------*/
+
+#sortDirectoryForm,
+#filterDirectoryForm {
+    width: 100%;
+}
+
+/*----------- Filter by -----------*/
+#victimsDirectory select.form-select {
+    width: 50%;
+}
+
+#sortDirectoryBtn,
+#filterDirectoryBtn {
+    background-color: rgb(129, 0, 0);
+    color: rgb(249, 246, 247);
+}
+
+#sortDirectoryBtn:hover,
+#filterDirectoryBtn:hover {
+    background-color: rgb(198, 198, 198);
+    color: black;
+    border: 1px solid black;
+}
+
+/*----------- Gallery Images -----------*/
+#gallery a.person img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+/* phone size */
+@media (max-width: 768px) {
+
+    #gallery a.person {
+        width: 33.33%;
+    }
+
+}
