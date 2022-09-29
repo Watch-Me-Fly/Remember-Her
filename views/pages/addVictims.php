@@ -179,3 +179,5 @@
         </div>
     </form>
 </div>
+
+<script src="./../../../assets/js/addVictimForm.js"></script>
