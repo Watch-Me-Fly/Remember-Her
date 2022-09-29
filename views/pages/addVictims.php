@@ -6,7 +6,7 @@
         <p>Please know that informations are verified before they are published</p>
     </div>
     <form action="" method="" id="addVictimForm" class="m-auto p-3">
-        <fieldset class="rounded-3 p-3 mb-3">
+        <fieldset class="rounded-3 p-3 mb-3" id="victimFieldset">
             <legend class="px-4 m-0">The victim</legend>
             <div class="form-group 
                         d-flex flex-wrap
@@ -52,7 +52,7 @@
                 <input type="file" name="photo" id="photo" class="form-control">
             </div>
         </fieldset>
-        <fieldset class="rounded-3 p-3 mb-3">
+        <fieldset class="rounded-3 p-3 mb-3" id="crimeFieldset">
             <legend class="px-4 m-0">The Crime</legend>
             <div class="form-group
                         d-flex flex-wrap
@@ -115,14 +115,22 @@
                 </div>
             </div>
         </fieldset>
-        <fieldset class="rounded-3 p-3 mb-3">
+        <fieldset class="rounded-3 p-3 mb-3" id="storyFieldset">
             <legend class="px-4 m-0">The Story</legend>
             <p class="p-2">What, how, where, why ..<br />all the details you can provide :
                 <span class="required">*</span>
             </p>
             <textarea name="story" id="story" class="form-control my-2" required></textarea>
         </fieldset>
-        <fieldset class="rounded-3 p-3 mb-3">
+        <fieldset class="rounded-3 p-3 mb-3" id="punishmentFieldset">
+            <legend class="px-4 m-0">The Punishment</legend>
+            <p class="p-2">What did the local government do to punish the perpetrator ?
+                <br />all the details you can provide :
+                <span class="required">*</span>
+            </p>
+            <textarea name="punishment" id="punishment" class="form-control my-2" required></textarea>
+        </fieldset>
+        <fieldset class="rounded-3 p-3 mb-3" id="sourceFieldset">
             <legend class="px-4 m-0">The Source</legend>
             <p class="m-3">
                 (For admins to accept to publish, please provide at least 3 sources)
