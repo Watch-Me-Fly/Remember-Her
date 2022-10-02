@@ -1,0 +1,104 @@
+/*--------------------------------------------
+*                 General
+*---------------------------------------------*/
+#connectContainer {
+    width: 50%;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(198, 198, 198, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: width 1s linear;
+}
+
+/*--------------------------------------------
+*                 Headers
+*---------------------------------------------*/
+h3 {
+    width: max-content;
+    white-space: normal;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+}
+
+h3,
+#connectContainer h2 {
+    color: rgb(102, 102, 102);
+}
+
+
+#connectContainer h2 span {
+    color: rgb(129, 0, 0);
+}
+
+/*--------------------------------------------
+*            Connect box Navbar
+*---------------------------------------------*/
+/* error box, set by default to display: none, unless error = true */
+p.error {
+    display: none;
+    color: rgb(129, 0, 0);
+    background-color: rgba(129, 0, 0, 0.3);
+}
+
+#connectNavBar {
+    width: 100%;
+    background-color: rgb(129, 0, 0);
+    font-size: 1.1em;
+    border-radius: 10px 10px 0 0;
+}
+
+#connectNavBar .nav-link {
+    color: white;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+#connectNavBar .nav-link:hover {
+    color: black !important;
+    background-color: rgb(249, 246, 247);
+}
+
+/*--------------------------------------------
+*             Connect Box Common
+*---------------------------------------------*/
+#connectBoxContents form label {
+    width: 30%;
+    font-weight: 600;
+}
+
+#connectBoxContents form input:not(type="submit") {
+    width: 60%;
+}
+
+#connectBoxContents input[type="submit"] {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 0.3s;
+}
+
+#connectBoxContents input[type="submit"]:hover {
+    background-color: rgb(129, 0, 0);
+    border: 1px solid rgb(129, 0, 0);
+}
+
+/*--------------------------------------------
+*                  Signup
+*---------------------------------------------*/
+/* by default, display log in page unless clicked on sign-up */
+#register {
+    display: none;
+}
+
+/*--------------------------------------------
+*         📱 small and medium size screens
+*---------------------------------------------*/
+@media (max-width: 992px) {
+    #connectContainer {
+        width: 70%;
+    }
+
+    #connectBoxContents form label {
+        min-width: 100%;
+    }
+
+    #connectBoxContents input.form-control {
+        margin-top: 10px;
+    }
+}
