@@ -6,7 +6,8 @@
         <b>Iman Arshid</b>,
         <b>Naira Asharaf</b>,
         and <b>Loulouah Althouaini</b>,<br/>
-        the girls who have inspired my project.
+        the girls who have inspired my project.<br />
+        May you rest in peace...
     </p>
 </div>
 
