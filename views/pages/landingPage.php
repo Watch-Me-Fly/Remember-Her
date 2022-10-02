@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/landingPage.css">
 
-<div id="about" class="p-4">
+<div id="about" class="rounded-3 p-4">
     <p>
         To the stolen youths of
         <b>Iman Arshid</b>,

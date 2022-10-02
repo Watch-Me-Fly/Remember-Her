@@ -1,15 +1,21 @@
 /* ------------------ Header General ------------------ */
 header {
-    background-color: var(--greys-2);
+    background-color: rgb(198, 198, 198);
     display: flex;
     padding: 20px;
     clear: both;
 }
 
-#headerImg,
-header a {
+#headerImg {
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+#headerImg img {
+    width: 100%;
+    max-height: 25vh;
+    margin: 10px auto;
 }
 
 /* ------------------ Title ------------------ */
@@ -19,14 +25,4 @@ header a {
 
 header h1 {
     font-size: 2.5em;
-}
-
-@media (min-width: 768px) {
-
-    /* reduce header size for larger screens */
-    #headerImg {
-        width: 60%;
-        margin: auto;
-    }
-
 }

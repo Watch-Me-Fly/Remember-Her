@@ -12,7 +12,6 @@
             <img 
                 src="./../../assets/images/header-en.png" 
                 alt="Header" 
-                width="60%" 
                 class="mx-auto"
             >
         </a>
