@@ -1,0 +1,22 @@
+#adminSettings {
+    background-color: rgba(198, 198, 198, 0.2);
+    box-shadow: -3px 2px 8px rgba(0, 0, 0, 0.17),
+        3px 2px 8px rgba(0, 0, 0, 0.17);
+    width: 60%;
+    min-height: 20vh;
+}
+
+#adminSettings>div {
+    width: 100%;
+}
+
+#adminSettings label {
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    #adminSettings {
+        width: 90%;
+        flex-direction: column;
+    }
+}
