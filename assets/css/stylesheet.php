@@ -2,7 +2,7 @@
 
 <!-- Color scheme -->
     <link rel="stylesheet" type="text/css" href="./colorPalette.css">
-<!-- Bootstrap ? -->
+<!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 <!-- General styling -->
     <link rel="stylesheet" type="text/css" href="./general.css">

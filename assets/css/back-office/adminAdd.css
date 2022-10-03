@@ -1,0 +1,104 @@
+/*--------------------------------------------
+*                 Form Container
+*---------------------------------------------*/
+#adminAddPost>.container {
+    background-color: rgba(198, 198, 198, 0.2);
+    box-shadow: -3px 2px 8px rgba(0, 0, 0, 0.17),
+        3px 2px 8px rgba(0, 0, 0, 0.17);
+    width: 60%;
+}
+
+/* hide error box when there is no error */
+p#error {
+    display: none;
+    width: 80%;
+    background-color: rgba(129, 0, 0, 0.1);
+}
+
+/*--------------------------------------------
+*                    Form
+*---------------------------------------------*/
+/* ----------- Form ----------- */
+#addVictimForm {
+    width: 80%;
+}
+
+fieldset {
+    border: 1px solid rgb(198, 198, 198);
+}
+
+.form-group {
+    padding: 0.4em 1em;
+}
+
+/* ----------- Form fields----------- */
+legend {
+    font-weight: 600;
+    float: none !important;
+    width: 40%;
+}
+
+label {
+    width: 40%;
+}
+
+span.required {
+    color: rgb(255, 0, 0);
+}
+
+#addVictimForm input[type="text"],
+#addVictimForm input[type="date"],
+#addVictimForm input[type="url"],
+#addVictimForm input[type="file"],
+#addVictimForm select.form-select,
+#killerList {
+    width: 60%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px !important;
+    resize: vertical;
+}
+
+#addVictimForm input[type="checkbox"] {
+    margin: 5px 10px 5px 0;
+}
+
+/* ----------- Form Buttons----------- */
+div.buttonContainer {
+    width: 50%;
+}
+
+#addVictimForm input.btn {
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow:
+        -3px 2px 8px rgba(0, 0, 0, 0.07),
+        3px 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+/*--------------------------------------------
+*                Responsiveness
+*---------------------------------------------*/
+/*-------------- small and medium size screens --------------*/
+@media (max-width: 992px) {
+
+    #notice,
+    #addVictimForm {
+        width: 80%;
+    }
+
+    #addVictimForm label,
+    #addVictimForm select {
+        min-width: 100%;
+    }
+
+    #addVictimForm input:not([type="checkbox"],
+        [type="submit"],
+        [type="reset"]) {
+        min-width: 100%;
+    }
+
+}

@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(246, 246, 246);
+}
+
+#main {
+    width: 100%;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: rgb(70, 193, 70);
+}
