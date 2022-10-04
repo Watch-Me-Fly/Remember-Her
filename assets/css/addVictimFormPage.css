@@ -15,35 +15,37 @@
 /* ----------- Box of notice before form ----------- */
 #notice {
     width: 50%;
-    background-color: rgb(77, 1, 21, 0.5);
+    background-color: rgb(129, 0, 0, 0.5);
 }
 
-/* ----------- Form ----------- */
+/*--------------------------------------------
+*                    FORM
+*---------------------------------------------*/
 #addVictimForm {
     width: 50%;
 }
 
-fieldset {
-    border: 1px solid rgb(249, 246, 247);
+#addVictimForm fieldset {
+    border: 1px solid rgb(249, 246, 247) !important;
 }
 
-.form-group {
+#addVictimForm .form-group {
     padding: 0.4em 1em;
 }
 
 /* ----------- Form fields----------- */
-legend {
+#addVictimForm legend {
     font-weight: 600;
     float: none !important;
     width: 50%;
 }
 
-label {
+#addVictimForm label {
     width: 40%;
 }
 
-span.required {
-    color: var(--greys-2)
+#addVictimForm span.required {
+    color: rgb(198, 198, 198);
 }
 
 #addVictimForm input[type="text"],
@@ -54,7 +56,7 @@ span.required {
     width: 60%;
 }
 
-textarea {
+#addVictimForm textarea {
     width: 100%;
     min-height: 200px !important;
     resize: vertical;
@@ -69,7 +71,7 @@ textarea {
 }
 
 /* ----------- Form Buttons----------- */
-div.buttonContainer {
+#addVictimForm div.buttonContainer {
     width: 50%;
 }
 
@@ -87,6 +89,10 @@ div.buttonContainer {
     color: white !important;
 }
 
+/*--------------------------------------------
+*                Responsiveness
+*---------------------------------------------*/
+/*-------------- 📱 small and medium size screens --------------*/
 @media (max-width: 992px) {
 
     #notice,
