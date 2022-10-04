@@ -1,5 +1,19 @@
-<link rel="stylesheet" type="text/css" href="./../../../assets/css/landingPage.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
+<link rel="stylesheet" type="text/css" href="./../../assets/css/landingPage.css">
+<link rel="stylesheet" type="text/css" href="./../../assets/css/carousel.css">
 
+<!-- -------------- ⏫ Page top --------------- -->
+<?php
+
+    $page_title = "Remember Her";
+
+    require_once('./../../views/components/top.php');
+    require_once('./../../views/components/navbar.php');
+    require_once('./../../views/components/header.php');
+    include_once('./../../views/components/stickyHomeButton.php');
+?>
+
+<!-- -------------- 📄 page content --------------- -->
 <div id="about" class="rounded-3 p-4">
     <p>
         To the stolen youths of
@@ -11,6 +25,13 @@
     </p>
 </div>
 
-<?php include_once('./views/components/carousel.php'); ?>
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php
+    // carousel
+    include_once('./../../views/components/carousel.php');
+    // footer
+    include_once('./../../views/components/footer.php'); 
+?>
 
-<script src="./../../../assets/js/carousel.js"></script>
+<!---------------- 📜 scripts used ---------------->
+<script src="./../../assets/js/carousel.js"></script>
