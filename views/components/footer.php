@@ -74,3 +74,10 @@
             <p class="text-muted">© 2022 by Saja ALHAYAN</p>
         </div>
     </footer>
+    
+<!-------- 📜 scripts used throught all pages -------->
+<?php require_once('./../../assets/js/script.php'); ?>
+
+<!-------- closing html tag -------->
+    </body>
+</html>

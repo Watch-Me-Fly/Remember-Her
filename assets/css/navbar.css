@@ -1,11 +1,13 @@
+/* ------------------ General Navbar ------------------ */
 nav {
     font-weight: 600;
 }
 
-nav a.btn:hover {
+nav .btn:hover {
     background-color: rgb(129, 0, 0) !important;
 }
 
+/* ------------------ Navbar links ------------------ */
 .nav-link:hover {
     color: rgb(129, 0, 0) !important;
 }
@@ -14,6 +16,9 @@ li.dropdown>a.dropdown-toggle {
     white-space: normal !important;
 }
 
+/*--------------------------------------------
+*               Language Menu
+*---------------------------------------------*/
 ul.dropdown-menu {
     min-width: 50px !important;
 }
@@ -30,6 +35,10 @@ ul.dropdown-menu a.dropdown-item {
     width: 100% !important;
 }
 
+/*--------------------------------------------
+*                Responsiveness
+*---------------------------------------------*/
+/*-------------- 📱 small size screens --------------*/
 @media (max-width: 768px) {
     nav>div>ul.navbar-nav {
         width: 100% !important;
@@ -40,4 +49,5 @@ ul.dropdown-menu a.dropdown-item {
     #searchbar {
         padding-top: 10px;
     }
+
 }
