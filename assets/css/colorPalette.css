@@ -1,9 +1,16 @@
 :root {
-    --primary-bg: ;
-    --secondary-bg: ;
-    --headers: ;
+    /*-- ------------ Backgrounds ------------ --*/
+    --primary-bg: rgb(249, 246, 247);
+    --secondary-bg: rgb(99, 0, 0);
+    --emphasis: rgb(129, 0, 0);
+    --headers: rgb(198, 198, 198);
+
+    /*-- ------------ Elements & tags ------------ --*/
     --text: ;
-    --borders: ;
+    --borders: rgb(249, 246, 247);
+
+    /*-- ------------ Shadows ------------ --*/
+    --text-shadow: rgba(249, 246, 247, 0.59);
     --dark-shadow: ;
     --light-shadow: ;
 }

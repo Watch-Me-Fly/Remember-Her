@@ -1,0 +1,171 @@
+/*--------------------------------------------
+*          Slideshow main container
+*---------------------------------------------*/
+#slideshow-container {
+    /* ANCHOR : bootstrap classes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 40vh;
+    /* 
+        * transform-style CSS property :
+        sets whether children of an element are positioned in the 
+        3D space 
+        or are flattened in the plane of the element. 
+    */
+    transform-style: preserve-3d;
+    margin: 20px auto;
+}
+
+/*-- ------------ Radio buttons ------------ --*/
+#slideshow-container input[type=radio] {
+    display: none;
+}
+
+/*--------------------------------------------
+*         Slideshow images container
+*---------------------------------------------*/
+#slideshow-container div.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*-- --------- Slideshow images cards (labels) --------- --*/
+#slideshow-container .card {
+    /* position absolute puts them one on top of the other */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#slideshow-container .card span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-radius: 10px 10px 0 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*--------------------------------------------
+*               Slideshow images
+*---------------------------------------------*/
+#slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+}
+
+/*--------------------------------------------
+*             Slideshow animation
+*---------------------------------------------*/
+/* 
+    general sibling combinator (~) :
+    separates two selectors and matches all iterations of the second element,
+    that are following the first element (though not necessarily immediately), 
+    and are children of the same parent element.
+*/
+
+/*-- ------------ right side slides ------------ --*/
+#item-1:checked~.cards #victim-2,
+#item-2:checked~.cards #victim-3,
+#item-3:checked~.cards #victim-4,
+#item-4:checked~.cards #victim-1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/*-- ------------ left side slides ------------ --*/
+#item-1:checked~.cards #victim-4,
+#item-3:checked~.cards #victim-2,
+#item-2:checked~.cards #victim-1,
+#item-4:checked~.cards #victim-3 {
+    transform: translateX(-40%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+/*-- ------------ which card is on top ? ------------ --*/
+#item-1:checked~.cards #victim-1,
+#item-2:checked~.cards #victim-2,
+#item-3:checked~.cards #victim-3,
+#item-4:checked~.cards #victim-4 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+/*-- ------------ Navigation buttons ------------ --*/
+
+/* -- position the strip of buttons at the bottom -- */
+/* -- same style for manual and auto -- */
+#slideshow-container .navigation-manual,
+#slideshow-container .navigation-auto {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ANCHOR : verify nav. auto btn */
+/* ANCHOR : comment well this part */
+#slideshow-container .manual-btn,
+#slideshow-container .navigation-auto div {
+    border: 2px solid rgb(144, 144, 144);
+    padding: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* -- add margin except to last button on the right -- */
+#slideshow-container .manual-btn:not(:last-child),
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+/*-- ------------ Manual hover to navigate ------------ --*/
+#slideshow-container .navigation-manual {
+    z-index: 10;
+}
+
+/* ANCHOR : check colors */
+#slideshow-container .manual-btn:hover {
+    background-color: rgb(144, 144, 144);
+}
+
+/*-- ------------ Automatic navigation ------------ --*/
+#slideshow-container .navigation-auto {
+    z-index: 5;
+}
+
+#item-1:checked~.navigation-auto .auto-btn1 {
+    background-color: rgb(144, 144, 144);
+}
+
+#item-2:checked~.navigation-auto .auto-btn2 {
+    background-color: rgb(144, 144, 144);
+}
+
+#item-3:checked~.navigation-auto .auto-btn3 {
+    background-color: rgb(144, 144, 144);
+}
+
+#item-4:checked~.navigation-auto .auto-btn4 {
+    background-color: rgb(144, 144, 144);
+}

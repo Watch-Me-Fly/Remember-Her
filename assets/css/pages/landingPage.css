@@ -1,0 +1,17 @@
+/*--------------------------------------------
+*             Page General Style
+*---------------------------------------------*/
+main {
+    /* -- main page fade in -- */
+    transition: background .4s ease-in;
+}
+
+/*-- ------------ Landing Page About box ------------ --*/
+#about {
+    width: 60%;
+    margin: 10px auto;
+    background-color: rgb(129, 0, 0);
+    box-shadow: var(--dark-shadow) 0px 2px 8px 0px;
+    text-align: center;
+    color: white;
+}

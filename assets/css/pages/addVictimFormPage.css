@@ -1,61 +1,66 @@
 /*--------------------------------------------
-*               Form Container
+*             Page General Style
 *---------------------------------------------*/
-#adminAddPost>.container {
-    background-color: rgba(198, 198, 198, 0.2);
-    box-shadow: -3px 2px 8px rgba(0, 0, 0, 0.17),
-        3px 2px 8px rgba(0, 0, 0, 0.17);
-    width: 60%;
+/* 
+#addVictimMain {
+    background: url('./../../assets/images/bg.jpg') no-repeat center;
+} 
+*/
+
+#addVictimMain .container {
+    background-color: rgb(99, 0, 0);
+    box-shadow: -3px 2px 8px rgba(0, 0, 0, 0.27),
+        3px 2px 8px rgba(0, 0, 0, 0.27);
+    color: rgb(249, 246, 247);
+    width: 80%;
 }
 
-p#error {
-    /* -- hide error box when there are no errors -- */
-    display: none;
-    width: 80%;
-    background-color: rgba(129, 0, 0, 0.1);
+/*-- ------------ Box of notice before form ------------ --*/
+#notice {
+    width: 50%;
+    background-color: rgb(129, 0, 0, 0.5);
 }
 
 /*--------------------------------------------
-*                    Form
+*                    FORM
 *---------------------------------------------*/
 #addVictimForm {
-    width: 80%;
+    width: 50%;
 }
 
-fieldset {
-    border: 1px solid rgb(198, 198, 198);
+#addVictimForm fieldset {
+    border: 1px solid rgb(249, 246, 247) !important;
 }
 
-.form-group {
+#addVictimForm .form-group {
     padding: 0.4em 1em;
 }
 
 /*-- ------------ Form fields ------------ --*/
-legend {
+#addVictimForm legend {
     font-weight: 600;
     float: none !important;
+    width: 50%;
+}
+
+#addVictimForm label {
     width: 40%;
 }
 
-label {
-    width: 40%;
-}
-
-span.required {
-    color: rgb(255, 0, 0);
-    /* ANCHOR : add class red */
+#addVictimForm span.required {
+    color: rgb(198, 198, 198);
+    /* ANCHOR : verify color */
 }
 
 #addVictimForm input[type="text"],
 #addVictimForm input[type="date"],
 #addVictimForm input[type="url"],
 #addVictimForm input[type="file"],
-#addVictimForm select.form-select,
-#killerList {
+#addVictimForm select.form-select {
     width: 60%;
 }
 
-textarea {
+#addVictimForm textarea {
     width: 100%;
     min-height: 200px !important;
     resize: vertical;
@@ -65,8 +70,12 @@ textarea {
     margin: 5px 10px 5px 0;
 }
 
+#killerList {
+    width: 60%;
+}
+
 /*-- ------------ Form Buttons ------------ --*/
-div.buttonContainer {
+#addVictimForm div.buttonContainer {
     width: 50%;
 }
 
@@ -75,8 +84,13 @@ div.buttonContainer {
     cursor: pointer;
     font-weight: 500;
     box-shadow:
-        -3px 2px 8px rgba(0, 0, 0, 0.07),
-        3px 2px 8px rgba(0, 0, 0, 0.07);
+        -3px 2px 8px rgba(0, 0, 0, 0.27),
+        3px 2px 8px rgba(0, 0, 0, 0.27);
+}
+
+#addVictimForm input.btn:hover {
+    background-color: grey !important;
+    color: white !important;
 }
 
 /*--------------------------------------------
@@ -95,10 +109,7 @@ div.buttonContainer {
         min-width: 100%;
     }
 
-    #addVictimForm input:not([type="checkbox"],
-        [type="submit"],
-        [type="reset"]) {
+    #addVictimForm input:not([type="checkbox"], [type="submit"], [type="reset"]) {
         min-width: 100%;
     }
-
 }

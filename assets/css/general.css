@@ -1,10 +1,27 @@
-/* ------------------ General style ------------------ */
+/*--------------------------------------------
+*                   General
+*---------------------------------------------*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background-color: var(--primary-bg);
+}
+
+a {
+    /* -- do not underline links anywhere unless added -- */
+    text-decoration: none;
+}
+
+/*-- ------------ Language specific ------------ --*/
 *:lang(en),
 *:lang(fr) {
     /* font-family: ; */
@@ -14,16 +31,4 @@
 *:lang(ar) {
     /* font-family: ; */
     direction: rtl;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: rgb(249, 246, 247);
-}
-
-a {
-    text-decoration: none;
 }

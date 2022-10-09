@@ -1,0 +1,201 @@
+/*--------------------------------------------
+*             Page General Style
+*---------------------------------------------*/
+#readStoryContainer {
+    min-height: 50vh;
+    position: relative;
+    flex-direction: row;
+    background-color: rgb(228, 228, 228);
+}
+
+#leftColumnStoryPage,
+#rightColumnStoryPage {
+    max-width: 50%;
+}
+
+/*--------------------------------------------
+*                 Left half
+*---------------------------------------------*/
+
+/*-- ------------ Personal Info Card ------------ --*/
+#leftColumnStoryPage>div:first-of-type {
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: rgb(255, 255, 255);
+    white-space: normal;
+}
+
+#leftColumnStoryPage h1 {
+    color: rgb(129, 0, 0);
+    font-weight: bolder;
+}
+
+.detailsSpan>span {
+    font-weight: bold;
+}
+
+/*-- ------------ left side cards ------------ --*/
+#leftColumnStoryPage .card {
+    width: 90%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#leftColumnStoryPage .card-title {
+    color: rgb(129, 0, 0);
+    font-weight: bold;
+}
+
+/*--------------------------------------------
+*                 Right half
+*---------------------------------------------*/
+#rightColumnStoryPage {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/*-- ------------ Victim Photo ------------ --*/
+#victimPhotoContainer {
+    height: 100%;
+    width: 90%;
+    overflow: hidden;
+    border: 3px solid rgb(0, 0, 0, 0.2);
+    border-radius: 50% 50% 0 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#victimPhotoImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#victimPhotoImg:hover {
+    opacity: 0.7;
+}
+
+/*-- ------------ Black Ribbon ------------ --*/
+#blackRibbon {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    z-index: 2;
+}
+
+/*--------------------------------------------
+*                 Modal Screen
+*---------------------------------------------*/
+#personalPicModal {
+    padding: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 3;
+}
+
+#modalImage {
+    max-width: 50%;
+}
+
+/*-- ------------ modal screen Caption ------------ --*/
+#caption {
+    max-width: 50%;
+    height: 100px;
+    overflow: hidden;
+    padding: 20px 0;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+}
+
+/*-- ------------ modal screen Close Button ------------ --*/
+#personalPicModal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: rgb(228, 228, 228);
+    font-size: 40px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#personalPicModal .close:hover,
+#personalPicModal .close:focus {
+    color: rgb(99, 0, 0);
+    cursor: pointer;
+}
+
+/*--------------------------------------------
+*                Responsiveness
+*---------------------------------------------*/
+/*----------- 📱 small and medium size screens -----------*/
+@media (max-width: 992px) {
+
+    /* -- column appearance for tablets and phones -- */
+    #readStoryContainer {
+        flex-direction: column-reverse;
+    }
+
+    #leftColumnStoryPage {
+        max-width: 100%;
+    }
+
+    /* -- remove absolute to have image on top -- */
+    #rightColumnStoryPage {
+        position: relative;
+        margin: 0 auto;
+        max-width: 70%;
+    }
+
+    /* -- adapt font size to screen size -- */
+    #readStoryContainer h1 {
+        font-size: 3vw;
+    }
+
+    #readStoryContainer h4 {
+        font-size: 2vw
+    }
+
+    /* -- adapt ribbon position to screen size -- */
+    #blackRibbon {
+        top: 7%;
+        right: 25%;
+    }
+
+    /* modal's photo has 100% width */
+    #modalImage {
+        max-width: 100%;
+    }
+
+}
+
+/*--------------------------------------------
+*                Responsiveness
+*---------------------------------------------*/
+/*----------- 📱 small size screens -----------*/
+@media (max-width: 768px) {
+
+    #rightColumnStoryPage {
+        max-width: 100%;
+    }
+
+    #readStoryContainer h1 {
+        font-size: 4vw;
+    }
+
+    #readStoryContainer h4 {
+        font-size: 3vw
+    }
+
+    #blackRibbon {
+        top: 7%;
+        right: 15%;
+    }
+}

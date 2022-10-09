@@ -1,0 +1,28 @@
+/*--------------------------------------------
+*             Page General Style
+*---------------------------------------------*/
+
+main {
+    background-image: url(../images/bg.jpg);
+}
+
+#eulogyPage {
+    min-width: 80%;
+    min-height: 20vh;
+    background-color: var(--secondary-bg);
+    color: rgb(249, 246, 247);
+}
+
+#eulogyPage hr {
+    opacity: 0.7;
+    width: 50%;
+    border: 1px rgb(249, 246, 247) solid;
+}
+
+/*-- ------------ Page heading ------------ --*/
+#eulogyPage h1 {
+    text-shadow: 1px 1px 3px rgba(249, 246, 247, 0.59),
+        -1px -1px 3px rgba(249, 246, 247, 0.59);
+    font-style: italic;
+    width: 50%;
+}
