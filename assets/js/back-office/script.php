@@ -8,5 +8,5 @@
     crossorigin="anonymous"></script>
 
 <!-- jQuery -->
-<script src="./../../assets/JS/jquery-3.6.1.min.js"></script>
+<script src="./../libraries/jquery-3.6.1.min.js"></script>
 

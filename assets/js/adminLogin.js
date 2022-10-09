@@ -1,4 +1,8 @@
+// IIFE to protect the global scope
 (() => {
+
+    // * ------------ opt-out of sloppy mode, and enforce variable declarations
+    "use strict";
 
     /*--------------------------------------------
     *        disable paste in email field
@@ -10,7 +14,7 @@
     /*--------------------------------------------
     *         Toggle log in and sign up
     *---------------------------------------------*/
-    // ----- DOM elements
+    // * ------------ DOM elements
     // get links
     const registerLink = document.getElementById('registerLink');
     const loginLink = document.getElementById('loginLink');
@@ -19,7 +23,7 @@
     const registerPage = document.getElementById('register');
     const loginPage = document.getElementById('login');
 
-    // ----- display register page
+    // * ------------ display register page
     registerLink.addEventListener('click', (e) => {
 
         // prevent default behavior (prevents submission and page refresh)
@@ -31,7 +35,7 @@
 
     });
 
-    // ----- display login page
+    // * ------------ display login page
     loginLink.addEventListener('click', (e) => {
 
         e.preventDefault();

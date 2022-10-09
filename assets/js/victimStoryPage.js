@@ -1,8 +1,13 @@
 (
     () => {
+
+        // * ------------ opt-out of sloppy mode, and enforce variable declarations
+        "use strict";
+
         /**--------------------------------------------
          *                 Photo Modal
          *---------------------------------------------**/
+        //* ------------ DOM elements
         // Get the modal
         const modal = document.getElementById("personalPicModal");
 
@@ -12,11 +17,10 @@
         // Get the image element from the modal 
         const modalImg = document.getElementById("modalImage");
 
-        // insert image inside the modal 
-
         // get the caption element from the modal
         const captionText = document.getElementById("caption");
 
+        // * ------------ add event to image click
         // when clicked on article image =>
         img.onclick = function () {
 
@@ -31,6 +35,7 @@
 
         }
 
+        // * ------------ Add modal close button
         // Get the element that closes the modal
         var closeModal = document.getElementById("closeModal");
 
