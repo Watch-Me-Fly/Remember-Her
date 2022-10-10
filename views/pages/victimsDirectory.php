@@ -73,11 +73,11 @@
     </a>
 </div>
 
+<!---------------- 📜 scripts used ---------------->
+<script src="assets/js/victimsDirectory.js"></script>
+
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php
     // footer
     require_once('views/components/footer.php'); 
 ?>
-
-<!---------------- 📜 scripts used ---------------->
-<script src="assets/js/victimsDirectory.js"></script>

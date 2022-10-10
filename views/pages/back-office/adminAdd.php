@@ -1,8 +1,13 @@
 <?php
     session_start();
+
+    $title = "Add victim";
 ?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
-<link rel="stylesheet" type="text/css" href="./../../assets/css/back-office/adminAdd.css">
+<link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/adminAdd.css">
+
+<!-- -------------- ⏫ Page top --------------- -->
+<?php include_once('./../../components/back-office/top.php'); ?>
 
 <!-- -------------- 📄 page content --------------- -->
 <div class="container rounded-4 m-auto p-4">
@@ -14,8 +19,11 @@
     <p id="error" class="text-danger rounded-3 p-3 mx-auto">
 
     </p>
-    <?php include_once("./addVictimForm.php") ?>
+    <?php include_once("./../../components/addVictimForm.php") ?>
 </div>
 
 <!---------------- 📜 scripts used ---------------->
 <script src="./../../../../assets/js/back-office/adminAdd.js"></script>
+
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php require_once('./../../components/back-office/footer.php'); ?>

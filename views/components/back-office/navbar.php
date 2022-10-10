@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/admin.css">
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/navbar.css">
 
 <nav class="nav navbar-expand-lg navbar-light bg-light mb-3 p-1">
@@ -18,7 +19,7 @@
                         <img src="./../../../assets/images/logo.png" alt="Remember her" class="p-2" id="logo">
                     </li>
                     <li class="nav-item">
-                        <h4 class="fw-bold">Welcome back ${name}</h4>
+                        <h4 class="fw-bold">Welcome back $_SESSION['username']; </h4>
                     </li>
 
                 </div>
@@ -27,14 +28,14 @@
 
                     <!-- Manage projects -->
                     <li class="nav-item px-3">
-                        <a href="./dashboard.html" id="managePosts" class="nav-link btn p-2">
+                        <a href="./../../pages/back-office/dashboard.php" id="managePosts" class="nav-link btn p-2">
                             ⚙️ Posts
                         </a>
                     </li>
 
                     <!-- add project button -->
                     <li class="nav-item px-3">
-                        <a href="./adminWritePosts.html" id="addProject" class="nav-link btn p-2">
+                        <a href="./../../pages/back-office/adminAdd.php" id="addProject" class="nav-link btn p-2">
                             📝 Add
                         </a>
                     </li>
@@ -55,10 +56,10 @@
                         </button>
                         <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton1">
                             <li class="p-2">
-                                <a class="dropdown-item rounded-1" href="#">Settings </a>
+                                <a class="dropdown-item rounded-1" href="./../../pages/back-office/adminSettings.php">Settings </a>
                             </li>
                             <li class="p-2">
-                                <a class="dropdown-item rounded-1" href="#">Log Out</a>
+                                <a class="dropdown-item rounded-1" href="./../../../controllers/back-office/logout.php">Log Out</a>
                             </li>
                         </ul>
                     </li>

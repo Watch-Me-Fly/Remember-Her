@@ -12,8 +12,10 @@
         $DATABASE_NAME = 'remember_her';
 
         // create an instance of the database
-        $pdo = new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME , $DATABASE_USER, $DATABASE_PASSWORD);
-        // $pdo = new PDO('mysql:host=localhost;dbname=remember_her;', "root", "");
+        $pdo = new PDO('mysql:host=' . $DATABASE_HOST . 
+                        ';dbname=' . $DATABASE_NAME , 
+                        $DATABASE_USER, $DATABASE_PASSWORD
+                    );
 
         // try to connect to the database
         try 
@@ -21,7 +23,7 @@
             // asking it to tell us what kind of errors we are having
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                
-            echo "✅ Connection is established ✅";
+            echo "✅ Connection to database is established ✅";
             
             return $pdo;
         } 
@@ -34,8 +36,6 @@
                 $Exception->getMessage( ) , 
                 $Exception->getCode( )
             );
-
-            echo "❌ Failed to connect to database ❌";
             
             // tell me that connection failed
             exit('❌ Failed to connect to database ❌');

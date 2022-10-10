@@ -1,10 +1,17 @@
 <?php
     session_start();
 
+    $title = "Settings";
+
     // hide password upon edit
+    
 ?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
-<link rel="stylesheet" type="text/css" href="./../../assets/css/back-office/adminSettings.css">
+<link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/admin.css">
+<link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/adminSettings.css">
+
+<!-- -------------- ⏫ Page top --------------- -->
+<?php include_once('./../../components/back-office/top.php'); ?>
 
 <!-- -------------- 📄 page content --------------- -->
 <div id="adminSettings" class="container d-flex justify-content-between rounded-4 my-5 mx-auto p-4">
@@ -28,7 +35,7 @@
                     ✉ Edit your email address
                 </label>
                 <input type="email" name="editMail" id="editMail" class="form-control mb-2"
-                    placeholder="Your email" value="<?= $_POST['mail'] ?>">
+                    placeholder="Your email" value="$_POST['mail']">
             </div>
             <div class="form-group mb-2">
                 <label for="editPassword" class="form-label mb-2">
@@ -45,4 +52,8 @@
     </div>
 </div>
 
-<script src="./../../../../assets/js/back-office/adminSettings.js"></script>
+<!---------------- 📜 scripts used ---------------->
+<script src="./../../../assets/js/back-office/adminSettings.js"></script>
+
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php require_once('./../../components/back-office/footer.php'); ?>

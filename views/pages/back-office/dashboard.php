@@ -1,9 +1,14 @@
 <?php
     session_start();
+
+    $title = "name" ."'s dashboard";
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/dashboard.css">
+
+<!-- -------------- ⏫ Page top --------------- -->
+<?php include_once('./../../components/back-office/top.php'); ?>
 
 <!-- -------------- 📄 page content --------------- -->
 <div id="tableContainer" class="container">
@@ -26,3 +31,6 @@
 
 <!---------------- 📜 scripts used ---------------->
 <script src="./../../../assets/js/back-office/adminDashboard.js"></script>
+
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php require_once('./../../components/back-office/footer.php'); ?>
