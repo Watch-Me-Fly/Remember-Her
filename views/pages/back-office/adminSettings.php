@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+    // hide password upon edit
+?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../assets/css/back-office/adminSettings.css">
 
@@ -23,14 +28,14 @@
                     ✉ Edit your email address
                 </label>
                 <input type="email" name="editMail" id="editMail" class="form-control mb-2"
-                    placeholder="<?= echo 'mail' ?>">
+                    placeholder="Your email" value="<?= $_POST['mail'] ?>">
             </div>
             <div class="form-group mb-2">
                 <label for="editPassword" class="form-label mb-2">
                     🔑 Edit your password
                 </label>
                 <input type="password" name="editPassword" id="editPassword" class="form-control"
-                    placeholder="<?= echo 'password' ?>">
+                    placeholder="Your password">
             </div>
             <div class="form-group mt-5">
                 <input type="submit" value="Submit Changes" class="btn btn-primary">

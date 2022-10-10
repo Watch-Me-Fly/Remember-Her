@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
 
 <!DOCTYPE html>

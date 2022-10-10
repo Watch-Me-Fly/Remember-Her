@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" href="assets/css/pages/adminLogin.css">
 

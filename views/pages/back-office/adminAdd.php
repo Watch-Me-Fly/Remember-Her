@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../assets/css/back-office/adminAdd.css">
 
