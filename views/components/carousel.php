@@ -1,5 +1,7 @@
-<link rel="stylesheet" type="text/css" href="./../../assets/css/carousel.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
+<link rel="stylesheet" type="text/css" href="assets/css/carousel.css">
 
+<!-- -------------- 📄 page content --------------- -->
 <!-- <h2 id="latest">Latest</h2> -->
 <div class="container" id="slideshow-container">
     <!-- images are connected to radio buttons as their labels -->
@@ -19,15 +21,15 @@
             <span>victim 1</span>
         </label>
         <label class="card" for="item-2" id="victim-2">
-            <img src="./../../assets/images/examples/Iman-Arshid.jpg" alt="victim's name" title="victim's name">
+            <img src="assets/images/examples/Iman-Arshid.jpg" alt="victim's name" title="victim's name">
             <span>victim 2</span>
         </label>
         <label class="card" for="item-3" id="victim-3">
-            <img src="./../../assets/images/examples/naira.webp" alt="victim's name" title="victim's name">
+            <img src="assets/images/examples/naira.webp" alt="victim's name" title="victim's name">
             <span>victim 3</span>
         </label>
         <label class="card" for="item-4" id="victim-4">
-            <img src="./../../assets/images/examples//Loulouah-Althouaini.png" alt="victim's name"
+            <img src="assets/images/examples//Loulouah-Althouaini.png" alt="victim's name"
                 title="victim's name">
             <span>victim 4</span>
         </label>

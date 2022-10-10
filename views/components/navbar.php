@@ -5,8 +5,8 @@
     <div class="container 
                 d-flex justify-content-between 
                 col-sm-12 col-md-1">
-        <a href="https://index.html" class="btn">
-            <img src="./../../assets/icons/dark-mode/home.png" alt="Home" title="Home" width="20px">
+        <a href="/home" class="btn">
+            <img src="assets/icons/dark-mode/home.png" alt="Home" title="Home" width="20px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -15,7 +15,7 @@
         </button>
     </div>
     <div id="searchbar" class="container col-sm-12 col-md-3">
-        <form action="" class="d-flex justify-content-center">
+        <form action="" method="GET" class="d-flex justify-content-center">
             <input type="text" name="" id="" class="form-control me-2">
             <input type="submit" value="Search" class="btn btn-secondary">
         </form>
@@ -24,13 +24,15 @@
                 col-sm-12 col-md-4 col-lg-4" id="navbarNavDropdown">
         <ul class="navbar-nav d-flex flex-row justify-content-evenly">
             <li class="nav-item">
-                <a href="" class="nav-link text-white">Victims</a>
+                <a href="/victims-directory" class="nav-link text-white">
+                    Victims
+                </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link text-white">Euology</a>
+                <a href="/eulogy" class="nav-link text-white">Euology</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link text-white">About</a>
+                <a href="/about" class="nav-link text-white">About</a>
             </li>
         </ul>
     </div>
@@ -38,21 +40,21 @@
         d-flex flex-row justify-content-end 
         col-sm-12 col-md-3 col-lg-3">
         <li class="nav-item me-1 ">
-            <a href="" class="btn btn-secondary">
-                <img src="./../../assets/icons/dark-mode/add.png" alt="" width="20px">
+            <a href="/add-victim" class="btn btn-secondary">
+                <img src="assets/icons/dark-mode/add.png" alt="" width="20px">
                 <span>Add</span>
             </a>
         </li>
         <li class="nav-item me-1">
-            <a href="" class="btn btn-secondary">
-                <img src="./../../assets/icons/dark-mode/admin.png" alt="" width="20px">
+            <a href="/admin-login" class="btn btn-secondary">
+                <img src="assets/icons/dark-mode/admin.png" alt="" width="20px">
                 <span>Admin</span>
             </a>
         </li>
         <li class="nav-item dropdown me-1">
-            <a class="dropdown-toggle btn btn-secondary" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="dropdown-toggle btn btn-secondary d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <img src="./../../assets/icons/dark-mode/globe.png" alt="Choose Language" title="Choose Language"
+                <img src="assets/icons/dark-mode/globe.png" alt="Choose Language" title="Choose Language"
                     width="20px">
             </a>
             <ul class="dropdown-menu bg-secondary">

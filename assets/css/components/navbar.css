@@ -19,6 +19,7 @@ nav .btn:hover {
 *               Language Menu
 *---------------------------------------------*/
 li.dropdown>a.dropdown-toggle {
+    height: 100%;
     white-space: normal !important;
 }
 

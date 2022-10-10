@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="./../../assets/css/stickyHomeButton.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
 
 
 <?php
@@ -15,10 +15,11 @@
     $home = "to the top";
 ?>
 
+<!-- -------------- 📄 content --------------- -->
 <div id="stickySideMenu">
-    <a href="header">
+    <a href="#header">
         <img 
-            src="./../../assets/icons/dark-mode/home.png" 
+            src="assets/icons/dark-mode/home.png" 
             alt=<?= $home ?> 
             title=<?= $home ?> 
             width="30px"

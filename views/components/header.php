@@ -4,13 +4,13 @@
     // conditions to switch header image source
 ?>
 
-<link rel="stylesheet" type="text/css" href="./../../assets/css/header.css">
+<link rel="stylesheet" type="text/css" href="assets/css/header.css">
 
-<header>
+<header id="header">
     <div id="headerImg">
-        <a href="./landingpage.html">
+        <a href="/home">
             <img 
-                src="./../../assets/images/header-en.png" 
+                src="assets/images/header-en.png" 
                 alt="Header" 
                 class="mx-auto"
             >
