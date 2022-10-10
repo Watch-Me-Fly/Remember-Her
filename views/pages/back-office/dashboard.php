@@ -1,5 +1,8 @@
+
+<!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/dashboard.css">
 
+<!-- -------------- 📄 page content --------------- -->
 <div id="tableContainer" class="container">
     <table class="table" data-order='[[0, "asc"]]' data-page-length="25">
         <thead>
@@ -18,4 +21,5 @@
     </table>
 </div>
 
+<!---------------- 📜 scripts used ---------------->
 <script src="./../../../assets/js/back-office/adminDashboard.js"></script>

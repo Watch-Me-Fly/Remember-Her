@@ -1,4 +1,14 @@
-<link rel="stylesheet" type="text/css" href="./../../assets/css/about.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
+<link rel="stylesheet" type="text/css" href="assets/css/pages/about.css">
+
+<!-- -------------- ⏫ Page top --------------- -->
+<?php
+    $page_title = "About";
+
+    require_once('views/components/pageTopContents.php');
+?>
+<!-- -------------- 📄 page content --------------- -->
+<main>
 
 <div id="aboutPage" class="container p-4">
     <h1 class="text-center rounded-4 mt-5 mx-auto py-3">
@@ -25,3 +35,11 @@
         </p>
     </div>
 </div>
+
+</main>
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php
+    // footer
+    require_once('views/components/footer.php'); 
+?>
+<!---------------- 📜 scripts used ---------------->

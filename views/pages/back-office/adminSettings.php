@@ -1,6 +1,7 @@
+<!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../assets/css/back-office/adminSettings.css">
 
-
+<!-- -------------- 📄 page content --------------- -->
 <div id="adminSettings" class="container d-flex justify-content-between rounded-4 my-5 mx-auto p-4">
     <div class="d-flex flex-column align-items-center justify-content-center p-5">
         <img src="./../../../assets/icons/back-office/profile.png" alt="username" width="100px">

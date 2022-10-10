@@ -1,5 +1,16 @@
-<link rel="stylesheet" type="text/css" href="./../../../assets/css/victimStoryPage.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
+<link rel="stylesheet" type="text/css" href="assets/css/pages/victimStoryPage.css">
 
+<!-- -------------- ⏫ Page top --------------- -->
+<?php
+
+    $page_title = "Her story";
+
+    require_once('views/components/pageTopContents.php');
+?>
+
+<!-- -------------- 📄 page content --------------- -->
+<main>
 <div id="readStoryContainer" class="container d-flex px-4 pt-4">
     <!-- left half -->
     <div id="leftColumnStoryPage" class="rounded-4 p-3">
@@ -74,10 +85,10 @@
     <!-- right half -->
     <div id="rightColumnStoryPage" class="pt-5 px-4">
         <div id="victimPhotoContainer" class="">
-            <img src="./../../assets/images/examples/Iman-Arshid.jpg" alt="naira" title="" id="victimPhotoImg">
+            <img src="assets/images/examples/Iman-Arshid.jpg" alt="naira" title="" id="victimPhotoImg">
         </div>
     </div>
-    <img src="./../../assets/images/blackRibbon.png" alt="Black Ribbon" title="BlackRibbon" width="7%"
+    <img src="assets/images/blackRibbon.png" alt="Black Ribbon" title="BlackRibbon" width="7%"
         height="auto" id="blackRibbon">
 </div>
 <!-- Modal to display the photo -->
@@ -87,4 +98,12 @@
     <div id="caption" class="m-auto"></div>
 </div>
 
-<script src="./../../assets/js/victimStoryPage.js"></script>
+</main>
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php
+    // footer
+    require_once('views/components/footer.php'); 
+?>
+
+<!---------------- 📜 scripts used ---------------->
+<script src="assets/js/victimStoryPage.js"></script>

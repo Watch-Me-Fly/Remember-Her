@@ -1,5 +1,16 @@
-<link rel="stylesheet" type="text/css" href="./../../../assets/css/legalMentionsPage.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
+<link rel="stylesheet" type="text/css" href="assets/css/pages/legalMentionsPage.css">
 
+<!-- -------------- ⏫ Page top --------------- -->
+<?php
+
+    $page_title = "Remember Her";
+
+    require_once('views/components/pageTopContents.php');
+?>
+
+<!-- -------------- 📄 page content --------------- -->
+<main>
 <div id="legalMentionsPage" class="container p-4">
     <h1 class="text-center rounded-4 my-5 mx-auto py-3">
         Legal Mentions
@@ -44,3 +55,10 @@
         </p>
     </div>
 </div>
+</main>
+
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php
+    // footer
+    require_once('views/components/footer.php'); 
+?>

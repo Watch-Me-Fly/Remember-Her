@@ -1,16 +1,12 @@
 <!-- -------- 🎨 page specific stylesheets -------- -->
-<link rel="stylesheet" type="text/css" href="./../../assets/css/landingPage.css">
-<link rel="stylesheet" type="text/css" href="./../../assets/css/carousel.css">
+<link rel="stylesheet" type="text/css" href="assets/css/pages/landingPage.css">
+<link rel="stylesheet" type="text/css" href="assets/css/components/carousel.css">
 
 <!-- -------------- ⏫ Page top --------------- -->
 <?php
-
     $page_title = "Remember Her";
 
-    require_once('./../../views/components/top.php');
-    require_once('./../../views/components/navbar.php');
-    require_once('./../../views/components/header.php');
-    include_once('./../../views/components/stickyHomeButton.php');
+    require_once('views/components/pageTopContents.php');
 ?>
 
 <!-- -------------- 📄 page content --------------- -->
@@ -28,10 +24,10 @@
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php
     // carousel
-    include_once('./../../views/components/carousel.php');
+    require_once('views/components/carousel.php');
     // footer
-    include_once('./../../views/components/footer.php'); 
+    require_once('views/components/footer.php'); 
 ?>
 
 <!---------------- 📜 scripts used ---------------->
-<script src="./../../assets/js/carousel.js"></script>
+<script src="assets/js/carousel.js"></script>

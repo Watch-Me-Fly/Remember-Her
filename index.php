@@ -15,12 +15,12 @@ switch ($path) {
     case '/victims-directory':
         require_once("./views/pages/victimsDirectory.php");
     break;
-    case '/victims-directory/victim-story/':
+    case '/victim-story':
         require_once("./views/pages/victimStory.php");
     break;
     // ------------------- Other pages
     case '/eulogy':
-        require_once("./views/pages/eulogy.php");
+        require_once("./views/pages/eulogyPage.php");
     break;
     case '/about':
         require_once("./views/pages/about.php");

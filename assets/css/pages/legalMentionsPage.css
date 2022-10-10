@@ -1,0 +1,23 @@
+/*--------------------------------------------
+*             Page General Style
+*---------------------------------------------*/
+#legalMentionsPage {
+    min-width: 80%;
+    min-height: 20vh;
+    background-color: rgb(99, 0, 0);
+    color: rgb(249, 246, 247);
+}
+
+#legalMentionsPage hr {
+    opacity: 0.7;
+    width: 50%;
+    border: 1px rgb(249, 246, 247) solid;
+}
+
+/*-- ------------ Page heading ------------ --*/
+#legalMentionsPage h1 {
+    text-shadow: 1px 1px 3px rgba(249, 246, 247, 0.59),
+        -1px -1px 3px rgba(249, 246, 247, 0.59);
+    font-style: italic;
+    width: 50%;
+}

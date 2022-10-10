@@ -1,8 +1,17 @@
-<link rel="stylesheet" type="text/css" href="./../../../assets/css/victimsDirectory.css">
+<!-- -------- 🎨 page specific stylesheets -------- -->
+<link rel="stylesheet" type="text/css" href="assets/css/pages/victimsDirectory.css">
 
+<!-- -------------- ⏫ Page top --------------- -->
+<?php
+
+    $page_title = "Victim's Directory";
+
+    require_once('views/components/pageTopContents.php');
+?>
+
+<!-- -------------- 📄 page content --------------- -->
 <div class="container d-flex justify-content-between px-5 mt-5 mb-3">
-
-    <form action="" id="sortDirectoryForm" class="d-flex">
+    <form action="" id="sortDirectoryForm" class="d-flex justify-content-start me-3">
         <select name="" id="" class="form-select">
             <option value="">-- Sort by --</option>
             <option value="">Name (A --> z)</option>
@@ -27,41 +36,48 @@
 
 <div id="gallery" class="container-fluid d-flex flex-wrap p-5">
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="" title="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="" title="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="" title="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="./../../../assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
     </a>
 </div>
 
-<script src="./../../assets/js/victimsDirectory.js"></script>
+<!-- -------------- ⏬ Page Bottom --------------- -->
+<?php
+    // footer
+    require_once('views/components/footer.php'); 
+?>
+
+<!---------------- 📜 scripts used ---------------->
+<script src="assets/js/victimsDirectory.js"></script>

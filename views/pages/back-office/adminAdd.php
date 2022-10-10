@@ -1,5 +1,7 @@
+<!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../assets/css/back-office/adminAdd.css">
 
+<!-- -------------- 📄 page content --------------- -->
 <div class="container rounded-4 m-auto p-4">
     <div id="notice" class="rounded-3 text-center m-auto p-4">
         <h4>⚠ Please verify before publishing ⚠</h4>
@@ -12,5 +14,5 @@
     <?php include_once("./addVictimForm.php") ?>
 </div>
 
-
+<!---------------- 📜 scripts used ---------------->
 <script src="./../../../../assets/js/back-office/adminAdd.js"></script>

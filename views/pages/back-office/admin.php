@@ -1,7 +1,4 @@
-<?php 
-    $title = "page title";
-    $pageContent = "Page content";
-?>
+<!-- -------- 🎨 page specific stylesheets -------- -->
 
 <!DOCTYPE html>
 <html lang="en">
