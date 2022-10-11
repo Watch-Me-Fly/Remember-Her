@@ -6,7 +6,7 @@
     // destroy it
     session_destroy();
     // redirect the user back to the login page
-    header('location: /admin-login');
+    header('location:/home');
     // end the script
     exit;
     

@@ -1,5 +1,10 @@
 <?php
-    session_start();
+
+    $page_title = "Remember Her";
+
+    // verify login details
+    require_once('controllers/back-office/login.php');
+    
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->
@@ -7,9 +12,6 @@
 
 <!-- -------------- ⏫ Page top --------------- -->
 <?php
-
-    $page_title = "Remember Her";
-
     require_once('views/components/pageTopContents.php');
 ?>
 
@@ -56,14 +58,32 @@
         <div id="login" class="container">
             <h2 class="text-center p-3">Welcome <span>back</span></h2>
 
-            <p id="errorLogin" class="error rounded-3 fst-italic p-3 m-3"></p>
+            <!-- if info is incorrect, display error message -->
+            <?php if(isset($errorMessage) ): ?>
 
-            <form action="" method="POST" id="signinForm" class="">
+                <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
+                    <?= $errorMessage; ?>
+                </p>
+
+            <?php endif; ?>
+            <!-- name exists, but "is_admin" =false (pending approval or refused) -->
+            <?php if(isset($refusedAdmin) ): ?>
+
+                <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
+                    <?= $refusedAdmin; ?>
+                </p>
+
+            <?php endif; ?>
+
+            <!-- if the person is not logged in, open log in / sign up page -->
+            <?php if (empty($_SESSION['admin'])) : ?>
+
+            <form action="" method="POST" id="signinForm" class="" enctype="multipart/form-data">
 
                 <div class="input-group d-flex align-items-center mb-3">
                     <label for="username">Username :</label>
                     <input type="text" name="username" id="username" class="form-control rounded-2"
-                        placeholder="Username" required autocomplete="on">
+                        placeholder="Username or Email" required autocomplete="on">
                 </div>
 
                 <div class="input-group d-flex align-items-center mb-3">
@@ -83,23 +103,27 @@
         <div id="register" class="container">
             <h2 class="text-center p-3">Join as <span>Admin</span></h2>
             <p class="description"></p>
-            <p id="errorRegistration" class="error rounded-3 fst-italic p-3 m-3">
 
-            </p>
+            <p id="errorRegistration" class="alert alert-danger error rounded-3 fst-italic p-3 m-3">
+                </p>
+                <!-- // ANCHOR : if email or username exists -->
 
-            <form action="" method="GET" id="registerForm">
+            <form action="" method="GET" id="registerForm" class="" enctype="multipart/form-data">
                 <!-- username -->
+                <p>Please note that username cannot be changed</p>
                 <div class="input-group d-flex align-items-center mb-3">
                     <label for="newUsername">Username :</label>
                     <input type="text" name="newUsername" id="newUsername" class="form-control rounded-2"
                         placeholder="Username" required autocomplete="off" />
                 </div>
+                <!-- ANCHOR verify while typing username available or not -->
                 <!-- email -->
                 <div class="input-group d-flex align-items-center mb-3">
                     <label for="email">Email :</label>
                     <input type="email" name="email" id="email" class="form-control rounded-2"
                         placeholder="Email" required autocomplete="off" />
                 </div>
+                <!-- ANCHOR verify while typing email available or not -->
                 <!-- password -->
                 <div class="input-group d-flex align-items-center mb-3">
                     <label for="newPassword">Password :</label>
@@ -110,8 +134,10 @@
                 <div class="input-group  justify-content-center mb-3">
                     <input type="submit" value="Sign up >" class="btn btn-secondary">
                 </div>
+                <!-- ANCHOR captcha -->
             </form>
         </div>
+        <?php endif; ?>
 
     </div>
 </div>

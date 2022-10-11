@@ -32,7 +32,18 @@ switch ($path) {
     case '/admin-login':
         require_once("./views/pages/adminLogin.php");
     break;
-
+    case '/admin':
+        require_once("./views/pages/back-office/admin.php");
+        break;
+    case '/admin/dashboard':
+        require_once("./views/pages/back-office/dashboard.php");
+        break;
+    case '/admin/add-victim':
+        require_once("./views/pages/back-office/adminAdd.php");
+        break;
+    case '/admin/settings':
+        require_once("./views/pages/back-office/adminSettings.php");
+        break;
     // ------------------- 
     default:
         require_once("./views/pages/landingPage.php");

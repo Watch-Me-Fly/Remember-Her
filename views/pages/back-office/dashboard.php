@@ -1,14 +1,13 @@
 <?php
     session_start();
-
-    $title = "name" ."'s dashboard";
+    $title = $_SESSION['admin'] ."'s dashboard";
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->
-<link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/dashboard.css">
+<link rel="stylesheet" type="text/css" href="assets/css/back-office/dashboard.css">
 
 <!-- -------------- ⏫ Page top --------------- -->
-<?php include_once('./../../components/back-office/top.php'); ?>
+<?php include_once('views/components/back-office/top.php'); ?>
 
 <!-- -------------- 📄 page content --------------- -->
 <div id="tableContainer" class="container">
@@ -30,7 +29,7 @@
 </div>
 
 <!---------------- 📜 scripts used ---------------->
-<script src="./../../../assets/js/back-office/adminDashboard.js"></script>
+<script src="assets/js/back-office/adminDashboard.js"></script>
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
-<?php require_once('./../../components/back-office/footer.php'); ?>
+<?php require_once('views/components/back-office/footer.php'); ?>

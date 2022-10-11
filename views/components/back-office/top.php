@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- stylesheets used through all pages -->
     <?php 
-        require_once('./../../../assets/css/back-office/stylesheets.php');
+        require_once('assets/css/back-office/stylesheets.php');
     ?>
     <title><?= $title ?></title>
 </head>

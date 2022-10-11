@@ -6,7 +6,7 @@
     </footer>
 
     <!-- -----------------JS scripts------------------ -->
-    <?php include_once('./../../../assets/js/back-office/script.php'); ?>
+    <?php include_once('assets/js/back-office/script.php'); ?>
 
 </body>
 
