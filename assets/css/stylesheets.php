@@ -24,4 +24,4 @@
 <!-- sticky home button -->
     <link rel="stylesheet" type="text/css" href="assets/css/components/stickyHomeButton.css">
 <!-- footer -->
-    <link rel="stylesheet" type="text/css" href="assets/css/components/footbar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/components/footer.css">
