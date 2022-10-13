@@ -1,6 +1,3 @@
-<!-- -------- 🎨 page specific stylesheets -------- -->
-<link rel="stylesheet" type="text/css" href="assets/css/footbar.css">
-
 <!-- -------------- 📄 content --------------- -->
 <footer class="container-fluid bg-dark text-white p-4">
         <div class="row">

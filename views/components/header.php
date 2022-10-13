@@ -4,8 +4,6 @@
     // conditions to switch header image source
 ?>
 
-<link rel="stylesheet" type="text/css" href="assets/css/header.css">
-
 <header id="header">
     <div id="headerImg">
         <a href="/home">
