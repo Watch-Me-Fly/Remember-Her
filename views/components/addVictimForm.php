@@ -132,10 +132,18 @@
                     d-flex flex-wrap
                     justify-content-between align-items-center">
             <label for="urlSource">
+                Twitter Hashtag
+            </label>
+            <input type="url" name="twitterHash" id="twitterHash" class="form-control" />
+        </div>
+        <div class="form-group
+                    d-flex flex-wrap
+                    justify-content-between align-items-center">
+            <label for="urlSource">
                 Source URL #1
                 <span class="required">*</span>
             </label>
-            <input type="url" name="urlSource1" id="urlSource1" class="form-control" />
+            <input type="url" name="urlSource1" id="urlSource1" class="form-control" required/>
         </div>
         <div class="form-group
                     d-flex flex-wrap
