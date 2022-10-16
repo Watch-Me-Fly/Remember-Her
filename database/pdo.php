@@ -1,5 +1,5 @@
 <?php
-// ';port=' . $DATABASE_PORT .
+
 
     // creating a new connection class to the database
     function pdo_connect() {
@@ -8,13 +8,14 @@
         $DATABASE_HOST = 'localhost';
         $DATABASE_USER = 'root';
         $DATABASE_PASSWORD = '';
-        $DATABASE_PORT = '';
+        // $DATABASE_PORT = '';
         $DATABASE_NAME = 'remember_her';
 
         // create an instance of the database
-        $pdo = new PDO('mysql:host=' . $DATABASE_HOST . 
-                        ';dbname=' . $DATABASE_NAME , 
-                        $DATABASE_USER, $DATABASE_PASSWORD
+        $pdo = new PDO('mysql:host=' . $DATABASE_HOST .
+                        ';dbname=' . $DATABASE_NAME,
+                        // .";charset='utf8';port=" . $DATABASE_PORT,
+                        $DATABASE_USER, $DATABASE_PASSWORD,
                     );
 
         // try to connect to the database
@@ -41,6 +42,4 @@
             exit('❌ Failed to connect to database ❌');
         }
     }
-    
-    pdo_connect();
 ?>
