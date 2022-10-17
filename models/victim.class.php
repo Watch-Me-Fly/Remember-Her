@@ -165,6 +165,10 @@
         }
         public function setIsEnabled(bool $isEnabled)
         {
+            if ($this->isEnabled == null)
+            {
+                return false;
+            }
             $this->isEnabled = $isEnabled;
         }
 
