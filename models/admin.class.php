@@ -81,6 +81,17 @@
             }
             $this->isAdmin = $isAdmin;
         }
+        public function getAdminInfo()
+        {
+            return json_encode([
+                'id' => $this->id,
+                'username' => $this->username,
+                'password' => $this->password,
+                'email' => $this->email,
+                'location' => $this->location,
+                'isAdmin' => $this->isAdmin,
+            ]);
+        }
 
     }
 

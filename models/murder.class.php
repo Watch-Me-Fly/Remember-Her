@@ -105,7 +105,7 @@ class Murder extends Victim
             'age' => $this->age,
             'countryOfOrigin' => $this->countryOfOrigin, 
             'photo' => $this->photo, 
-            'reasonForCrime' => $this->getReasonForCrime(),
+            'reasonForCrime' => $this->reasonForCrime,
             'crimeTool' => $this->crimeTool, 
             'countryOfCrime' => $this->countryOfCrime, 
             'dateOfDeath' => $this->dateOfDeath, 

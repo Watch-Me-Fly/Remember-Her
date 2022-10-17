@@ -12,5 +12,6 @@ $ahmad = new Admin(
 );
 
 var_dump($ahmad);
+// echo $ahmad->getAdminInfo();
 
 ?>
