@@ -26,12 +26,12 @@
             int $age, 
             string $countryOfOrigin, 
             string $photo,
-            string $twitterTag, 
+            ?string $twitterTag, 
             string $source1,
-            string $source2, 
-            string $source3, 
-            string $source4, 
-            string $source5, 
+            ?string $source2, 
+            ?string $source3, 
+            ?string $source4, 
+            ?string $source5, 
             bool $isEnabled = false
         )
         {
@@ -82,6 +82,10 @@
         
         public function getTwitterTag():string
         {
+            if ($this->twitterTag === null)
+            {
+                return false;
+            }
             return $this->twitterTag;
         }
         public function getSource1():string
@@ -90,18 +94,34 @@
         }
         public function getSource2():string
         {
+            if ($this->source2 === null)
+            {
+                return false;
+            }
             return $this->source2;
         }
         public function getSource3():string
         {
+            if ($this->source3 === null)
+            {
+                return false;
+            }
             return $this->source3;
         }
         public function getSource4():string
         {
+            if ($this->source4 === null)
+            {
+                return false;
+            }
             return $this->source4;
         }
         public function getSource5():string
         {
+            if ($this->source5 === null)
+            {
+                return false;
+            }
             return $this->source5;
         }
         public function getIsEnabled():bool

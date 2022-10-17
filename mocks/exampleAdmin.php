@@ -1,6 +1,6 @@
 <?php
 
-require_once('admin.class.php');
+require_once('./../models/admin.class.php');
 
 $ahmad = new Admin(
     "4",

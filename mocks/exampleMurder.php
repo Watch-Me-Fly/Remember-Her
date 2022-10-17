@@ -1,6 +1,6 @@
 <?php
 
-require_once('murder.class.php');
+require_once('./../models/murder.class.php');
 
     $id="2";
     $postCreationDate = "25-02-2020";
@@ -15,7 +15,7 @@ require_once('murder.class.php');
     $dateOfDeath = "2020";
     $killerRelationship = "killer";
     $story = "story";
-    $twitterTag = "twitterTag";
+    $twitterTag = "#hashtag";
     $source1 = "source1";
     $source2 = null;
     $source3 = null;
@@ -31,9 +31,9 @@ require_once('murder.class.php');
         $age, 
         $countryOfOrigin, 
         $photo, 
-        $twitterTag, 
+        $twitterTag,
         $source1,
-        $source2, 
+        $source2,
         $source3, 
         $source4, 
         $source5, 
