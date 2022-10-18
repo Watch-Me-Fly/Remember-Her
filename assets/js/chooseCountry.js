@@ -1,8 +1,7 @@
 (() => {
     "use strict";
 
-    // * ------------ add id to main tag for styling purposes
-    // document.querySelector("main").setAttribute("id", "addVictimMain");
+    // NOTE this file is not used anywhere, php is used instead
 
     /*--------------------------------------------
     *              Country selector

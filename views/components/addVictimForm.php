@@ -1,3 +1,8 @@
+<?php 
+    require_once('controllers/imageVerif.php');
+    require_once('controllers/addMurder.controller.php');
+?>
+
 <form action="controllers/submitVictim.php" method="POST" enctype="multipart/form-data" id="addVictimForm" class="m-auto p-3">
     <fieldset class="rounded-3 p-3 mb-3" id="victimFieldset">
         <legend class="px-4 m-0">The victim</legend>
@@ -36,6 +41,12 @@
             <label for="countryOfOrigin">Country of origin</label>
             <select name="countryOfOrigin" id="countryOfOrigin" class="form-select">
                 <!-- JSON countries  -->
+                <?php
+                    foreach ($json as $country)
+                    {
+                        echo "<option value=" . $country['code'] . ">" . $country['name'] . "</option>";
+                    }
+                ?>
             </select>
         </div>
         <div class="form-group
@@ -50,18 +61,18 @@
         <div class="form-group
                     d-flex flex-wrap
                     justify-content-between align-items-center">
-            <label for="typeOfCrime">
-                Type of crime
+            <label for="reasonForCrime">
+                Reason behind the crime
                 <span class="required">*</span>
             </label>
-            <select name="typeOfCrime" id="typeOfCrime" class="form-select" required>
+            <select name="reasonForCrime" id="reasonForCrime" class="form-select" required>
                 <option value="" disabled>-- please choose --</option>
             </select>
         </div>
         <div class="form-group
                     d-flex flex-wrap
                     justify-content-between align-items-center">
-            <label for="">
+            <label for="toolUsed">
                 Tool
                 <span class="required">*</span>
             </label>
@@ -78,6 +89,12 @@
             </label>
             <select name="countryOfCrime" id="countryOfCrime" class="form-select" required />
             <!-- JSON countries  -->
+            <?php
+                foreach ($json as $country)
+                {
+                    echo "<option value=" . $country['code'] . ">" . $country['name'] . "</option>";
+                }
+            ?>
             </select>
         </div>
         <div class="form-group
@@ -187,3 +204,6 @@
         <input type="submit" value="Send" name"send" class="btn btn-light">
     </div>
 </form>
+
+<script src="./../../assets/js/libraries/jquery-3.6.1.min.js" type="application/javascript"></script>
+<!-- <script src="./../../assets/js/chooseCountry.js" type="text/javascript"></script> -->
