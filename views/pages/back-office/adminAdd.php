@@ -1,15 +1,14 @@
 <?php
-    session_start();
-
+    // -- -------------- ⏫ Page top --------------- --
     $title = "Add victim";
+    require_once('views/components/back-office/top.php');
 ?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/adminAdd.css">
 
-<!-- -------------- ⏫ Page top --------------- -->
-<?php include_once('views/components/back-office/top.php'); ?>
-
 <!-- -------------- 📄 page content --------------- -->
+<?php if (isset($_SESSION['admin'])) : ?>
+
 <div class="container rounded-4 m-auto p-4">
     <div id="notice" class="rounded-3 text-center m-auto p-4">
         <h4>⚠ Please verify before publishing ⚠</h4>
@@ -17,7 +16,6 @@
             verifications</p>
     </div>
     <p id="error" class="text-danger rounded-3 p-3 mx-auto">
-
     </p>
     <?php include_once("views/components/addVictimForm.php") ?>
 </div>
@@ -27,3 +25,5 @@
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php require_once('views/components/back-office/footer.php'); ?>
+
+<?php endif; ?>

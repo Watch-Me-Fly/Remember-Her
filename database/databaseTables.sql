@@ -18,7 +18,7 @@ CREATE TABLE Reason (
     PRIMARY KEY (`reason_id`)
 ) ENGINE=InnoDB character set=utf8;
 
-CREATE TABLE TOOLS (
+CREATE TABLE Tools (
     `tool_id` int(10) NOT NULL AUTO_INCREMENT,
     `tool_name` varchar(255) NOT NULL,
     PRIMARY KEY (`tool_id`),

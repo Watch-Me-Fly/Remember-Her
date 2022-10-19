@@ -1,16 +1,15 @@
 <?php
-    session_start();
-
+    // -- -------------- ⏫ Page top --------------- --
     $title = "Settings";
+    require_once('views/components/back-office/top.php');
 ?>
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/admin.css">
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/adminSettings.css">
 
-<!-- -------------- ⏫ Page top --------------- -->
-<?php include_once('views/components/back-office/top.php'); ?>
-
 <!-- -------------- 📄 page content --------------- -->
+<?php if (isset($_SESSION['admin'])) : ?>
+
 <div id="adminSettings" class="container d-flex justify-content-between rounded-4 my-5 mx-auto p-4">
     <div class="d-flex flex-column align-items-center justify-content-center p-5">
         <img src="./../../../assets/icons/back-office/profile.png" alt="username" width="100px">
@@ -56,3 +55,5 @@
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php require_once('views/components/back-office/footer.php'); ?>
+
+<?php endif; ?>

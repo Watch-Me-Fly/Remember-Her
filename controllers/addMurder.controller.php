@@ -24,4 +24,5 @@ $tool = Query::sqlReadQuery('SELECT * FROM Tools', null);
     // decode it
     $json = json_decode($jsonFile, true);
 
+    
 ?>
