@@ -1,21 +1,27 @@
 CREATE DATABASE IF NOT EXISTS `remember_her`;
 
-CREATE TABLE Killer (
-    `killer_id` INT(11) NOT NULL AUTO_INCREMENT , 
+CREATE TABLE Perpetrator (
+    `perpetrator_id` INT(11) NOT NULL AUTO_INCREMENT , 
     `relationship` VARCHAR(255) NOT NULL,
-    PRIMARY KEY (`killer_id`)
-) ENGINE = InnoDB character set=utf8; 
+    PRIMARY KEY (`perpetrator_id`)
+) ENGINE = InnoDB character set=utf8;
 
-CREATE TABLE Crime (
-    `crime_id` int(11) NOT NULL AUTO_INCREMENT,
-    `crime_type` varchar(255) NOT NULL,
-    PRIMARY KEY (`crime_id`)
-) ENGINE=InnoDB character set=utf8;
+-- CREATE TABLE Crime (
+--     `crime_id` int(11) NOT NULL AUTO_INCREMENT,
+--     `crime_type` varchar(255) NOT NULL,
+--     PRIMARY KEY (`crime_id`)
+-- ) ENGINE=InnoDB character set=utf8;
 
 CREATE TABLE Reason (
     `reason_id` int(11) NOT NULL AUTO_INCREMENT,
     `reason_group` varchar(255) NOT NULL,
     PRIMARY KEY (`reason_id`)
+) ENGINE=InnoDB character set=utf8;
+
+CREATE TABLE TOOLS (
+    `tool_id` int(10) NOT NULL AUTO_INCREMENT,
+    `tool_name` varchar(255) NOT NULL,
+    PRIMARY KEY (`tool_id`),
 ) ENGINE=InnoDB character set=utf8;
 
 CREATE TABLE Sources (
@@ -29,7 +35,7 @@ CREATE TABLE Sources (
     PRIMARY KEY (`sources_id`)
 ) ENGINE=InnoDB character set=utf8;
 
-CREATE TABLE Victims (
+CREATE TABLE Victims_murder (
     `post_creation_date` DATETIME NOT NULL,
     `victim_id` int(11) NOT NULL AUTO_INCREMENT,
 
@@ -43,10 +49,10 @@ CREATE TABLE Victims (
     --------------------- The crime -------------------------
     -- `crime_type` INT, -- Foreign key
     `reason_group` INT, -- Foreign key
-    `crime_tool` varchar(255) NOT NULL, 
+    `crime_tool` INT, -- Foreign key 
     `country_crime` varchar(255) NOT NULL, 
     `date_of_death` int(4) NOT NULL,
-    `killer` INT, -- Foreign key
+    `perpetrator` INT, -- Foreign key
 
     --------------------- The story -------------------------
     `story` TEXT NOT NULL,
@@ -67,16 +73,20 @@ CREATE TABLE Victims (
         REFERENCES Reason (`reason_id`)
         ON DELETE CASCADE ON UPDATE CASCADE,
 
-    CONSTRAINT FOREIGN KEY (`enabled_by`)
-        REFERENCES Admins (`admin_id`)
+    CONSTRAINT FOREIGN KEY (`crime_tool`)
+        REFERENCES Tools (`tool_id`)
         ON DELETE CASCADE ON UPDATE CASCADE,
     
-    CONSTRAINT FOREIGN KEY (`killer`)
-        REFERENCES Killer (`killer_id`)
+    CONSTRAINT FOREIGN KEY (`perpetrator`)
+        REFERENCES Perpetrator (`perpetrator_id`)
         ON DELETE CASCADE ON UPDATE CASCADE,
 
     CONSTRAINT FOREIGN KEY (`sources`)
         REFERENCES Sources (`sources_id`)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+
+    CONSTRAINT FOREIGN KEY (`enabled_by`)
+        REFERENCES Admins (`admin_id`)
         ON DELETE CASCADE ON UPDATE CASCADE
 
 ) ENGINE=InnoDB character set=utf8;

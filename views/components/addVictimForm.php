@@ -1,6 +1,8 @@
 <?php 
+
     require_once('controllers/imageVerif.php');
     require_once('controllers/addMurder.controller.php');
+    
 ?>
 
 <form action="controllers/submitVictim.php" method="POST" enctype="multipart/form-data" id="addVictimForm" class="m-auto p-3">
@@ -21,9 +23,10 @@
                     justify-content-between align-items-center">
             <label for="lastName">
                 Her last name
+                <span class="required">*</span>
             </label>
             <input type="text" class="form-control" placeholder="Victim's last name" name="lastName"
-                size="50">
+                size="50" required>
         </div>
         <div class="form-group 
                     d-flex  flex-wrap
@@ -38,13 +41,19 @@
         <div class="form-group
                     d-flex flex-wrap
                     justify-content-between align-items-center">
-            <label for="countryOfOrigin">Country of origin</label>
+            <label for="countryOfOrigin">
+                Country of origin
+                <span class="required">*</span>
+            </label>
             <select name="countryOfOrigin" id="countryOfOrigin" class="form-select">
+                <option value="" disabled selected="selected">-- please choose --</option>
                 <!-- JSON countries  -->
                 <?php
                     foreach ($json as $country)
                     {
-                        echo "<option value=" . $country['code'] . ">" . $country['name'] . "</option>";
+                        echo "<option value=" . $country['code'] . ">" 
+                                . $country['name'] . 
+                             "</option>";
                     }
                 ?>
             </select>
@@ -66,7 +75,16 @@
                 <span class="required">*</span>
             </label>
             <select name="reasonForCrime" id="reasonForCrime" class="form-select" required>
-                <option value="" disabled>-- please choose --</option>
+                <option value="" disabled selected="selected">-- please choose --</option>
+                <?php
+                    foreach ($reason as $item)
+                    {
+                        echo 
+                        "<option value=".$item->reason_id.">" 
+                        .utf8_encode($item->reason_group).
+                        "</option>";
+                    }
+                ?>
             </select>
         </div>
         <div class="form-group
@@ -77,7 +95,16 @@
                 <span class="required">*</span>
             </label>
             <select name="toolUsed" id="toolUsed" class="form-select" required>
-                <option value="" disabled>-- please choose --</option>
+                <option value="" disabled selected="selected">-- please choose --</option>
+                <?php
+                    foreach ($tool as $item)
+                    {
+                        echo 
+                        "<option value=".$item->tool_id.">" 
+                        .utf8_encode($item->tool_name).
+                        "</option>";
+                    }
+                ?>
             </select>
         </div>
         <div class="form-group
@@ -88,11 +115,14 @@
                 <span class="required">*</span>
             </label>
             <select name="countryOfCrime" id="countryOfCrime" class="form-select" required />
+            <option value="" disabled selected="selected">-- please choose --</option>
             <!-- JSON countries  -->
             <?php
                 foreach ($json as $country)
                 {
-                    echo "<option value=" . $country['code'] . ">" . $country['name'] . "</option>";
+                    echo "<option value=" . $country['code'] . ">" 
+                            . $country['name'] . 
+                         "</option>";
                 }
             ?>
             </select>
@@ -114,14 +144,15 @@
                 <span class="required">*</span>
             </label>
             <div id="killerList">
-                <input type="checkbox" name="killer" id="father" class="form-check-input" />Father <br />
-                <input type="checkbox" name="killer" id="brother" class="form-check-input" />Brother<br />
-                <input type="checkbox" name="killer" id="relative" class="form-check-input" />Other
-                relative<br />
-                <input type="checkbox" name="killer" id="husband" class="form-check-input" />Husband<br />
-                <input type="checkbox" name="killer" id="fiancee" class="form-check-input" />Fiancée<br />
-                <input type="checkbox" name="killer" id="nonRelative"
-                    class="form-check-input" />Non-Relative<br />
+                <?php
+                    foreach ($perpetrator as $item)
+                    {
+                        echo "<input type='radio' name='killer' id='" 
+                        . $item->perpetrator_id .
+                        "' class='form-check-input' /> "
+                        . utf8_encode($item->relationship) . "<br/>";
+                    }
+                ?>
             </div>
         </div>
     </fieldset>
@@ -167,7 +198,6 @@
                     justify-content-between align-items-center">
             <label for="urlSource">
                 Source URL #2
-                <span class="required">*</span>
             </label>
             <input type="url" name="urlSource2" id="urlSource2" class="form-control" />
         </div>
@@ -176,7 +206,6 @@
                     justify-content-between align-items-center">
             <label for="urlSource">
                 Source URL #3
-                <span class="required">*</span>
             </label>
             <input type="url" name="urlSource3" id="urlSource3" class="form-control" />
         </div>
@@ -185,7 +214,6 @@
                     justify-content-between align-items-center">
             <label for="urlSource">
                 Source URL #4
-                <span class="required">*</span>
             </label>
             <input type="url" name="urlSource4" id="urlSource4" class="form-control" />
         </div>
@@ -194,7 +222,6 @@
                     justify-content-between align-items-center">
             <label for="urlSource">
                 Source URL #5
-                <span class="required">*</span>
             </label>
             <input type="url" name="urlSource5" id="urlSource5" class="form-control" />
         </div>

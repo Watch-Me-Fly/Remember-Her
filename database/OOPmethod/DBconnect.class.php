@@ -4,17 +4,17 @@
 *=============================================**/
 class DBConnection
 {
-    private $DATABASE_DSN = 'mysql:host=localhost;dbname=remember_her';
-    private $DATABASE_USER = 'root';
-    private $DATABASE_PASSWORD = '';
-    
     protected $dbConnect;
 
-    public function __construct()
+    public static function PDO()
     {
-        if (!isset($this->dbConnect))
+        $DATABASE_DSN = 'mysql:host=localhost;dbname=remember_her';
+        $DATABASE_USER = 'root';
+        $DATABASE_PASSWORD = '';
+
+        if (!isset($dbConnect))
         {
-            $this->dbConnect = new PDO($this->DATABASE_DSN, $this->DATABASE_USER, $this->DATABASE_PASSWORD, [
+            $dbConnect = new PDO($DATABASE_DSN, $DATABASE_USER, $DATABASE_PASSWORD, [
                 PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION,
             ]);
         }
@@ -22,7 +22,7 @@ class DBConnection
         {           
             // echo "✅ Connection to database is established ✅";
             
-            return $this->dbConnect;
+            return $dbConnect;
         } 
         // if connection fails, catch the exception 
         catch (PDOException $Exception) 
