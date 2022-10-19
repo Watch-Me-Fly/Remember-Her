@@ -1,16 +1,15 @@
 <?php
-
     class Admin
     {
         private $id;
-        private $username;
-        private $password;
-        private $email;
-        private $location;
-        private $isAdmin;
+        public $username;
+        public $password;
+        public $email;
+        public $location;
+        public $isAdmin;
 
         function __construct(
-            int $id,
+            ?int $id,
             string $username, 
             string $password, 
             string $email, 
@@ -51,7 +50,6 @@
             return $this->isAdmin;
         }
 
-        // ANCHOR type setters
         // -- -------------- setters
         public function setId(int $id)
         {
@@ -81,18 +79,6 @@
             }
             $this->isAdmin = $isAdmin;
         }
-        public function getAdminInfo()
-        {
-            return json_encode([
-                'id' => $this->id,
-                'username' => $this->username,
-                'password' => $this->password,
-                'email' => $this->email,
-                'location' => $this->location,
-                'isAdmin' => $this->isAdmin,
-            ]);
-        }
-
+        
     }
-
 ?>

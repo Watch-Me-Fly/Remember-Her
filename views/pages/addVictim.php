@@ -1,12 +1,12 @@
+<!-- -------------- ⏫ Page top --------------- -->
+<?php
+    require_once('views/components/pageTopContents.php');
+    $page_title = "Add victim";
+?>
+
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" type="text/css" href="assets/css/pages/addVictimFormPage.css">
 
-<!-- -------------- ⏫ Page top --------------- -->
-<?php
-    $page_title = "Her story";
-
-    require_once('views/components/pageTopContents.php');
-?>
 <!-- -------------- 📄 page content --------------- -->
 <main>
     <div class="container m-auto p-4">

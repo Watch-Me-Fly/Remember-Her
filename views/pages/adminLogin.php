@@ -1,19 +1,16 @@
 <?php
-
-    $page_title = "Remember Her";
-
     // verify login details
     require_once('controllers/back-office/login.php');
     
+    // -- -------------- ⏫ Page top --------------- --
+    require_once('views/components/pageTopContents.php');
+    $page_title = "Remember Her";
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" href="assets/css/pages/adminLogin.css">
 
-<!-- -------------- ⏫ Page top --------------- -->
-<?php
-    require_once('views/components/pageTopContents.php');
-?>
+<?php if (empty($_SESSION['admin'])) : ?>
 
 <!-- -------------- 📄 page content --------------- -->
 <main>
@@ -21,7 +18,6 @@
 <h3 class="text-center rounded-3 fst-italic my-4 mx-auto p-4">
             Login as admin, or register as one
 </h3>
-
 <div id="connectContainer" class="container px-0 pb-3 mb-5">
 
     <!-- ------------navbar of the login / signup container------------- -->
@@ -54,95 +50,22 @@
     <!-- -----------------contents of connection box------------------ -->
     <div id="connectBoxContents" class="m-3 p-4">
 
-        <!-- login page -->
-        <div id="login" class="container">
-            <h2 class="text-center p-3">Welcome <span>back</span></h2>
+        <?php
 
-            <!-- if info is incorrect, display error message -->
-            <?php if(isset($errorMessage) ): ?>
+            // -- login page --
+            require_once('views/components/adminLogin.php');
 
-                <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
-                    <?= $errorMessage; ?>
-                </p>
+            // -- signup page --
+            require_once('views/components/adminSignup.php');
 
-            <?php endif; ?>
-            <!-- name exists, but "is_admin" =false (pending approval or refused) -->
-            <?php if(isset($refusedAdmin) ): ?>
-
-                <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
-                    <?= $refusedAdmin; ?>
-                </p>
-
-            <?php endif; ?>
-
-            <!-- if the person is not logged in, open log in / sign up page -->
-            <?php if (empty($_SESSION['admin'])) : ?>
-
-            <form action="" method="POST" id="signinForm" class="" enctype="multipart/form-data">
-
-                <div class="input-group d-flex align-items-center mb-3">
-                    <label for="username">Username :</label>
-                    <input type="text" name="username" id="username" class="form-control rounded-2"
-                        placeholder="Username or Email" required autocomplete="on">
-                </div>
-
-                <div class="input-group d-flex align-items-center mb-3">
-                    <label for="password">Password :</label>
-                    <input type="password" name="password" id="password" class="form-control rounded-2"
-                        placeholder="Password" required autocomplete="on">
-                </div>
-
-                <div class="input-group justify-content-center">
-                    <input type="submit" value="Log in &gt;" class="btn btn-secondary">
-                </div>
-
-            </form>
-        </div>
-
-        <!-- signup page -->
-        <div id="register" class="container">
-            <h2 class="text-center p-3">Join as <span>Admin</span></h2>
-            <p class="description"></p>
-
-            <p id="errorRegistration" class="alert alert-danger error rounded-3 fst-italic p-3 m-3">
-                </p>
-                <!-- // ANCHOR : if email or username exists -->
-
-            <form action="" method="GET" id="registerForm" class="" enctype="multipart/form-data">
-                <!-- username -->
-                <p>Please note that username cannot be changed</p>
-                <div class="input-group d-flex align-items-center mb-3">
-                    <label for="newUsername">Username :</label>
-                    <input type="text" name="newUsername" id="newUsername" class="form-control rounded-2"
-                        placeholder="Username" required autocomplete="off" />
-                </div>
-                <!-- ANCHOR verify while typing username available or not -->
-                <!-- email -->
-                <div class="input-group d-flex align-items-center mb-3">
-                    <label for="email">Email :</label>
-                    <input type="email" name="email" id="email" class="form-control rounded-2"
-                        placeholder="Email" required autocomplete="off" />
-                </div>
-                <!-- ANCHOR verify while typing email available or not -->
-                <!-- password -->
-                <div class="input-group d-flex align-items-center mb-3">
-                    <label for="newPassword">Password :</label>
-                    <input type="password" name="newPassword" id="newPassword" class="form-control rounded-2"
-                        placeholder="Password" required autocomplete="off" />
-                </div>
-                <!-- submit -->
-                <div class="input-group  justify-content-center mb-3">
-                    <input type="submit" value="Sign up >" class="btn btn-secondary">
-                </div>
-                <!-- ANCHOR captcha -->
-            </form>
-        </div>
-        <?php endif; ?>
+        ?>
 
     </div>
 </div>
 
 </main>
+
+<?php endif; ?>
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php
