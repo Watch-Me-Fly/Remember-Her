@@ -33,5 +33,15 @@ class Query extends DBConnection
         return $response;
     }
 
+    public static function sqlUpdateQuery($query, $fields)
+    {
+        $db = DBConnection::PDO();
+        $sqlStatement = $db->prepare($query);
+        $sqlStatement->execute($fields);
+        $response = $sqlStatement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $response;
+    }
+
 }
 ?>

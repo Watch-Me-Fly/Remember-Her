@@ -36,17 +36,69 @@
 
         }
 
-        public static function read($admin)
+        public static function read()
         {
             try 
             {
-                $sqlStatement = "SELECT * FROM Admin WHERE admin_id = :id";
-                $fields = [":id"=> $admin->admin_id];
+                $sqlStatement = "SELECT * FROM Admins";
 
-                $db = Query::sqlReadQuery($sqlStatement, $fields);
+                $db = Query::sqlReadQuery($sqlStatement, null);
 
+                // ANCHOR do i need this ?
+                $array = [];
+                foreach ($db as $adminArray)
+                {
+                    $array[] = new Admin(
+                        $adminArray->admin_id,
+                        $adminArray->username,
+                        $adminArray->email,
+                        $adminArray->password,
+                        $adminArray->location,
+                        $adminArray->is_admin = false
+                    );
+                }
+                // return $db;
+                return $array;
+
+            }
+            catch (PDOException $Exception)
+            {
+                throw new PDOException(
+                    $Exception->getMessage( )
+                );
+                header('location:/error');
+            }
+        }
+
+        public static function update($admin_id, $conditions)
+        {
+            try
+            {
+                $sqlStatement = 'UPDATE Admins SET ' . 
+                                $conditions .
+                                'WHERE `admin_id` = ' . $admin_id;
+
+                $db = Query::sqlUpdateQuery($sqlStatement, null);
+                
                 return $db;
+            }
+            catch (PDOException $Exception)
+            {
+                throw new PDOException(
+                    $Exception->getMessage( )
+                );
+                header('location:/error');
+            }
+        }
 
+        public static function delete($conditions)
+        {
+            try
+            {
+                $sqlStatement = 'DELETE FROM Admins WHERE ' . $conditions;
+                $db = Query::sqlCreateQuery($sqlStatement, null);
+                
+                return $db;
             }
             catch (PDOException $Exception)
             {
