@@ -91,12 +91,12 @@
             }
         }
 
-        public static function delete($conditions)
+        public static function delete($admin_id)
         {
             try
             {
-                $sqlStatement = 'DELETE FROM Admins WHERE ' . $conditions;
-                $db = Query::sqlCreateQuery($sqlStatement, null);
+                $sqlStatement = 'DELETE FROM Admins WHERE admin_id = ' . $admin_id;
+                $db = Query::sqlDeleteQuery($sqlStatement, null);
                 
                 return $db;
             }

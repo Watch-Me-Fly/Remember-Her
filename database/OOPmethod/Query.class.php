@@ -43,5 +43,12 @@ class Query extends DBConnection
         return $response;
     }
 
+    public static function sqlDeleteQuery($query, $fields)
+    {
+        $db = DBConnection::PDO();
+        $sqlStatement = $db->prepare($query);
+        $sqlStatement->execute($fields);
+    }
+
 }
 ?>

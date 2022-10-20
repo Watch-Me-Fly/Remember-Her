@@ -44,6 +44,9 @@ switch ($path) {
     case '/admin/settings':
         require_once("./views/pages/back-office/adminSettings.php");
         break;
+    case '/ERROR':
+        require_once("./views/pages/error.php");
+        break;
     // ------------------- 
     default:
         require_once("./views/pages/landingPage.php");

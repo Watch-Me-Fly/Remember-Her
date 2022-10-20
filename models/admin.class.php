@@ -1,7 +1,7 @@
 <?php
     class Admin
     {
-        private $id;
+        public $id;
         public $username;
         public $password;
         public $email;
