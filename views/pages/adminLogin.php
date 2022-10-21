@@ -3,8 +3,8 @@
     require_once('controllers/back-office/login.php');
     
     // -- -------------- ⏫ Page top --------------- --
-    require_once('views/components/pageTopContents.php');
     $page_title = "Remember Her";
+    require_once('views/components/pageTopContents.php');
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->
