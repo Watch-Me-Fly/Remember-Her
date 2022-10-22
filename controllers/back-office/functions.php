@@ -16,5 +16,26 @@
         return $isAdmin;
     }
 
+    function failedStatement($query, $variables)
+    {
+        if (!$query->execute($variables))
+        {
+            $query = null;
+            header('location:/admin-login?error=failed-statement');
+            exit();
+        }
+    }
+    function noResultQuery($query)
+    {
+        if ($query->rowCount() == 0)
+        {
+            $query = null;
+            header('location:admin-login?error=userNotFound');
+            exit();
+        }
+    }
+    
+    
+
 
 ?>

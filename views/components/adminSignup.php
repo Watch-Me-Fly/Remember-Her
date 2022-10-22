@@ -1,20 +1,6 @@
 <?php 
     require_once('controllers/countrySelector.php'); 
-    require_once('database/OOPmethod/admin.CRUD.php');
 
-    if (isset($_POST['signupBtn']))
-    {
-        $newAdmin = new Admin(
-            $_POST['admin_id'],
-            $_POST['newUsername'],
-            $_POST['newPassword'],
-            $_POST['email'],
-            $_POST['location']
-        );
-        
-        AdminCRUD::create($newAdmin);
-
-    }
 ?>
 
 <div id="register" class="container">
@@ -24,12 +10,19 @@
     <p class="description"></p>
 
     <p id="errorRegistration" class="alert alert-danger error rounded-3 fst-italic p-3 m-3">
-    </p>
-        <!-- // ANCHOR : if email or username exists -->
 
-    <form method="POST" id="registerForm" action="/trial.php" class="" enctype="multipart/form-data">
+    </p>
+
+    <form method="POST" id="registerForm" action="controllers/signup.controller.php" class="" enctype="multipart/form-data">
         <!-- username -->
         <p>Please note that username cannot be changed</p>
+        <?php if(isset($errorMessage) ): ?>
+
+            <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
+                <?= $errorMessage; ?>
+            </p>
+
+        <?php endif; ?>
         <input type="hidden" name="admin_id">
         <div class="input-group d-flex align-items-center mb-3">
             <label for="newUsername">
@@ -79,7 +72,7 @@
         </div>
         <!-- submit -->
         <div class="input-group  justify-content-center mb-3">
-            <input type="submit" name="signupBtn" value="Sign up >" class="btn btn-secondary">
+            <input type="submit" name="submit" value="Sign up >" class="btn btn-secondary">
         </div>
         <!-- ANCHOR captcha -->
     </form>

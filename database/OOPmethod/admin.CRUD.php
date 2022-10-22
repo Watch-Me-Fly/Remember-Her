@@ -77,8 +77,8 @@
                     $array[] = new Admin(
                         $adminArray->admin_id,
                         $adminArray->username,
-                        $adminArray->email,
                         $adminArray->password,
+                        $adminArray->email,
                         $adminArray->location,
                         $adminArray->is_admin = false
                     );
