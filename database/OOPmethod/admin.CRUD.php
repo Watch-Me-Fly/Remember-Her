@@ -48,7 +48,7 @@
                         $adminArray->password,
                         $adminArray->email,
                         $adminArray->location,
-                        $adminArray->is_admin = false
+                        $adminArray->is_admin
                     );
                 }
                 // return $db;
@@ -138,5 +138,6 @@
                 header('location:/error');
             }
         }
+
     }
 ?>

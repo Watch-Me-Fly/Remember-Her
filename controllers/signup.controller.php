@@ -21,7 +21,7 @@ if (isset($_POST['submit']))
     $signup->signupUser();
 
     // grab data
-    header('location: /admin-login.php?signup=1');
+    header('location:?signup=1');
 }
 
 ?>

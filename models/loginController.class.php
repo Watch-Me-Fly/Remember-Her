@@ -18,8 +18,7 @@ class LoginController extends Login
     {
         if($this->isNotEmptyInput() == false)
         {
-            $errorMessage = "Please fill in all the required fields";
-            header('location: /error?error=fieldsCheck');
+            header('location:?error=fieldsCheck');
             exit();
         }
         // if no errors after all of the above checks : signup user
@@ -27,8 +26,9 @@ class LoginController extends Login
             $this->username, 
             $this->password
         );
-        header('location: /admin');
         
+        header('location:/admin/dashboard');
+        exit();
     }
 
     // check if none of the fields is empty

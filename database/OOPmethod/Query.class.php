@@ -16,6 +16,14 @@ class Query extends DBConnection
         $this->fields = $fields;
     }
 
+    public static function sqlPrepare($query)
+    {
+        $db = DBConnection::PDO();
+        $sqlStatement = $db->prepare($query);
+        
+        return $sqlStatement;
+    }
+
     public static function sqlCreateQuery ($query, $fields)
     {
         $db = DBConnection::PDO();

@@ -1,16 +1,16 @@
 <?php
+    session_start();
     // verify login details
-    require_once('controllers/back-office/login.php');
-    
+    // require_once('controllers/back-office/login.php');
+
     // -- -------------- ⏫ Page top --------------- --
     $page_title = "Remember Her";
     require_once('views/components/pageTopContents.php');
+    include_once('./controllers/errorMessages.php');
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->
 <link rel="stylesheet" href="assets/css/pages/adminLogin.css">
-
-<?php if (empty($_SESSION['admin'])) : ?>
 
 <!-- -------------- 📄 page content --------------- -->
 <main>
@@ -65,6 +65,11 @@
 
 </main>
 
+<?php if(isset($_GET['signup'])): ?>
+    <div class="alert alert-sucess" role="alert">
+        Signup Successful !
+        <br/>⏲ Your account is pending authorisation, pending approvals take 24h-48h.
+    </div>
 <?php endif; ?>
 
 <!-- -------------- ⏬ Page Bottom --------------- -->

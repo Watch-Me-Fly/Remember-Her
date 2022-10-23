@@ -8,17 +8,18 @@
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/adminSettings.css">
 
 <!-- -------------- 📄 page content --------------- -->
-<?php if (isset($_SESSION['admin'])) : ?>
+<?php if (isset($_SESSION['userID'])) : ?>
 
 <div id="adminSettings" class="container d-flex justify-content-between rounded-4 my-5 mx-auto p-4">
     <div class="d-flex flex-column align-items-center justify-content-center p-5">
         <img src="./../../../assets/icons/back-office/profile.png" alt="username" width="100px">
         <!-- card title displaying username -->
-        <h4 class="fw-bold"><?= $_SESSION['admin']; ?></h4>
+        <h4 class="fw-bold"><?= $_SESSION['userID']; ?></h4>
+        <p>Location with flag ?</p>
     </div>
     <div class="p-5">
 
-        <form class="form">
+        <form class="form" method="POST">
             <div class="form-group mb-2">
                 <label for="lang" class="form-label mb-2">🌎 Change Language</label>
                 <select name="lang" id="lang" class="form-select">
@@ -33,17 +34,18 @@
                 </label>
                 <!-- keep the old email displayed in case wanting to edit -->
                 <input type="email" name="editMail" id="editMail" class="form-control mb-2"
-                    placeholder="Your email" value="<?= $_SESSION['admin']; ?>">
+                    placeholder="Your email" value="">
             </div>
             <div class="form-group mb-2">
                 <label for="editPassword" class="form-label mb-2">
                     🔑 Edit your password
                 </label>
                 <input type="password" name="editPassword" id="editPassword" class="form-control"
-                    placeholder="Your password">
+                    placeholder="Your password" value="">
             </div>
             <div class="form-group mt-5">
                 <input type="submit" value="Submit Changes" class="btn btn-primary">
+                <input type="submit" value="Delete My Account" class="btn btn-danger" id="deleteAccount">
             </div>
         </form>
 
