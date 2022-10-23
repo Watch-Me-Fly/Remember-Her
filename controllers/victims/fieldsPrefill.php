@@ -1,4 +1,5 @@
 <?php
+
 /*--------------------------------------------
 *             Connect to Database
 *---------------------------------------------*/
@@ -17,6 +18,4 @@ $perpetrator = Query::sqlReadQuery('SELECT * FROM Perpetrator', null);
 // 🗄️ ------- Tool used
 $tool = Query::sqlReadQuery('SELECT * FROM Tools', null);
 
-
-    
 ?>

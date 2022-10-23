@@ -22,16 +22,16 @@
         </label>
         <label class="card" for="item-2" id="victim-2">
             <img src="assets/images/examples/Iman-Arshid.jpg" alt="victim's name" title="victim's name">
-            <span>victim 2</span>
+            <span>Iman Arshid (21 years old)</span>
         </label>
         <label class="card" for="item-3" id="victim-3">
             <img src="assets/images/examples/naira.webp" alt="victim's name" title="victim's name">
-            <span>victim 3</span>
+            <span>Naira Ashraf (21 years old)</span>
         </label>
         <label class="card" for="item-4" id="victim-4">
             <img src="assets/images/examples//Loulouah-Althouaini.png" alt="victim's name"
                 title="victim's name">
-            <span>victim 4</span>
+            <span>Loulouah Althouaini (17 years old)</span>
         </label>
     </div>
     <!-- images carousel end -->

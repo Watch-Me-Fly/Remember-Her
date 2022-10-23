@@ -1,7 +1,7 @@
 <!-- -------------- ⏫ Page top --------------- -->
 <?php
-    require_once('views/components/pageTopContents.php');
     $page_title = "Add victim";
+    require_once('views/components/pageTopContents.php');
 ?>
 
 <!-- -------- 🎨 page specific stylesheets -------- -->

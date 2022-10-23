@@ -20,7 +20,7 @@
                         <img src="./../../../assets/images/logo.png" alt="Remember her" class="p-2" id="logo">
                     </li>
                     <li class="nav-item">
-                        <h4 class="fw-bold">Welcome back <?= $_SESSION['admin']; ?> </h4>
+                        <h4 class="fw-bold">Welcome back <?= $_SESSION['userID']; ?> </h4>
                     </li>
 
                 </div>

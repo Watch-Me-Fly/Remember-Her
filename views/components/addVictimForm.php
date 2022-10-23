@@ -1,11 +1,10 @@
 <?php 
 
-    require_once('controllers/imageVerif.php');
-    require_once('controllers/addMurder.controller.php');
+    require_once('controllers/victims/fieldsPrefill.php');
     
 ?>
 
-<form action="controllers/submitVictim.php" method="POST" enctype="multipart/form-data" id="addVictimForm" class="m-auto p-3">
+<form action="controllers/victims/addMurder.controller.php" method="POST" enctype="multipart/form-data" id="addVictimForm" class="m-auto p-3">
     <fieldset class="rounded-3 p-3 mb-3" id="victimFieldset">
         <legend class="px-4 m-0">The victim</legend>
         <div class="form-group 
@@ -179,7 +178,7 @@
         <div class="form-group
                     d-flex flex-wrap
                     justify-content-between align-items-center">
-            <label for="urlSource">
+            <label for="twitterHash">
                 Twitter Hashtag
             </label>
             <input type="url" name="twitterHash" id="twitterHash" class="form-control" />
@@ -228,9 +227,8 @@
     </fieldset>
     <div class="buttonContainer m-auto d-flex justify-content-evenly">
         <input type="reset" value="Reset" name="reset" class="btn btn-light">
-        <input type="submit" value="Send" name"send" class="btn btn-light">
+        <input type="submit" value="Send" name="submit" class="btn btn-light">
     </div>
 </form>
 
 <script src="./../../assets/js/libraries/jquery-3.6.1.min.js" type="application/javascript"></script>
-<!-- <script src="./../../assets/js/chooseCountry.js" type="text/javascript"></script> -->

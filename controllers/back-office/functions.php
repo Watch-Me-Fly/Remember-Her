@@ -3,11 +3,11 @@
     function isAdmin(array $admin) : bool
     {
         // to secure the code, ensure that key exists
-        if (array_key_exists('is_admin', $admin))
+        if (array_key_exists('isAdmin', $admin))
         {
             // create a var to get a "true" 'is_enabled'
-            $isAdmin = $admin['is_admin'];
-        } 
+            $isAdmin = $admin['isAdmin'];
+        }
         else 
         {
             $isAdmin = false;

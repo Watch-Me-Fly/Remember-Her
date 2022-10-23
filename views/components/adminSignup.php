@@ -1,6 +1,5 @@
 <?php 
     require_once('controllers/countrySelector.php'); 
-
 ?>
 
 <div id="register" class="container">
@@ -23,6 +22,7 @@
             </p>
 
         <?php endif; ?>
+        
         <input type="hidden" name="admin_id">
         <div class="input-group d-flex align-items-center mb-3">
             <label for="newUsername">

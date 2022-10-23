@@ -10,9 +10,9 @@ if (isset($_POST['submit']))
     $location = $_POST['location'];
 
     // instanciate class
-    include('./../database/OOPmethod/admin.CRUD.php');
-    include('./../database/OOPmethod/signup.class.php');
-    include('./../models/signupController.class.php');
+    include('./../database/OOPmethod/admin.CRUD.php'); // NOTE DONE
+    include('./../database/OOPmethod/signup.class.php'); // NOTE DONE
+    include('./../models/signupController.class.php'); 
     $signup = new SignupController(
         $username, $password, $email, $location, false
     );

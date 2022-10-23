@@ -21,7 +21,7 @@ class LoginController extends Login
             header('location:?error=fieldsCheck');
             exit();
         }
-        // if no errors after all of the above checks : signup user
+        // if no errors after all of the above checks : login user
         $this->getUser(
             $this->username, 
             $this->password
@@ -30,8 +30,9 @@ class LoginController extends Login
         header('location:/admin/dashboard');
         exit();
     }
-
-    // check if none of the fields is empty
+    /**============================================
+    *     check if none of the fields is empty
+    *=============================================**/
     private function isNotEmptyInput():bool
     {
         if ( 

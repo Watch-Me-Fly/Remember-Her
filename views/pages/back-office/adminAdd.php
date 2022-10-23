@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/adminAdd.css">
 
 <!-- -------------- 📄 page content --------------- -->
-<?php if (isset($_SESSION['admin'])) : ?>
+<?php if (isset($_SESSION['userID'])) : ?>
 
 <div class="container rounded-4 m-auto p-4">
     <div id="notice" class="rounded-3 text-center m-auto p-4">

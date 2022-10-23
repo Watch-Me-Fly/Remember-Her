@@ -47,6 +47,18 @@ class Signup extends AdminCRUD
         }
         return $resultCheck;
     }
+
+    protected function getUser()
+    {        
+        $query = $this->read();
+
+        if ($query)
+        {
+            header('location: /error?error=failed-statement');
+            exit();
+        }
+
+    }
 }
 
 ?>

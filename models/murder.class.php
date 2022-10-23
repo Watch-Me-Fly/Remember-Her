@@ -2,7 +2,7 @@
 
 require_once('victim.class.php');
 
-class Murder extends Victim
+class Murder2 extends Victim
 {
     protected $reasonForCrime;
     protected $crimeTool;
@@ -10,6 +10,7 @@ class Murder extends Victim
     protected $dateOfDeath;
     protected $killerRelationship;
     protected $story;
+    protected $punishment;
 
     public function __construct(
         int $id,
@@ -25,13 +26,14 @@ class Murder extends Victim
         ?string $source3,
         ?string $source4, 
         ?string $source5, 
-        bool $isEnabled = false,
+        bool $isEnabled,
         string $reasonForCrime, 
         string $crimeTool, 
         string $countryOfCrime, 
         int $dateOfDeath, 
         string $killerRelationship, 
-        string $story
+        string $story,
+        string $punishment
     )
     {
         parent::__construct(...func_get_args());
@@ -41,6 +43,7 @@ class Murder extends Victim
         $this->dateOfDeath = (int) $dateOfDeath;
         $this->killerRelationship = (string) $killerRelationship;
         $this->story = (string) $story;
+        $this->punishment = (string) $punishment;
     }
 
     // -- -------------- getters
