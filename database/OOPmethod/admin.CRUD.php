@@ -14,7 +14,7 @@
             $fields = [
                 ':username' => $admin['username'],
                 ':password' => $admin['password'],
-                ':email' => $admin['email'],
+                ':email'    => $admin['email'],
                 ':location' => $admin['location'],
             ];
 

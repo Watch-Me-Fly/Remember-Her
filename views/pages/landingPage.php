@@ -3,13 +3,14 @@
 <link rel="stylesheet" type="text/css" href="assets/css/components/carousel.css">
 
 <!-- -------------- ⏫ Page top --------------- -->
+
 <?php
     $page_title = "Remember Her";
-
     require_once('views/components/pageTopContents.php');
 ?>
 
 <!-- -------------- 📄 page content --------------- -->
+
 <div id="about" class="rounded-3 p-4">
     <p>
         To the stolen youths of
@@ -22,6 +23,7 @@
 </div>
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
+
 <?php
     // carousel
     require_once('views/components/carousel.php');
@@ -30,4 +32,8 @@
 ?>
 
 <!---------------- 📜 scripts used ---------------->
+
 <script src="assets/js/carousel.js"></script>
+
+<?php session_start(); ?>
+<!-- STUB : did i really need session start? -->

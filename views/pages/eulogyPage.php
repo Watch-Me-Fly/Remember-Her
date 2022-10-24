@@ -17,7 +17,6 @@
     </h1>
     <hr class="mx-auto">
     <div class="container">
-        <h4 class="text-center mt-5">Title</h4>
         <p class="p-5">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
             massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec

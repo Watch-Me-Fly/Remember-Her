@@ -10,8 +10,8 @@ if (isset($_POST['submit']))
     $location = $_POST['location'];
 
     // instanciate class
-    include('./../database/OOPmethod/admin.CRUD.php'); // NOTE DONE
-    include('./../database/OOPmethod/signup.class.php'); // NOTE DONE
+    include('./../database/OOPmethod/admin.CRUD.php');
+    include('./../database/OOPmethod/signup.class.php');
     include('./../models/signupController.class.php'); 
     $signup = new SignupController(
         $username, $password, $email, $location, false
@@ -21,7 +21,7 @@ if (isset($_POST['submit']))
     $signup->signupUser();
 
     // grab data
-    header('location:?signup=1');
+    // header('location:?signup=1');
 }
 
 ?>
