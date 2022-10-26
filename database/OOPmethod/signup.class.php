@@ -1,5 +1,7 @@
 <?php
 // DB functions
+require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/admin.CRUD.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/Query.class.php');
 
 class Signup extends AdminCRUD
 {
@@ -28,16 +30,17 @@ class Signup extends AdminCRUD
     // check if username or email exist in database
     protected function checkUser($username, $email):bool
     {
-        $select = "username";
-        $whereCondition = "username= :username OR email= :email";
+        $sqlStatement = "SELECT username FROM Admins where username= :username OR email= :email";
+        $query = Query::sqlPrepare($sqlStatement);
+
         $variables = [
             ":username" => $username,
             ":email" => $email
         ];
-        $query = $this->readWhere($select, $whereCondition, $variables);
+        $query->execute($variables);
 
         // check variable in DB (how many rows have these usernames or email)
-        if($query > 0)
+        if($query->rowCount() == 0)
         {
             $resultCheck= false;
         }

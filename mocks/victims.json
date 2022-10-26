@@ -1,0 +1,86 @@
+{
+    "naira": {
+        "the-victim": {
+            "id": "1",
+            "first-name": "Naira",
+            "last-name": "Ashraf",
+            "age": "21",
+            "origin-country": "Egypt"
+        },
+        "the-crime": {
+            "reason": "She said No",
+            "tool": "Knife",
+            "crime-country": "Egypt",
+            "date": "2022",
+            "killer": "Acquaintance"
+        },
+        "the-story": {
+            "story": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit architecto possimus deleniti repudiandae voluptatum amet similique est! Necessitatibus voluptate nihil corrupti vitae eligendi temporibus adipisci doloribus. Commodi cupiditate corrupti suscipit?",
+            "the-punishment": "orem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit architecto possimus deleniti repudiandae voluptatum amet similique est!"
+        },
+        "sources": {
+            "twitter": "https://twitter.com/hashtag/%D9%86%D9%8A%D8%B1%D8%A9_%D8%A3%D8%B4%D8%B1%D9%81?src=hashtag_click",
+            "source-1": "https://www.courrierinternational.com/article/justice-le-meurtre-de-naira-ashraf-symbole-des-feminicides-en-egypte-et-dans-le-monde-arabe",
+            "source-2": "https://egyptindependent.com/renowned-lawyer-files-appeal-in-naira-ashraf-murder/",
+            "source-3": "",
+            "source-4": "",
+            "source-5": ""
+        }
+    },
+    "iman": {
+        "the-victim": {
+            "id": "2",
+            "first-name": "",
+            "last-name": "",
+            "age": "",
+            "origin-country": ""
+        },
+        "the-crime": {
+            "reason": "",
+            "tool": "",
+            "crime-country": "",
+            "date": "",
+            "killer": ""
+        },
+        "the-story": {
+            "story": "",
+            "the-punishment": ""
+        },
+        "sources": {
+            "twitter": "",
+            "source-1": "",
+            "source-2": "",
+            "source-3": "",
+            "source-4": "",
+            "source-5": ""
+        }
+    },
+    "loulouah": {
+        "the-victim": {
+            "id": "3",
+            "first-name": "",
+            "last-name": "",
+            "age": "",
+            "origin-country": ""
+        },
+        "the-crime": {
+            "reason": "",
+            "tool": "",
+            "crime-country": "",
+            "date": "",
+            "killer": ""
+        },
+        "the-story": {
+            "story": "",
+            "the-punishment": ""
+        },
+        "sources": {
+            "twitter": "",
+            "source-1": "",
+            "source-2": "",
+            "source-3": "",
+            "source-4": "",
+            "source-5": ""
+        }
+    }
+}

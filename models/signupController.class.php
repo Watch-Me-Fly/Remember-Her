@@ -129,10 +129,12 @@ class SignupController extends Signup
             $this->checkUser($this->username, $this->email)
         )
         {
+            // if it is true, it means that user exists, refuse registration
             $result = false;
         }
         else
         {
+            // if check user is false, user does not exist, register ok
             $result = true;
         }
         return $result;

@@ -17,7 +17,9 @@
                 <div id="leftNav" class="col-6 d-flex align-items-center">
 
                     <li class="nav-item p-2">
+                        <a href="/home">
                         <img src="./../../../assets/images/logo.png" alt="Remember her" class="p-2" id="logo">
+                        </a>
                     </li>
                     <li class="nav-item">
                         <h4 class="fw-bold">Welcome back <?= $_SESSION['userID']; ?> </h4>

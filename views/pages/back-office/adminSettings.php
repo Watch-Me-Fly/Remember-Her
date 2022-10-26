@@ -15,7 +15,7 @@
         <img src="./../../../assets/icons/back-office/profile.png" alt="username" width="100px">
         <!-- card title displaying username -->
         <h4 class="fw-bold"><?= $_SESSION['userID']; ?></h4>
-        <p>Location with flag ?</p>
+        <p>France</p>
     </div>
     <div class="p-5">
 
@@ -23,6 +23,7 @@
             <div class="form-group mb-2">
                 <label for="lang" class="form-label mb-2">🌎 Change Language</label>
                 <select name="lang" id="lang" class="form-select">
+                    <option value="" disabled selected>--Select--</option>
                     <option value="ar">عربي</option>
                     <option value="fr">Français</option>
                     <option value="en">English</option>

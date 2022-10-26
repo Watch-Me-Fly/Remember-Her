@@ -10,20 +10,20 @@ class Login
         /**============================================
         *  check if password is correct for current user
         *=============================================**/
-        $sqlQuery = 'SELECT `password` FROM Admins WHERE username= ? OR email= ?';
-        $query = Query::sqlPrepare($sqlQuery);
+        $getUserStatement = 'SELECT `password` FROM Admins WHERE username= ? OR email= ?';
+        $getUserQuery = Query::sqlPrepare($getUserStatement);
 
         // variales to replace the ? in the query
-        $variables = [$user, $password];
+        $getUserVariables = [$user, $password];
 
         // if query cannot obtain variables, end
-        failedStatement($query, $variables);
+        failedStatement($getUserQuery, $getUserVariables);
 
         // if query gives no results : end off query, exit script, and give an error message
-        noResultQuery($query);
+        noResultQuery($getUserQuery);
 
         // compare the password from DB with the one entered, get as associated column
-        $passwordHashed = $query->fetchAll(PDO::FETCH_ASSOC);
+        $passwordHashed = $getUserQuery->fetchAll(PDO::FETCH_ASSOC);
 
         // check the first dimension of results, password column
         $checkPassword = ($password === $passwordHashed[0]['password']);
@@ -33,7 +33,7 @@ class Login
         *=============================================**/
         if ($checkPassword == false)
         {
-            $query = null;
+            $getUserQuery = null;
             header('location:?error=wrongPassword');
             exit();
         }
@@ -44,33 +44,46 @@ class Login
             *  allow user to connect with mail or username
             *=============================================**/
             // is username/email connected to pw is equal to submitted
-            $sqlQuery = 'SELECT * FROM Admins WHERE username= ? OR email= ? AND `password`= ?';
-            $query = Query::sqlPrepare($sqlQuery);
+            // STUB : verify with florian why it is not working
+
+            $userOrEmailStatement = 'SELECT * FROM Admins WHERE 
+                            (username= :username OR email= :email) AND `password`= :password';
+
+            $userOrEmailQuery = Query::sqlPrepare($userOrEmailStatement);
 
             // $user here = email or username
-            $variables = [$user, $user, $password];
+            $userOrEmailVariables = [
+                ":username" => $user,
+                ":email" => $user,
+                ":password" => $password
+            ];
+            failedStatement($userOrEmailQuery, $userOrEmailVariables);
 
-            failedStatement($query, $variables);
-
-            noResultQuery($query);
+            noResultQuery($userOrEmailQuery);
             /**============================================
             *       was their admin account validate ?
             *=============================================**/
-            $isAdmin = "SELECT * FROM Admins WHERE username = ? AND is_admin = ?";
-            $query = Query::sqlPrepare($isAdmin);
+            $isAdminStatement = "SELECT * FROM Admins WHERE username = :username AND is_admin = :is_admin";
+            $isAdminQuery = Query::sqlPrepare($isAdminStatement);
             
             // get only valid admin accounts
-            $variables = [$user, 1];
-            if (!$query->execute($variables))
+            $isAdminVariables = [
+                ":username" => $user,
+                ":is_admin" => 1
+            ];
+            $isAdminQuery->execute($isAdminVariables);
+
+            if ($isAdminQuery->rowCount() == 0)
             {
-                $query = null;
+                $isAdminQuery = null;
                 header('location:?error=pendingAdmin');
                 exit();
             }
             /**============================================
             *  if it passes all verifications, get the results
             *=============================================**/
-            $admin = $query->fetchAll(PDO::FETCH_ASSOC);
+            $isAdminQuery->fetchAll(PDO::FETCH_ASSOC);
+            // $admin = $isAdminQuery->fetchAll(PDO::FETCH_ASSOC);
             // $array= json_decode(json_encode($admin));
 
             /**============================================
@@ -87,7 +100,7 @@ class Login
         }
 
         // if it does not pass all the previous steps, don't query
-        $query = null;
+        $getUserQuery = null;
     }
 
 

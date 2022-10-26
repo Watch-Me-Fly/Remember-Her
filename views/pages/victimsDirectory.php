@@ -34,43 +34,35 @@
 
 </div>
 
-<div id="gallery" class="container-fluid d-flex flex-wrap p-5">
+<div id="gallery" class="container-fluid d-flex flex-wrap p-5 justify-content-center">
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
+        <img src="assets/images/examples/loulouah-althouaini" alt="" title="">
+    </a>
+    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
+        <img src="assets/images/examples/naira.webp" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
         <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
+        <img src="assets/images/examples/loulouah-althouaini" alt="" title="">
+    </a>
+    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
+        <img src="assets/images/examples/naira.webp" alt="" title="">
+    </a>
+    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
         <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/loulouah-althouaini" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/naira.webp" alt="" title="">
     </a>
     <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
+        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
     </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="">
-    </a>
+
 </div>
 
 <!---------------- 📜 scripts used ---------------->

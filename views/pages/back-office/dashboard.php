@@ -1,5 +1,4 @@
-<?php
-
+<?php   
     // -- -------------- ⏫ Page top --------------- --
     $title = "dashboard";
     require_once('views/components/back-office/top.php');
@@ -9,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/back-office/dashboard.css">
 
 <!-- -------------- 📄 page content --------------- -->
-<?php if (isset($_SESSION['admin'])) : ?>
+<?php if (isset($_SESSION['userID'])) : ?>
 
 <div id="tableContainer" class="container">
     <table class="table" data-order='[[0, "asc"]]' data-page-length="25">
@@ -24,7 +23,7 @@
             </tr>
         </thead>
         <tbody id="dataTable">
-
+            <!-- foreach table goes in here -->
         </tbody>
     </table>
 </div>

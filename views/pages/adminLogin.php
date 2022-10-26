@@ -1,7 +1,11 @@
 <?php
     session_start();
-    // verify login details
-    // require_once('controllers/back-office/login.php');
+    // verify login
+    // login page, if session exists => go directly to dashboard
+    if ( !empty($_SESSION['userID']) )
+    {
+        header('location: /admin/dashboard');
+    }
 
     // -- -------------- ⏫ Page top --------------- --
     $page_title = "Remember Her";

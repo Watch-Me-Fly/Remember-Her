@@ -9,6 +9,5 @@
     window.onload = () => {
         editMail.onpaste = (event) => event.preventDefault();
     }
-    // ANCHOR : add same functionality to register form
 
 })();

@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: var(--emphasis);
+    font-size: 5rem;
+}
+
+a.btn:hover {
+    transition: 0.3s all;
+    background-color: var(--emphasis) !important;
+}

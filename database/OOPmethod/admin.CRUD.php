@@ -9,7 +9,9 @@
         {
             try 
             {
-            $sqlStatement = "INSERT INTO Admins (username, password, email, location, is_admin) VALUES (:username, :password, :email, :location, '0')";
+            $sqlStatement = "INSERT INTO Admins 
+                (username, password, email, location, is_admin) 
+                VALUES (:username, :password, :email, :location, '0')";
 
             $fields = [
                 ':username' => $admin['username'],
