@@ -76,7 +76,7 @@ class Login
             if ($isAdminQuery->rowCount() == 0)
             {
                 $isAdminQuery = null;
-                header('location:?error=pendingAdmin');
+                header('location:/error?error=pendingAdmin');
                 exit();
             }
             /**============================================

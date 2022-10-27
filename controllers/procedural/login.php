@@ -27,13 +27,13 @@
                 if ( isAdmin($admin[0]) )
                 {
                     // set the session with username
-                    $_SESSION['userID'] = $admin['admin_id'];
+                    $_SESSION['userID'] = $admin[0]['admin_id'];
                     // redirect to admin page
                     header('location:/admin');
                 }
                 else
                 {
-                    $refusedAdmin = sprintf('📄 Registeration application 
+                    $errorMessage = sprintf('📄 Registeration application 
                             for user <u>'. $_POST['username'] . '</u> is either 
                             <b>pending</b> acceptance, 
                             or is <b>refused</b>, 

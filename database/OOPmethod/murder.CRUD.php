@@ -10,15 +10,13 @@
         {
             try
             {
-                $sqlStatement = "INSERT INTO `victims_murder`(`post_creation_date`, `victim_id`, first_name, last_name, age, country_origin, photo, reason_group, crime_tool, country_crime, date_of_death, perpetrator, story, punishment, sources, is_enabled, enabled_by) 
-                VALUES 
-                (:post_creation_date, null, :first_name, :last_name, :age, :country_origin, :photo, :reason_group, :crime_tool, :country_crime, :date_of_death, :perpetrator, :story, :punishment, :sources, :is_enabled)";
+                $sqlStatement = "INSERT INTO `victims_murder`(`post_creation_date`, `victim_id`, `first_name`, `last_name`, `age`, `country_origin`, `photo`, `reason_group`, `crime_tool`, `country_crime`, `date_of_death`, `perpetrator`, `story`, `punishment`, `sources`, `is_enabled`, `enabled_by`) VALUES (:post_creation_date, null ,:first_name,:last_name,:age,:country_origin,:photo,:reason_group,:crime_tool,:country_crime,:date_of_death,:perpetrator,:story,:punishment,:sources,:is_enabled, :enabled_by)";
 
                 $fields = [
                     ":post_creation_date"=> $article['post_creation_date'],
                     ":first_name"       => $article['firstName'], 
                     ":last_name"        => $article['lastName'], 
-                    ":age"              => $article['age'], 
+                    ":age"              => $article['age'],
                     ":country_origin"   => $article['countryOfOrigin'], 
                     ":photo"            => $article['photo'],
                     ":reason_group"     => $article['reasonForCrime'], 
@@ -30,11 +28,14 @@
                     ":punishment"       => $article['punishment'],
                     ":sources"          => $article['sources'], 
                     ":is_enabled"       => $article['is_enabled'],
+                    ":enabled_by"       => $article['enabled_by'],
                 ];
 
-                $db = Query::sqlCreateQuery($sqlStatement, $fields);
+                $db = DBConnection::PDO(); 
+                $connect = $db->prepare($sqlStatement);
+                $connect->execute($fields);
 
-                return $db;
+                return $connect;
             }
             catch (PDOException $Exception) 
             {

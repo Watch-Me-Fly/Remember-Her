@@ -4,7 +4,10 @@
     
 ?>
 
-<form action="controllers/victims/addMurder.controller.php" method="POST" enctype="multipart/form-data" id="addVictimForm" class="m-auto p-3">
+<form action="controllers/addMurder.controller.php" 
+        method="POST" enctype="multipart/form-data" 
+        id="addVictimForm" class="m-auto p-3"
+>
     <fieldset class="rounded-3 p-3 mb-3" id="victimFieldset">
         <legend class="px-4 m-0">The victim</legend>
         <div class="form-group 
@@ -148,7 +151,8 @@
                     {
                         echo "<input type='radio' name='killer' id='" 
                         . $item->perpetrator_id .
-                        "' class='form-check-input' /> "
+                        "' value='".$item->perpetrator_id."'
+                        class='form-radio-input' /> "
                         . utf8_encode($item->relationship) . "<br/>";
                     }
                 ?>
