@@ -11,13 +11,13 @@
 <?php if (isset($_SESSION['userID'])) : ?>
 
 <div id="adminSettings" class="container d-flex justify-content-between rounded-4 my-5 mx-auto p-4">
-    <div class="d-flex flex-column align-items-center justify-content-center p-5">
+    <div class="d-flex flex-column align-items-center justify-content-center p-3">
         <img src="./../../../assets/icons/back-office/profile.png" alt="username" width="100px">
         <!-- card title displaying username -->
         <h4 class="fw-bold"><?= $_SESSION['userID']; ?></h4>
         <p>France</p>
     </div>
-    <div class="p-5">
+    <div class="p-3">
 
         <form class="form" method="POST">
             <div class="form-group mb-2">
@@ -44,9 +44,9 @@
                 <input type="password" name="editPassword" id="editPassword" class="form-control"
                     placeholder="Your password" value="">
             </div>
-            <div class="form-group mt-5">
-                <input type="submit" value="Submit Changes" class="btn btn-primary">
-                <input type="submit" value="Delete My Account" class="btn btn-danger" id="deleteAccount">
+            <div id="buttonsContainer" class="form-group mt-5 d-flex justify-content-around">
+                <input type="submit" value="Submit Changes" class="btn btn-primary m-3">
+                <input type="submit" value="Delete My Account" class="btn btn-danger m-3" id="deleteAccount">
             </div>
         </form>
 

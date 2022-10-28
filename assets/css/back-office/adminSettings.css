@@ -31,3 +31,9 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 768px) {
+    form #buttonsContainer {
+        flex-direction: column;
+    }
+}

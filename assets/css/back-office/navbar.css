@@ -27,6 +27,17 @@ nav img:not(#logo):hover {
     color: rgb(129, 0, 0);
 }
 
+/*----------- Nav menu -----------*/
+nav>div.container-fluid {
+    flex-direction: row;
+}
+
+#leftNav {
+    min-width: max-content;
+}
+
+
+
 /*----------- Profile Menu -----------*/
 #profileMenu img {
     min-width: 30px;
@@ -43,4 +54,20 @@ nav img:not(#logo):hover {
 #profileMenu .dropdown-menu a {
     color: black;
     text-decoration: none;
+}
+
+/*--------------------------------------------
+*                Responsiveness
+*---------------------------------------------*/
+/*----------- 📱 small and medium size screens -----------*/
+@media (max-width: 768px) {
+    nav>div.container-fluid {
+        flex-direction: column;
+    }
+
+    #rightNav {
+        background-color: rgba(188, 188, 188, 0.1);
+        padding: 10px 0;
+        border-radius: 10px;
+    }
 }
