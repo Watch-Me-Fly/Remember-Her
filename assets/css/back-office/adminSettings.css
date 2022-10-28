@@ -21,6 +21,12 @@
     width: 100%;
 }
 
+a.close {
+    text-decoration: none;
+    color: grey;
+    font-size: 1.5em;
+}
+
 /*--------------------------------------------
 *                Responsiveness
 *---------------------------------------------*/

@@ -50,7 +50,7 @@
     }
 
     // login page, if session exists => go directly to dashboard
-    if ( !empty($_SESSION['admin']) )
+    if ( !empty($_SESSION['userID']) )
     {
         header('location: /admin/dashboard');
     }

@@ -12,7 +12,8 @@
 
     </p>
 
-    <form method="POST" id="registerForm" action="controllers/signup.controller.php" class="" enctype="multipart/form-data">
+    <form method="POST" id="registerForm" action="controllers/signup.controller.php" 
+          class="" enctype="multipart/form-data">
         <!-- username -->
         <p>Please note that username cannot be changed</p>
         <?php if(isset($errorMessage) ): ?>

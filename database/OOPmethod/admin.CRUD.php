@@ -97,13 +97,18 @@
                 header('location:/error');
             }
         }
-        public static function update($admin_id, $conditions, $fields)
+        public static function update($admin_id, $password, $email)
         {
             try
             {
-                $sqlStatement = 'UPDATE Admins SET ' . 
-                                $conditions .
-                                ' WHERE `admin_id` = ' . $admin_id;
+                $sqlStatement = 'UPDATE Admins SET  
+                        `password`= :password,
+                        `email`=:email 
+                        WHERE `admin_id` = ' . $admin_id;
+                $fields = [
+                    ":password" => $password,
+                    ":email" => $email
+                ];
                 $db = Query::sqlUpdateQuery($sqlStatement, $fields);
                 
                 return $db;

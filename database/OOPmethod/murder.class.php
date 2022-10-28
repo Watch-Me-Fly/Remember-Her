@@ -1,5 +1,8 @@
 <?php
-// DB functions
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/murder.CRUD.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/Query.class.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/DBConnect.class.php');
 
 class Murder extends MurderCRUD
 {
@@ -9,7 +12,7 @@ class Murder extends MurderCRUD
         string $lastName, 
         int $age, 
         string $countryOfOrigin,
-        array $photo,
+        string $photo,
         string $twitterTag, 
         string $source1,
         string $source2, 
@@ -17,6 +20,7 @@ class Murder extends MurderCRUD
         string $source4,
         string $source5,
         int $isEnabled,
+        int $enabledBy,
         string $reasonForCrime, 
         string $crimeTool, 
         string $countryOfCrime, 
@@ -31,32 +35,24 @@ class Murder extends MurderCRUD
     *             add to sources table
     *=============================================**/
         $this->getSources($source1, $source2, $source3, $source4, $source5, $twitterTag);
-
-    /**============================================
-     *             add to victims_murder
-     *=============================================**/
-        $sourcesId = "LAST_INSERT_ID()";
-
-        $article = [
-            'post_creation_date'    => $postCreationDate,
-            'firstName'             => $firstName,
-            'lastName'              => $lastName,
-            'age'                   => $age,
-            'countryOfOrigin'       => $countryOfOrigin,
-            'photo'                 => $photo['name'],
-            'reasonForCrime'        => $reasonForCrime,
-            'toolUsed'              => $crimeTool,
-            'countryOfCrime'        => $countryOfCrime,
-            'dateOfDeath'           => $dateOfDeath,
-            'killer'                => $killerRelationship,
-            'story'                 => $story,
-            'punishment'            => $punishment,
-            'sources'               => $sourcesId,
-            'is_enabled'            => $isEnabled
-        ];
-
-        $this->addMurder($article);
         
+        $findSourceId = "SELECT sources_id FROM sources WHERE 
+                            source_1 = ('$source1')
+                        AND source_2 = ('$source2')
+                        AND source_3 = ('$source3')
+                        AND source_4 = ('$source4')
+                        AND source_5 = ('$source5')
+                        AND twitter_hashtag = ('$twitterTag')";
+        $sourceIdQuery = Query::sqlReadQuery($findSourceId, null);
+        $sourceId = $sourceIdQuery[0]->sources_id;
+
+        var_dump($sourceId);
+
+        $this->getMurderArticle(
+            $postCreationDate, $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
+        );
+
+
         }
         catch (PDOException $Exception) 
         {
@@ -112,6 +108,55 @@ class Murder extends MurderCRUD
                 );
                 header('location:/error?error=failed-statement');
             }   
+    }
+
+    protected function getMurderArticle(
+        $postCreationDate, $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
+    )
+    {
+        try
+        {
+        /**============================================
+         *             add to victims_murder
+         *=============================================**/
+        $article = [
+            'post_creation_date'    => $postCreationDate,
+            'firstName'             => $firstName,
+            'lastName'              => $lastName,
+            'age'                   => $age,
+            'countryOfOrigin'       => $countryOfOrigin,
+            'photo'                 => $photo,
+            'reasonForCrime'        => $reasonForCrime,
+            'toolUsed'              => $crimeTool,
+            'countryOfCrime'        => $countryOfCrime,
+            'dateOfDeath'           => $dateOfDeath,
+            'killer'                => $killerRelationship,
+            'story'                 => $story,
+            'punishment'            => $punishment,
+            'sources'               => $sourceId,
+            'is_enabled'            => $isEnabled,
+            'enabled_by'            => $enabledBy,
+        ];
+            $connect = $this->addMurder($article);
+
+            // FIXME : not entering data
+            if ($connect)
+            {
+                echo "✅ Connection to database is established ✅";
+            }
+            else
+            {
+                echo "❌ error occurred";
+            }
+
+        }
+        catch (PDOException $Exception) 
+        {
+            throw new PDOException(
+                $Exception->getMessage( )
+            );
+            header('location:/error?error=failed-statement');
+        }
     }
 }
 

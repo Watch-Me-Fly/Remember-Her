@@ -1,7 +1,8 @@
 <?php
 
     require_once('Query.class.php');
-    require_once($_SERVER['DOCUMENT_ROOT']. '/models/murder.class.php');
+    // require_once($_SERVER['DOCUMENT_ROOT']. '/models/murder.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT']. '/database/OOPmethod/murder.class.php');
 
     class MurderCRUD
     {
@@ -10,7 +11,28 @@
         {
             try
             {
-                $sqlStatement = "INSERT INTO `victims_murder`(`post_creation_date`, `victim_id`, `first_name`, `last_name`, `age`, `country_origin`, `photo`, `reason_group`, `crime_tool`, `country_crime`, `date_of_death`, `perpetrator`, `story`, `punishment`, `sources`, `is_enabled`, `enabled_by`) VALUES (:post_creation_date, null ,:first_name,:last_name,:age,:country_origin,:photo,:reason_group,:crime_tool,:country_crime,:date_of_death,:perpetrator,:story,:punishment,:sources,:is_enabled, :enabled_by)";
+                // FIXME 
+                // $sqlStatement = "INSERT INTO `victims_murder`(`post_creation_date`, `victim_id`, `first_name`, `last_name`, `age`, `country_origin`, `photo`, `reason_group`, `crime_tool`, `country_crime`, `date_of_death`, `perpetrator`, `story`, `punishment`, `sources`, `is_enabled`, `enabled_by`) VALUES (:post_creation_date, null,:first_name,:last_name,:age,:country_origin,:photo,:reason_group,:crime_tool,:country_crime,:date_of_death,:perpetrator,:story,:punishment,:sources,:is_enabled, :enabled_by)";
+
+                $sqlStatement = "INSERT INTO `victims_murder` SET 
+                `post_creation_date` = :post_creation_date, 
+                `victim_id` = null, 
+                `first_name` = :first_name, 
+                `last_name` = :last_name, 
+                `age` = :age, 
+                `country_origin` = :country_origin, 
+                `photo` = :photo, 
+                `reason_group` = :reason_group, 
+                `crime_tool` = :crime_tool, 
+                `country_crime` = :country_crime, 
+                `date_of_death` = :date_of_death, 
+                `perpetrator` = :perpetrator, 
+                `story` = :story, 
+                `punishment`= :punishment, 
+                `sources` = :sources, 
+                `is_enabled` = :is_enabled, 
+                `enabled_by` = :enabled_by,
+                ";
 
                 $fields = [
                     ":post_creation_date"=> $article['post_creation_date'],
@@ -34,6 +56,8 @@
                 $db = DBConnection::PDO(); 
                 $connect = $db->prepare($sqlStatement);
                 $connect->execute($fields);
+
+                var_dump($sqlStatement);
 
                 return $connect;
             }
@@ -95,14 +119,13 @@
         {
             try
             {
-                $array = [];
                 $sqlStatement = 
                 "SELECT * FROM `victims_murder` 
-                JOIN reason
-                JOIN tools
-                JOIN perpetrator
-                JOIN sources
-                JOIN admins
+                INNER JOIN reason
+                INNER JOIN tools
+                INNER JOIN perpetrator
+                INNER JOIN sources
+                INNER JOIN admins
                 ON victims_murder.reason_group = reason.reason_id
                 AND victims_murder.crime_tool = tools.tool_id
                 AND victims_murder.perpetrator = perpetrator.perpetrator_id
@@ -111,33 +134,7 @@
 
                 $db = Query::sqlReadQuery($sqlStatement, $fields);
 
-                foreach ($db as $murderArray)
-                {
-                    $array[] = new Murder(
-                        $murderArray->victim_id,
-                        $murderArray->post_creation_date,
-                        $murderArray->first_name,
-                        $murderArray->last_name,
-                        $murderArray->age,
-                        $murderArray->country_origin,
-                        $murderArray->photo,
-                        $murderArray->twitter_hashtag,
-                        $murderArray->source_1,
-                        $murderArray->source_2,
-                        $murderArray->source_3,
-                        $murderArray->source_4,
-                        $murderArray->source_5,
-                        $murderArray->is_enabled,
-                        $murderArray->reason_group,
-                        $murderArray->crime_tool,
-                        $murderArray->country_crime,
-                        $murderArray->date_of_death,
-                        $murderArray->perpetrator,
-                        $murderArray->story,
-                    );
-                }
-
-                return $array;
+                return $db;
             }
             catch (PDOException $Exception) 
             {

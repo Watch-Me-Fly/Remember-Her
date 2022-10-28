@@ -2,7 +2,6 @@
     // -- -------------- ⏫ Page top --------------- --
     $title = "Settings";
     require_once('views/components/back-office/top.php');
-    require_once('models/admin.class.php');
     
     if (isset($_SESSION['userID']))
     {
@@ -79,7 +78,7 @@
                         name="submitBtn">
                 <input type="submit" value="Delete My Account" 
                         class="btn btn-danger m-3" id="deleteAccount" 
-                        name="deleteBtn">
+                        name="deleteBtn" onclick="return confirm('⚠ This action is irreversible')">
             </div>
         </form>
 
