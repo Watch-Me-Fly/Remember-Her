@@ -1,3 +1,15 @@
+<?php
+
+    require_once('models/admin.class.php');
+    
+    /*--------------------------------------------
+    *           Retrieve user's info
+    *---------------------------------------------*/
+    $what = "*";
+    $whereCondition = "admin_id= '".$_SESSION['userID']."'";
+    $userInfo = AdminCRUD::readWhere($what, $whereCondition, null);
+
+?>
 
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/admin.css">
 <link rel="stylesheet" type="text/css" href="./../../../assets/css/back-office/navbar.css">
@@ -20,7 +32,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <h4 class="fw-bold">Welcome back <?= $_SESSION['userID']; ?> </h4>
+                    <h4 class="fw-bold">Welcome back <?= $userInfo[0]->username; ?> !</h4>
                 </li>
 
             </div>
@@ -72,4 +84,3 @@
 
     </div>
 </nav>
-

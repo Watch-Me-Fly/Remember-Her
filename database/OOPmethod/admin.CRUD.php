@@ -82,7 +82,7 @@
                         $adminArray->password,
                         $adminArray->email,
                         $adminArray->location,
-                        $adminArray->is_admin = false
+                        $adminArray->is_admin
                     );
                 }
                 // return $db;
@@ -97,14 +97,14 @@
                 header('location:/error');
             }
         }
-        public static function update($admin_id, $conditions)
+        public static function update($admin_id, $conditions, $fields)
         {
             try
             {
                 $sqlStatement = 'UPDATE Admins SET ' . 
                                 $conditions .
                                 ' WHERE `admin_id` = ' . $admin_id;
-                $db = Query::sqlUpdateQuery($sqlStatement, null);
+                $db = Query::sqlUpdateQuery($sqlStatement, $fields);
                 
                 return $db;
             }

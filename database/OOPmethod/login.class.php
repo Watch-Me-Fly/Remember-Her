@@ -82,21 +82,16 @@ class Login
             /**============================================
             *  if it passes all verifications, get the results
             *=============================================**/
-            $isAdminQuery->fetchAll(PDO::FETCH_ASSOC);
+            $adminInfo = $isAdminQuery->fetchAll(PDO::FETCH_ASSOC);
             // $admin = $isAdminQuery->fetchAll(PDO::FETCH_ASSOC);
             // $array= json_decode(json_encode($admin));
 
             /**============================================
-            *       Now start the session with username 
+            *       Now start the session with id 
             *=============================================**/
             session_start();
             
-            // FIXME : this function should not be using username but userid
-            // search for the first index admin from the last admin 
-            // var containing all data from DB, get the admin_id column
-            
-            $_SESSION['userID'] = $user;
-            // var_dump($_SESSION['userID']);
+            $_SESSION['userID'] = $adminInfo[0]['admin_id'];
         }
 
         // if it does not pass all the previous steps, don't query
