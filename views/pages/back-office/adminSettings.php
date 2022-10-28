@@ -71,7 +71,7 @@
                     🔑 Edit your password
                 </label>
                 <input type="password" name="editPassword" id="editPassword" class="form-control"
-                    placeholder="Your password" value="********" onfocus="this.value=''" required>
+                    placeholder="Your password" required>
             </div>
             <div id="buttonsContainer" class="form-group mt-5 d-flex justify-content-around">
                 <input type="submit" value="Submit Changes" 

@@ -12,6 +12,17 @@ if ( isset($_POST['submitBtn']) )
     $successMessage = "✅ Your informations have been updated successfully";
 }
 
+if ( isset($_POST['deleteBtn']) )
+{
+    /*--------------------------------------------
+    *           Delete user's info
+    *---------------------------------------------*/
+        $where = ['admin_id' => $_SESSION['userID']];
 
+        $deleteAdmin= AdminCRUD::delete($where);
+
+        header('location:/home');
+
+}
 
 ?> 
