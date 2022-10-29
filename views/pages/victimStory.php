@@ -140,7 +140,7 @@
 
 <!-- if no article is found -->
 <?php else : ?>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger w-50 mx-auto h-50 text-center" role="alert">
         Article NOT FOUND
     </div>
 <?php endif; ?>

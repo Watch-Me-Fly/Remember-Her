@@ -2,6 +2,7 @@
 
 $path = $_SERVER['REQUEST_URI'];
 // ANCHOR search what is request_uri and htaccess explanation
+// $path = explode('?',$path);
 
 // Routing pages
 switch ($path) {
@@ -15,7 +16,7 @@ switch ($path) {
     case '/victims-directory':
         require_once("./views/pages/victimsDirectory.php");
     break;
-    case '/victim-story':
+    case '/victim-story?id='.$_GET['id']:
         require_once("./views/pages/victimStory.php");
     break;
     // ------------------- Other pages
@@ -28,8 +29,12 @@ switch ($path) {
     case '/legal-mentions';
         require_once("./views/pages/legalMentionsPage.php");
     break;
+    case '/error':
+        require_once("./views/pages/error.php");
+        break;
     // ------------------- admins
     case '/admin-login':
+        // $signup = $path[1];
         require_once("./views/pages/adminLogin.php");
     break;
     case '/admin':
@@ -44,12 +49,10 @@ switch ($path) {
     case '/admin/settings':
         require_once("./views/pages/back-office/adminSettings.php");
         break;
-    case '/ERROR':
+
+    default:
         require_once("./views/pages/error.php");
         break;
-    // ------------------- 
-    default:
-        require_once("./views/pages/landingPage.php");
 } 
     
 ?>
