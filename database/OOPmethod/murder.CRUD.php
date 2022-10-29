@@ -115,7 +115,7 @@
             }
         }
 
-        public static function readAll($whereOptional, $fields)
+        public static function readAll($whereOptional)
         {
             try
             {
@@ -132,7 +132,29 @@
                 AND victims_murder.sources = sources.sources_id
                 AND victims_murder.enabled_by = admins.admin_id ".$whereOptional;
 
-                $db = Query::sqlReadQuery($sqlStatement, $fields);
+                $db = Query::sqlReadQuery($sqlStatement, null);
+
+                return $db;
+            }
+            catch (PDOException $Exception) 
+            {
+                throw new PDOException(
+                    $Exception->getMessage( )
+                );
+                header('location:/error');
+            }
+        }
+
+        public static function readLastFour()
+        {
+            try {
+                $sqlStatement = "SELECT 
+                    `victim_id`, `first_name`, `last_name`, `age`, `photo` 
+                    FROM `victims_murder` 
+                    WHERE `is_enabled` = 1
+                    ORDER BY `victim_id` 
+                    DESC LIMIT 4";
+                $db = Query::sqlReadQuery($sqlStatement, null);
 
                 return $db;
             }

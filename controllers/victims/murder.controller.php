@@ -7,7 +7,7 @@
     // $articleID = $_GET['id'];
 
     $whereCondition = " WHERE victims_murder.victim_id = 1";
-    $article = MurderCRUD::readAll($whereCondition, null);
+    $article = MurderCRUD::readAll($whereCondition);
 
     /**============================================
     *                Country name

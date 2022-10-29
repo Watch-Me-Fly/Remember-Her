@@ -34,6 +34,3 @@
 <!---------------- 📜 scripts used ---------------->
 
 <script src="assets/js/carousel.js"></script>
-
-<?php session_start(); ?>
-<!-- STUB : did i really need session start? -->

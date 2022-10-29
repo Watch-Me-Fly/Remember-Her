@@ -32,18 +32,44 @@
                     title="Country of Origin : <?php getCountryByCode($json, $countryOfOrigin) ?>" 
                     width="30px">
 
-                <?php if ($article[0]->twitter_hashtag) : ?>
-
-                    <img src="./../../../assets/icons/twitter.png" alt="
-                alt="Twitter hashtag" title="Twitter hashtag" width="30px">
-
-                <?php endif; ?>
-                <?php if ($article[0]->twitter_hashtag) : ?>
-
-                <img src="./../../../assets/icons/twitter.png" alt="
-                alt="Twitter hashtag" title="Twitter hashtag" width="30px">
-
-                <?php endif; ?>
+                <div id="links" class="d-flex">
+                    <?php if ($article[0]->twitter_hashtag) : ?>
+                        <a href="<?= $article[0]->twitter_hashtag; ?>" target="_blank">
+                            <img src="./../../../assets/icons/twitter.png" alt="
+                        alt="Twitter hashtag" title="Twitter hashtag" width="30px">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($article[0]->source_1) : ?>
+                        <a href="<?= $article[0]->source_1; ?>" target="_blank">
+                            <img src="./../../../assets/icons/link.png" alt="
+                            alt="Twitter hashtag" title="Source 1" width="30px">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($article[0]->source_2) : ?>
+                        <a href="<?= $article[0]->source_2; ?>" target="_blank">
+                            <img src="./../../../assets/icons/link.png" alt="
+                            alt="Twitter hashtag" title="Source 2" width="30px">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($article[0]->source_3) : ?>
+                        <a href="<?= $article[0]->source_3; ?>" target="_blank">
+                            <img src="./../../../assets/icons/link.png" alt="
+                            alt="Twitter hashtag" title="Source 3" width="30px">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($article[0]->source_4) : ?>
+                        <a href="<?= $article[0]->source_4; ?>" target="_blank">
+                            <img src="./../../../assets/icons/link.png" alt="
+                            alt="Twitter hashtag" title="Source 4" width="30px">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($article[0]->source_5) : ?>
+                        <a href="<?= $article[0]->source_5; ?>" target="_blank">
+                            <img src="./../../../assets/icons/link.png" alt="
+                            alt="Twitter hashtag" title="Source 5" width="30px">
+                        </a>
+                    <?php endif; ?>
+                </div>
 
             </h1>
             <p class="detailsSpan">died :
