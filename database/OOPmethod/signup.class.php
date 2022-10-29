@@ -51,7 +51,7 @@ class Signup extends AdminCRUD
         return $resultCheck;
     }
 
-    protected function getUser()
+    public function getUser()
     {        
         $query = $this->read();
 

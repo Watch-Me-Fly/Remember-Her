@@ -9,7 +9,6 @@
     $whereCondition = " WHERE victims_murder.victim_id = 1";
     $article = MurderCRUD::readAll($whereCondition, null);
 
-    var_dump($article);
     /**============================================
     *                Country name
     *=============================================**/
