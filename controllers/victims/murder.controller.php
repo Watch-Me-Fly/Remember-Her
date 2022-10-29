@@ -6,7 +6,7 @@
     require_once('database/OOPmethod/murder.CRUD.php');
     // $articleID = $_GET['id'];
 
-    $whereCondition = " WHERE victims_murder.victim_id = 1";
+    $whereCondition = " WHERE victims_murder.victim_id = 3";
     $article = MurderCRUD::readAll($whereCondition);
 
     /**============================================

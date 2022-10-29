@@ -44,7 +44,6 @@ class Login
             *  allow user to connect with mail or username
             *=============================================**/
             // is username/email connected to pw is equal to submitted
-            // STUB : verify with florian why it is not working
 
             $userOrEmailStatement = 'SELECT * FROM Admins WHERE 
                             (username= :username OR email= :email) AND `password`= :password';
