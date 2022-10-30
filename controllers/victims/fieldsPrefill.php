@@ -3,8 +3,10 @@
 /*--------------------------------------------
 *             Connect to Database
 *---------------------------------------------*/
-require_once('database/OOPmethod/Query.class.php');
-require_once('controllers/countrySelector.php');
+require_once($_SERVER['DOCUMENT_ROOT'].
+            '/database/OOPmethod/Query.class.php');
+require_once($_SERVER['DOCUMENT_ROOT'].
+            '/controllers/countrySelector.php');
 
 /*--------------------------------------------
 *               Display Fields Loops

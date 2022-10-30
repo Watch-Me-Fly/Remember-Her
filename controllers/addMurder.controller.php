@@ -49,7 +49,7 @@ if (isset($_POST['submit']))
     $urlSource4,
     $urlSource5,
     false,
-    0,
+    1,
     $reasonForCrime,
     $toolUsed,
     $countryOfCrime,

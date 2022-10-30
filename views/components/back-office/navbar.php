@@ -1,6 +1,7 @@
 <?php
 
-    require_once('models/admin.class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].
+                    '/models/admin.class.php');
     
     /*--------------------------------------------
     *           Retrieve user's info

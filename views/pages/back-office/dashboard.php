@@ -16,6 +16,16 @@
     <div class="container w-75 p-2 mb-5 rounded">
         <h4 class="text-center p-2 fw-bold">-- All articles --</h4>
         <hr>
+
+        <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1) : ?>
+            
+        <div class="alert alert-success alert-dismissible w-75 mx-auto d-flex justify-content-between align-items-center">
+        ✅ Entry was deleted successfully
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <?php else : ?>
+
         <div class="alert alert-info alert-dismissible w-75 mx-auto d-flex justify-content-between align-items-center">
         👩🏽‍💻 Validate, modify, delete a pending article, or add a new one !
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -24,6 +34,9 @@
         💡 Please check if the article exists already before approving
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+
+        <?php endif; ?>
+
     </div>
 
     <table class="table" id="table" data-order='[[0, "des"]]' data-page-length="25">
@@ -61,14 +74,18 @@
                     <!-- allow modifications only if article is not yet online -->
                     <?php if ($article->is_enabled == 0) : ?>
                     <td>
-                        <button type="submit" class="btn py-0" name="modify">
-                            <img src="./../../../assets/icons/back-office/edit.png" alt="edit" width="20px">
-                        </button>
+                        <a href="./../../../views/pages/back-office/update?id=<?= $article->victim_id ?>" 
+                            type="submit" class="btn py-0" >
+                            <img src="./../../../assets/icons/back-office/edit.png" 
+                                alt="edit" width="20px">
+                        </a>
                     </td>
                     <td>
-                        <button type="submit" class="btn py-0" name="delete">
-                                <img src="./../../../assets/icons/back-office/trash.png" alt="delete" width="20px">
-                        </button>
+                        <a href="./../../../controllers/victims/delete.php?id=<?= $article->victim_id ?>" 
+                            type="submit" class="btn py-0" onclick="return confirm('⚠ This action is irreversible')">
+                            <img src="./../../../assets/icons/back-office/trash.png" 
+                                alt="delete" width="20px">
+                        </a>
                     </td>
                     <?php endif; ?>
                 </tr>

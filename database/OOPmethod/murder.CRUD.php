@@ -231,18 +231,11 @@
                 header('location:/error');
             }
         }
-        public static function deleteSources($whereCondition)
+        public static function deleteSources($sourceId)
         {
             try
             {
-                $conditions = "";
-                foreach ($whereCondition as $key => $value)
-                {
-                    $conditions .= $key." = ".$value." AND ";
-                }
-                $conditions = substr($conditions, 0, -5);
-
-                $sqlStatement = 'DELETE FROM Victims_murder WHERE ' . $conditions;
+                $sqlStatement = 'DELETE FROM sources WHERE `sources_id` = '. $sourceId;
                 $db = Query::sqlDeleteQuery($sqlStatement, null);
                 
                 return $db;
@@ -255,7 +248,7 @@
                 header('location:/error');
             }
         }
-        public static function findSourceId        ($source1, $source2, $source3, $source4, $source5, $twitterTag)
+        public static function findSourceId($source1, $source2, $source3, $source4, $source5, $twitterTag)
         {
             try
             {

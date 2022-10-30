@@ -18,7 +18,7 @@ if (isset($_GET['id']))
         // delete article
         $deleteArticle= MurderCRUD::deleteArticle(['victim_id' => $_GET['id']]);
 
-        header('location: /admin/dashboard');
+        header('location: /admin/dashboard?deleted=1');
 }
 else
 {
