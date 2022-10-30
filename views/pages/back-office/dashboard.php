@@ -50,31 +50,46 @@
             </tr>
             <?php foreach($database as $article): ?>
 
-                <?php 
-                    // --------------- is enabled ?
-                    $status = ($article->is_enabled == 1 &&
-                                $article->enabled_by !== 1) ? 
-                    "<span class='green fw-bold'>✅ On site</span>" : 
-                    "<span class='yellow fw-bold'>⏳ Pending</span>" ;    
-                ?>
                 <!-- create a row for each article -->
                 <tr>
+            <!-- //-- -------------- post creation date --------------- --// -->
                     <td>
                         <?= $article->post_creation_date; ?>
                     </td>
+            <!-- //-- -------------- Name --------------- --// -->
+                    <!-- read only if article is online -->
+                    <?php if ($article->is_enabled == 1): ?>
                     <td>
-                        <a href="/admin/article?id=<?= $article->victim_id; ?>" 
+                        <a href="/admin/read-article?id=<?= $article->victim_id; ?>" 
                             title="Read the article">
                             <?= $article->first_name . " " . $article->last_name; ?>
                         </a>
                     </td>
+                    <!-- can modify if article is pending -->
+                    <?php else : ?>
                     <td>
-                        <?= $status; ?>
+                        <a href="/admin/manage-article?id=<?= $article->victim_id; ?>" 
+                            title="Read the article">
+                            <?= $article->first_name . " " . $article->last_name; ?>
+                        </a>
                     </td>
-                    <!-- allow modifications only if article is not yet online -->
+                    <?php endif; ?>
+            <!-- //-- -------------- Status --------------- --// -->
+                    <td>
+                        <?php 
+                            // --------------- is enabled ?
+                            $status = ($article->is_enabled == 1 &&
+                                        $article->enabled_by !== 1) ? 
+                            "<span class='green fw-bold'>✅ On site</span>" : 
+                            "<span class='yellow fw-bold'>⏳ Pending</span>" ;
+                            echo $status;
+                        ?>
+                    </td>
+            <!-- //-- -------------- Modify and delete --------------- --// -->
+                    <!-- allow modifications / delete only if article is not yet online -->
                     <?php if ($article->is_enabled == 0) : ?>
                     <td>
-                        <a href="./../../../views/pages/back-office/update?id=<?= $article->victim_id ?>" 
+                        <a href="/admin/manage-article?id=<?= $article->victim_id; ?>" 
                             type="submit" class="btn py-0" >
                             <img src="./../../../assets/icons/back-office/edit.png" 
                                 alt="edit" width="20px">

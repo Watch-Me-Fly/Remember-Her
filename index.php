@@ -46,8 +46,11 @@ switch ($path) {
     case '/admin/dashboard?deleted=1':
         require_once("./views/pages/back-office/dashboard.php");
         break;
-    case '/admin/article?id='.$getId:
-        require_once("./views/pages/back-office/crudArticle.php");
+    case '/admin/manage-article?id='.$getId:
+        require_once("./views/pages/back-office/update.php");
+    break;
+    case '/admin/read-article?id='.$getId:
+        require_once("./views/pages/back-office/readArticle.php");
     break;
     case '/admin/add-victim':
         require_once("./views/pages/back-office/adminAdd.php");

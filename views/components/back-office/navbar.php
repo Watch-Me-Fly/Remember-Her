@@ -28,7 +28,7 @@
 
             <div class="d-flex align-items-center">
                 <li class="nav-item p-2">
-                    <a href="/home">
+                    <a href="/">
                     <img src="./../../../assets/images/logo.png" alt="Remember her" class="p-2" id="logo">
                     </a>
                 </li>
