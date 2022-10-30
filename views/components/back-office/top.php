@@ -13,7 +13,7 @@
     <title><?= $title ?></title>
 </head>
 
-<body class="min-vh-80">
+<body>
 
 <?php 
     if (!isset($_SESSION['userID'])) 

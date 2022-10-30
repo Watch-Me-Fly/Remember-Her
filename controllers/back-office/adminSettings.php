@@ -21,8 +21,7 @@ if ( isset($_POST['deleteBtn']) )
 
         $deleteAdmin= AdminCRUD::delete($where);
 
-        header('location:/home');
-
+        session_destroy();
 }
 
 ?> 

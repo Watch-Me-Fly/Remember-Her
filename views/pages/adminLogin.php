@@ -69,7 +69,7 @@
 
 </main>
 
-<?php if(isset($_GET['signup'])): ?>
+<?php if(isset($_GET['signup']) && $_GET['signup'] == 1): ?>
     <div class="alert alert-sucess" role="alert">
         Signup Successful !
         <br/>⏲ Your account is pending authorisation, pending approvals take 24h-48h.

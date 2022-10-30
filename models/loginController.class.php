@@ -18,7 +18,7 @@ class LoginController extends Login
     {
         if($this->isNotEmptyInput() == false)
         {
-            header('location:?error=fieldsCheck');
+            header('location:/admin-login?error=fieldsCheck');
             exit();
         }
         // if no errors after all of the above checks : login user

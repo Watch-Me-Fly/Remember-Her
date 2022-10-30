@@ -4,6 +4,10 @@ $path = $_SERVER['REQUEST_URI'];
 // ANCHOR search what is request_uri and htaccess explanation
 // $path = explode('?',$path);
 
+// define an id variable
+$getId = isset($_GET['id']) ? $_GET['id'] : false;
+$errorMessage = isset($_GET['error']) ? $_GET['error'] : '';
+
 // Routing pages
 switch ($path) {
     case '/home':
@@ -16,9 +20,35 @@ switch ($path) {
     case '/victims-directory':
         require_once("./views/pages/victimsDirectory.php");
     break;
-    case '/victim-story?id='.$_GET['id']:
+    case '/victim-story?id='.$getId:
         require_once("./views/pages/victimStory.php");
     break;
+    // ------------------- admins
+    case '/admin-login':
+        // $signup = $path[1];
+        require_once("./views/pages/adminLogin.php");
+    break;
+    case '/admin-login?error='.$errorMessage:
+        require_once("./views/pages/adminLogin.php");
+    break;
+    case '/admin-login?signup=1':
+        require_once("./views/pages/adminLogin.php");
+    break;
+    case '/admin':
+        require_once("./views/pages/back-office/admin.php");
+        break;
+    case '/admin/dashboard':
+        require_once("./views/pages/back-office/dashboard.php");
+        break;
+    case '/admin/article?id='.$getId:
+        require_once("./views/pages/back-office/crudArticle.php");
+    break;
+    case '/admin/add-victim':
+        require_once("./views/pages/back-office/adminAdd.php");
+        break;
+    case '/admin/settings':
+        require_once("./views/pages/back-office/adminSettings.php");
+        break;
     // ------------------- Other pages
     case '/eulogy':
         require_once("./views/pages/eulogyPage.php");
@@ -29,25 +59,9 @@ switch ($path) {
     case '/legal-mentions';
         require_once("./views/pages/legalMentionsPage.php");
     break;
-    case '/error':
+    // for predefined error messages
+    case '/error?error='.$errorMessage:
         require_once("./views/pages/error.php");
-        break;
-    // ------------------- admins
-    case '/admin-login':
-        // $signup = $path[1];
-        require_once("./views/pages/adminLogin.php");
-    break;
-    case '/admin':
-        require_once("./views/pages/back-office/admin.php");
-        break;
-    case '/admin/dashboard':
-        require_once("./views/pages/back-office/dashboard.php");
-        break;
-    case '/admin/add-victim':
-        require_once("./views/pages/back-office/adminAdd.php");
-        break;
-    case '/admin/settings':
-        require_once("./views/pages/back-office/adminSettings.php");
         break;
 
     default:

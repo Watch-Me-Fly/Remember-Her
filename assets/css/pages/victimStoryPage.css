@@ -16,6 +16,9 @@
 /*--------------------------------------------
 *                 Left half
 *---------------------------------------------*/
+#leftColumnStoryPage {
+    min-width: 50%;
+}
 
 /*-- ------------ Personal Info Card ------------ --*/
 #leftColumnStoryPage>div:first-of-type {

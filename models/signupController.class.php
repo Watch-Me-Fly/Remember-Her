@@ -28,26 +28,22 @@ class SignupController extends Signup
     {
         if($this->isNotEmptyInput() == false)
         {
-            $errorMessage = "Please fill in all the required fields";
-            header('location: /error?error=fieldsCheck');
+            header('location: /admin-login?error=fieldsCheck');
             exit();
         }
         if($this->checkUsername() == false)
         {
-            $errorMessage = "Invalid username, username should contain only letters and numbers";
-            header('location: /error?error=Invalid-username');
+            header('location: /admin-login?error=invalid-username');
             exit();
         }
         if($this->checkEmail() == false)
         {
-            $errorMessage = "Invalid email adress, please check for typos";
-            header('location: /error?error=Invalid-Email');
+            header('location: /admin-login?error=invalid-email');
             exit();
         }
         if($this->matchUser() == false)
         {
-            $errorMessage = "Username or email address already in use";
-            header('location: /error?error=UsernameOrEmailTaken');
+            header('location: /admin-login?error=UsernameOrEmailTaken');
             exit();
         }
         // if no errors after all of the above checks : signup user

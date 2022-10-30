@@ -2,7 +2,7 @@
     <h2 class="text-center p-3">Welcome <span>back</span></h2>
 
     <!-- if info is incorrect, display error message -->
-    <?php if(isset($errorMessage) ): ?>
+    <?php if(isset($_GET['error']) ): ?>
 
         <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
             <?= $errorMessage; ?>

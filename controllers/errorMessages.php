@@ -1,21 +1,39 @@
 <?php
 
 // login page error messages :
-
 if (isset($_GET['error']))
 {
+    $getError = $_GET['error'];
+
     // set a variable to simplify code
     $getErrorIsSet = isset($_GET['error']);
 
     // ----- sql errors
     if ($getError == 'failed-statement')
     {
-        $errorMessage = "an error occurred while executing the query";
+        $errorMessage = "⚠ an error occurred while executing the request to our database";
+    }
+    // ----- Signup errors
+    if ($getError == 'UsernameOrEmailTaken')
+    {
+        $errorMessage = "⛔ Username or email address already in use";
+    }
+    if ($getError == 'fieldsCheck')
+    {
+        $errorMessage = "Please fill in all the required fields";
+    }
+    if ($getError == 'invalid-username')
+    {
+        $errorMessage = "❌ Invalid username, username should contain only letters and numbers";
+    }
+    if ($getError == 'invalid-email')
+    {
+        $errorMessage = "❌ Invalid email adress, please check for typos";
     }
     // ----- login errors
     if ($getError == 'userNotFound')
     {
-        $errorMessage == "This username / email does not exist in the database";
+        $errorMessage == "❌ This username / email does not exist in the database";
     }
     if ($getError == 'pendingAdmin')
     {
@@ -33,12 +51,11 @@ if (isset($_GET['error']))
     {
         $errorMessage = "❌ Wrong Password, please retry";
     }
-    if ($getError == 'fieldsCheck')
-    {
-        $errorMessage = "Please fill in all the required fields";
-    }
-    
 
+}
+else
+{
+    return false;
 }
 
 ?>

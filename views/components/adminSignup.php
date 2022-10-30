@@ -16,7 +16,7 @@
           class="" enctype="multipart/form-data">
         <!-- username -->
         <p>Please note that username cannot be changed</p>
-        <?php if(isset($errorMessage) ): ?>
+        <?php if(isset($_GET['error']) ): ?>
 
             <p id="errorLogin" class="alert alert-danger rounded-3 fst-italic p-3 m-3">
                 <?= $errorMessage; ?>

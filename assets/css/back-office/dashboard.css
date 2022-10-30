@@ -2,3 +2,35 @@
 h1 {
     margin: 20px 50px;
 }
+
+/*-- ------------ Header ------------ --*/
+#tableContainer>div.container {
+    background-color: rgba(213, 213, 213, 0.3);
+}
+
+a.close {
+    text-decoration: none;
+}
+
+/*-- ------------ Page size ------------ --*/
+#tableContainer {
+    min-height: 75vh;
+}
+
+/*-- ------------ Table ------------ --*/
+#tableContainer a {
+    color: rgb(57, 115, 240);
+    /* text-decoration: none; */
+}
+
+#tableContainer a:hover {
+    color: black;
+}
+
+#tableContainer a:visited {
+    color: rgb(99, 0, 0);
+}
+
+table button:hover {
+    opacity: 0.7;
+}
