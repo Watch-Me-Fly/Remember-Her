@@ -31,9 +31,9 @@ if (isset($_POST['submit']))
     $punishment         = $_POST['punishment'];
 
    // class instance
-   include($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/murder.CRUD.php');
-   include($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/murder.class.php');
-   include($_SERVER['DOCUMENT_ROOT'].'/models/murderEntryController.class.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/murder.CRUD.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/murder.class.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/models/murderEntryController.class.php');
 
    $addVictim = new AddMurderController(
     $created, 
@@ -62,11 +62,10 @@ if (isset($_POST['submit']))
    // run error handler
    $addVictim->addArticle();
    
-
-   var_dump($addVictim);
+    // var_dump($addVictim);
 
    // grab data
-//    header('location:/add-victim?added=1');
+   header('location:/add-victim?added=1');
 }
 
 ?>

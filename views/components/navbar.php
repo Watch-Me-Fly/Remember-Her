@@ -5,7 +5,7 @@
     <div class="container 
                 d-flex justify-content-between 
                 col-sm-12 col-md-1">
-        <a href="/home" class="btn">
+        <a href="/" class="btn">
             <img src="assets/icons/dark-mode/home.png" alt="Home" title="Home" width="20px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

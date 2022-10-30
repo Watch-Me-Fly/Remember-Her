@@ -6,13 +6,13 @@
     background: url('./../../assets/images/bg.jpg') no-repeat center;
 } 
 */
-
 #addVictimMain .container {
     background-color: rgb(99, 0, 0);
     box-shadow: -3px 2px 8px rgba(0, 0, 0, 0.27),
         3px 2px 8px rgba(0, 0, 0, 0.27);
     color: rgb(249, 246, 247);
     width: 80%;
+    min-height: 40vh;
 }
 
 /*-- ------------ Box of notice before form ------------ --*/

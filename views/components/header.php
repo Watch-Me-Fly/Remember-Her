@@ -6,7 +6,7 @@
 
 <header id="header">
     <div id="headerImg">
-        <a href="/home">
+        <a href="/">
             <img 
                 src="assets/images/header-en.png" 
                 alt="Header" 

@@ -36,22 +36,11 @@ class Murder extends MurderCRUD
     *=============================================**/
         $this->getSources($source1, $source2, $source3, $source4, $source5, $twitterTag);
         
-        $findSourceId = "SELECT sources_id FROM sources WHERE 
-                            source_1 = ('$source1')
-                        AND source_2 = ('$source2')
-                        AND source_3 = ('$source3')
-                        AND source_4 = ('$source4')
-                        AND source_5 = ('$source5')
-                        AND twitter_hashtag = ('$twitterTag')";
-        $sourceIdQuery = Query::sqlReadQuery($findSourceId, null);
-        $sourceId = $sourceIdQuery[0]->sources_id;
+        $sourceId = $this->findSourceId($source1, $source2, $source3, $source4, $source5, $twitterTag);
 
-        var_dump($sourceId);
-
-        $this->getMurderArticle(
+        $this->setMurderArticle(
             $postCreationDate, $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
         );
-
 
         }
         catch (PDOException $Exception) 
@@ -61,6 +50,7 @@ class Murder extends MurderCRUD
             );
             header('location:/error?error=failed-statement');
         }
+
 
     }
 
@@ -110,7 +100,7 @@ class Murder extends MurderCRUD
             }   
     }
 
-    protected function getMurderArticle(
+    protected function setMurderArticle(
         $postCreationDate, $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
     )
     {
@@ -119,7 +109,8 @@ class Murder extends MurderCRUD
         /**============================================
          *             add to victims_murder
          *=============================================**/
-        $article = [
+
+            $article = [
             'post_creation_date'    => $postCreationDate,
             'firstName'             => $firstName,
             'lastName'              => $lastName,
@@ -136,7 +127,8 @@ class Murder extends MurderCRUD
             'sources'               => $sourceId,
             'is_enabled'            => $isEnabled,
             'enabled_by'            => $enabledBy,
-        ];
+            ];
+
             $connect = $this->addMurder($article);
 
             // FIXME : not entering data
@@ -149,6 +141,29 @@ class Murder extends MurderCRUD
                 echo "❌ error occurred";
             }
 
+        }
+        catch (PDOException $Exception) 
+        {
+            throw new PDOException(
+                $Exception->getMessage( )
+            );
+            header('location:/error?error=failed-statement');
+        }
+    }
+
+    protected function updateArticleSources($source1, $source2, $source3, $source4, $source5, $twitterTag,$victim_id)
+    {
+        try
+        {
+            $sources = [
+                'urlSource1' => $source1, 
+                'urlSource2' => $source2, 
+                'urlSource3' => $source3,
+                'urlSource4' => $source4,
+                'urlSource5' => $source5, 
+                'twitterHash' => $twitterTag
+            ];
+            $this->updateSources($sources, $victim_id);
         }
         catch (PDOException $Exception) 
         {

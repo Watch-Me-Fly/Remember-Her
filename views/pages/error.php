@@ -50,7 +50,7 @@
 <?php endif; ?>
 <!-- ------------------------------ -->
             <div class="d-flex justify-content-center">
-                <a href="/home" class="btn btn-secondary m-3">Home Page</a>
+                <a href="/" class="btn btn-secondary m-3">Home Page</a>
                 <a href="" class="btn btn-secondary m-3" id="goBack">Go back</a>
             </div>
 

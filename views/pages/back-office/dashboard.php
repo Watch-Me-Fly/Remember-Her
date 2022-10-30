@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <table class="table" id="table" data-order='[[0, "asc"]]' data-page-length="25">
+    <table class="table" id="table" data-order='[[0, "des"]]' data-page-length="25">
         <thead>
             <tr>
                 <th scope="col">Date Created</th>
@@ -39,7 +39,8 @@
 
                 <?php 
                     // --------------- is enabled ?
-                    $status = $article->is_enabled == 1 ? 
+                    $status = ($article->is_enabled == 1 &&
+                                $article->enabled_by !== 1) ? 
                     "<span class='green fw-bold'>✅ On site</span>" : 
                     "<span class='yellow fw-bold'>⏳ Pending</span>" ;    
                 ?>

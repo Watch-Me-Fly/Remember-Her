@@ -10,11 +10,14 @@ $errorMessage = isset($_GET['error']) ? $_GET['error'] : '';
 
 // Routing pages
 switch ($path) {
-    case '/home':
+    case '/':
         require_once("./views/pages/landingPage.php");
     break;
     // ------------------- Victim
     case '/add-victim':
+        require_once("./views/pages/addVictim.php");
+    break;
+    case '/add-victim?added=1':
         require_once("./views/pages/addVictim.php");
     break;
     case '/victims-directory':
