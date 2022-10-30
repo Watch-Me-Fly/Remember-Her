@@ -320,9 +320,7 @@
 </div>
 </form>
 
-<script src="./../../assets/js/libraries/jquery-3.6.1.min.js" type="application/javascript"></script>
 </div>
-
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php require_once($_SERVER['DOCUMENT_ROOT'].
