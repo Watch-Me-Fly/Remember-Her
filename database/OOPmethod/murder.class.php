@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/DBConnect.class.php'
 class Murder extends MurderCRUD
 {
     protected function setArticle(
-        string $postCreationDate,
+        // string $postCreationDate,
         string $firstName, 
         string $lastName, 
         int $age, 
@@ -31,15 +31,12 @@ class Murder extends MurderCRUD
     )
     {
         try {
-    /**============================================
-    *             add to sources table
-    *=============================================**/
-        $this->getSources($source1, $source2, $source3, $source4, $source5, $twitterTag);
-        
+        $this->setSources($source1, $source2, $source3, $source4, $source5, $twitterTag);
         $sourceId = $this->findSourceId($source1, $source2, $source3, $source4, $source5, $twitterTag);
 
         $this->setMurderArticle(
-            $postCreationDate, $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
+            // $postCreationDate, 
+            $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
         );
 
         }
@@ -53,7 +50,6 @@ class Murder extends MurderCRUD
 
 
     }
-
     protected function getArticle($articleId)
     {
     /**============================================
@@ -74,8 +70,7 @@ class Murder extends MurderCRUD
             header('location:/error?error=failed-statement');
         }
     }
-
-    protected function getSources($source1, $source2, $source3, $source4, $source5, $twitterTag)
+    protected function setSources($source1, $source2, $source3, $source4, $source5, $twitterTag)
     {
         try {
             /**============================================
@@ -99,9 +94,9 @@ class Murder extends MurderCRUD
                 header('location:/error?error=failed-statement');
             }   
     }
-
     protected function setMurderArticle(
-        $postCreationDate, $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
+        // $postCreationDate,
+        $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
     )
     {
         try
@@ -111,7 +106,7 @@ class Murder extends MurderCRUD
          *=============================================**/
 
             $article = [
-            'post_creation_date'    => $postCreationDate,
+            // 'post_creation_date'    => $postCreationDate,
             'firstName'             => $firstName,
             'lastName'              => $lastName,
             'age'                   => $age,
@@ -150,20 +145,77 @@ class Murder extends MurderCRUD
             header('location:/error?error=failed-statement');
         }
     }
-
-    protected function updateArticleSources($source1, $source2, $source3, $source4, $source5, $twitterTag,$victim_id)
+    public static function updateMurderVictim(
+        Int $adminId,
+        int $victim_id,
+        string $firstName, 
+        string $lastName, 
+        int $age, 
+        string $countryOfOrigin,
+        string $photo,
+        string $twitterTag, 
+        string $source1,
+        string $source2, 
+        string $source3,
+        string $source4,
+        string $source5,
+        string $reasonForCrime, 
+        string $crimeTool, 
+        string $countryOfCrime, 
+        string $dateOfDeath, 
+        string $killerRelationship, 
+        string $story,
+        string $punishment
+        )
     {
         try
         {
+            // ---------------- get source id
+            $sourceId = MurderCRUD::findSourceId($source1,$source2,$source3,$source4,$source5,$twitterTag);
+            // ---------------- update sources
             $sources = [
                 'urlSource1' => $source1, 
                 'urlSource2' => $source2, 
                 'urlSource3' => $source3,
                 'urlSource4' => $source4,
                 'urlSource5' => $source5, 
-                'twitterHash' => $twitterTag
+                'twitterHash' => $twitterTag,
+                'sources_id' => $sourceId
             ];
-            $this->updateSources($sources, $victim_id);
+            MurderCRUD::updateSources($sourceId, $sources);
+            
+            // ---------------- update article
+            $table = "victims_murder";
+
+            $conditions = "
+                `first_name`=':first_name',
+                `last_name`=':last_name',
+                `age`=:age,
+                `country_origin`=':country_origin',
+                `photo`=':photo',
+                `reason_group`= $reasonForCrime,
+                `crime_tool`= $crimeTool,
+                `country_crime`=':country_crime',
+                `date_of_death`=':date_of_death',
+                `perpetrator`=$killerRelationship,
+                `story`=':story',
+                `punishment`=':punishment',
+                `is_enabled`= 1,
+                `enabled_by`= $adminId
+            ";
+            $fields = [
+                ":first_name"       => $firstName,
+                ":last_name"        => $lastName,
+                ":age"              => $age,
+                "country_origin"    => $countryOfOrigin,
+                ":photo"            => $photo,
+                "country_crime"     => $countryOfCrime,
+                ":date_of_death"    => $dateOfDeath,
+                ":story"            => $story,
+                ":punishment"       => $punishment,
+            ];
+            MurderCRUD::updateArticle($table, $conditions, $victim_id, $fields);
+
         }
         catch (PDOException $Exception) 
         {

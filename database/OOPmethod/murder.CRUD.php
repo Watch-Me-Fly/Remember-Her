@@ -22,7 +22,7 @@
                 story`, `punishment`, 
                 `sources`, 
                 `is_enabled`, `enabled_by`) 
-                VALUES (:post_creation_date, null,
+                VALUES (NOW(), null,
                 :first_name, :last_name,
                 :age, :country_origin,
                 :photo, :reason_group,
@@ -34,7 +34,7 @@
 
 
                 $fields = [
-                    ":post_creation_date"=> $article['post_creation_date'],
+                    // ":post_creation_date"=> $article['post_creation_date'],
                     ":first_name"       => $article['firstName'], 
                     ":last_name"        => $article['lastName'], 
                     ":age"              => $article['age'],
@@ -161,11 +161,18 @@
                 header('location:/error');
             }
         }
-        public static function updateSources($sources, $victim_id)
+        public static function updateSources($sourcesId, $sources)
         {
             try
             {
-                $sqlStatement = "UPDATE `sources` SET `source_1`=':source_1',`source_2`=':source_2',`source_3`=':source_3',`source_4`=':source_4',`source_5`=':source_5',`twitter_hashtag`=':twitter_hashtag' WHERE `victim_id` = ' . $victim_id";
+                $sqlStatement = "UPDATE `sources` SET 
+                    `source_1`=':source_1',
+                    `source_2`=':source_2',
+                    `source_3`=':source_3',
+                    `source_4`=':source_4',
+                    `source_5`=':source_5',
+                    `twitter_hashtag`=':twitter_hashtag' 
+                    WHERE `sources_id` = :sources_id";
 
                 $fields = [
                     ":source_1" => $sources['urlSource1'], 
@@ -173,7 +180,8 @@
                     ":source_3" => $sources['urlSource3'],
                     ":source_4" => $sources['urlSource4'],
                     ":source_5" => $sources['urlSource5'], 
-                    ":twitter_hashtag" => $sources['twitterHash']
+                    ":twitter_hashtag" => $sources['twitterHash'],
+                    ":sources_id" => $sourcesId,
                 ];
 
                 $db = Query::sqlUpdateQuery($sqlStatement, $fields);
@@ -188,16 +196,16 @@
                 header('location:/error');
             }
         }
-        public static function updateArticle($table, $conditions, $victim_id)
+        public static function updateArticle($table, $conditions, $victim_id, $fields)
         {
             try
             {
                 $sqlStatement = 'UPDATE '.$table.' SET ' . 
                                 $conditions .
                                 ' WHERE `victim_id` = ' . $victim_id;
-                $db = Query::sqlUpdateQuery($sqlStatement, null);
+                $db = Query::sqlUpdateQuery($sqlStatement, $fields);
                 
-                return $db;
+                return $db; // ANCHOR
             }
             catch (PDOException $Exception)
             {

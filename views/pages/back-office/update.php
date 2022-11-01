@@ -315,8 +315,11 @@
     </div>
 </fieldset>
 <div class="buttonContainer m-auto d-flex justify-content-evenly">
-    <a href="./../../../controllers/victims/delete.php?id=<?= $article[0]->victim_id ?>" class="btn btn-primary">Delete</a>
-    <input type="submit" value="Approve" name="submit" class="btn btn-primary">
+    <a href="./../../../controllers/victims/delete.php?id=<?= $article[0]->victim_id ?>" 
+        class="btn btn-danger"  onclick="return confirm('⚠ This action is irreversible')">
+        Delete
+    </a>
+    <input type="submit" value="Approve" name="submit" class="btn btn-success">
 </div>
 </form>
 

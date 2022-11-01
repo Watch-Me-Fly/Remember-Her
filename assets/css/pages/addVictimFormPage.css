@@ -15,6 +15,10 @@
     min-height: 40vh;
 }
 
+div.alert {
+    margin: 15vh auto;
+}
+
 /*-- ------------ Box of notice before form ------------ --*/
 #notice {
     width: 50%;

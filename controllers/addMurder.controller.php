@@ -36,7 +36,7 @@ if (isset($_POST['submit']))
    require_once($_SERVER['DOCUMENT_ROOT'].'/models/murderEntryController.class.php');
 
    $addVictim = new AddMurderController(
-    $created, 
+    // $created, 
     $firstName, 
     $lastName, 
     $age, 
@@ -64,7 +64,7 @@ if (isset($_POST['submit']))
    
     // var_dump($addVictim);
 
-   // grab data
+   // success message
    header('location:/add-victim?added=1');
 }
 

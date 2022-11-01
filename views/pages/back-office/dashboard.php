@@ -19,10 +19,16 @@
 
         <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1) : ?>
             
-        <div class="alert alert-success alert-dismissible w-75 mx-auto d-flex justify-content-between align-items-center">
-        ✅ Entry was deleted successfully
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+            <div class="alert alert-success alert-dismissible w-75 mx-auto d-flex justify-content-between align-items-center">
+            ✅ Entry was deleted successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php elseif (isset($_GET['updated']) && $_GET['updated'] == 1) : ?>
+        
+            <div class="alert alert-success alert-dismissible w-75 mx-auto d-flex justify-content-between align-items-center">
+            ✅ Entry was updated and published successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
 
         <?php else : ?>
 
