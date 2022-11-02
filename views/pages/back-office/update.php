@@ -15,6 +15,7 @@
 <!-- -------------- 📄 page content --------------- -->
 <?php if (isset($_SESSION['userID'])) : ?>
 
+    <?php if ($article[0]->is_enabled == 0) : ?>
 <div id="edit" class="container">
 
 <form action="./../../../controllers/back-office/articlesManagement.php<?= '?id='. $article[0]->victim_id ?>" 
@@ -324,6 +325,12 @@
 </form>
 
 </div>
+<?php else : ?>
+    <div class="alert alert-danger w-50 mx-auto h-50 text-center" role="alert">
+        ⛔ This article was already published, modifications or deletion are not allowed in this case
+    </div>
+<?php endif; ?>
+
 
 <!-- -------------- ⏬ Page Bottom --------------- -->
 <?php require_once($_SERVER['DOCUMENT_ROOT'].
@@ -331,5 +338,4 @@
 
 <!---------------- 📜 scripts used ---------------->
 <script type="application/javascript" src="./../../../assets/js/back-office/adminDashboard.js"></script>
-
 <?php endif; ?>
