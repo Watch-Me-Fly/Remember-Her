@@ -1,5 +1,4 @@
 <?php
-
     /**============================================
      *           Image upload verifications
      *=============================================**/
@@ -34,6 +33,11 @@ function verifyImage()
                     return $photoName;
                 }
             }
+        }
+        else
+        {
+            $photoName = "default.jpg";
+            return $photoName;
         }
     }
 

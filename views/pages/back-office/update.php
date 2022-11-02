@@ -17,7 +17,7 @@
 
 <div id="edit" class="container">
 
-<form action="./../../../controllers/back-office/articlesManagement.php" 
+<form action="./../../../controllers/back-office/articlesManagement.php<?= '?id='. $article[0]->victim_id ?>" 
     method="POST" enctype="multipart/form-data" 
     id="addVictimForm" class="m-auto p-3"
 >
@@ -89,7 +89,7 @@
         </select>
     </div>
     <div class="d-flex justify-content-center">
-        <img class="mx-auto" src="./../../../uploads/<?= $article[0]->photo; ?>" alt="victim's photo">
+        <img class="mx-auto" src="./../../../uploads/<?= $article[0]->photo; ?>" alt="victim's photo" width="60%">
     </div>
 
     <div class="form-group

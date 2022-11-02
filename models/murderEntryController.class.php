@@ -1,7 +1,6 @@
 <?php
 class AddMurderController extends Murder
 {
-    private $postCreationDate;
     private $firstName;
     private $lastName;
     private $age;
@@ -24,7 +23,6 @@ class AddMurderController extends Murder
     private $punishment;
 
     public function __construct(
-        string $postCreationDate,
         string $firstName, 
         string $lastName, 
         int $age, 
@@ -34,7 +32,7 @@ class AddMurderController extends Murder
         string $source1,
         ?string $source2, 
         ?string $source3,
-        ?string $source4, 
+        ?string $source4,
         ?string $source5, 
         int $isEnabled,
         int $enabledBy,
@@ -47,7 +45,6 @@ class AddMurderController extends Murder
         string $punishment
     )
     {
-        $this->postCreationDate = (string) $postCreationDate;
         $this->firstName = (string) $firstName;
         $this->lastName = (string) $lastName;
         $this->age = (int) $age;
@@ -72,9 +69,7 @@ class AddMurderController extends Murder
 
     public function addArticle()
     {
-
         $this->setArticle(
-            $this->postCreationDate,
             $this->firstName, 
             $this->lastName, 
             $this->age, 
@@ -98,8 +93,7 @@ class AddMurderController extends Murder
         );
     }
 
-    // verify picture 
-
+    
 }
 
 ?>

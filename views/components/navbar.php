@@ -1,5 +1,7 @@
+<?php require_once('controllers/searchBar.php'); ?>
+
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fw-semibold">
 <div class="container-fluid d-flex flex-row 
             p-1 align-items-center">
     <div class="container 
@@ -16,9 +18,12 @@
     </div>
     <div id="searchbar" class="container col-sm-12 col-md-3">
         <form action="" method="GET" class="d-flex justify-content-center">
-            <input type="text" name="" id="" class="form-control me-2">
-            <input type="submit" value="Search" class="btn btn-secondary">
+            <input type="text" name="searchbox" id="" class="search-box form-control me-2">
+            <input type="submit" value="Search" class="btn btn-secondary" name="search">
         </form>
+        <div class="result">
+
+        </div>
     </div>
     <div class="collapse navbar-collapse 
                 col-sm-12 col-md-4 col-lg-4" id="navbarNavDropdown">

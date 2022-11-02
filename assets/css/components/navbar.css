@@ -1,10 +1,6 @@
 /*--------------------------------------------
 *                General Navbar
 *---------------------------------------------*/
-nav {
-    font-weight: 600;
-    /* ANCHOR bootstrap fw-semibold class */
-}
 
 /*-- ------------ Navbar links and buttons ------------ --*/
 nav .btn:hover {

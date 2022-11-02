@@ -2,7 +2,6 @@
 
 $path = $_SERVER['REQUEST_URI'];
 // ANCHOR search what is request_uri and htaccess explanation
-// $path = explode('?',$path);
 
 // define an id variable
 $getId = isset($_GET['id']) ? $_GET['id'] : false;

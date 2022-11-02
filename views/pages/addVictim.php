@@ -1,5 +1,6 @@
 <!-- -------------- ⏫ Page top --------------- -->
 <?php
+    session_start();
     $page_title = "Add victim";
     require_once('views/components/pageTopContents.php');
 ?>
@@ -18,12 +19,19 @@
         <?php include_once("views/components/addVictimForm.php"); ?>
             
             <?php else : ?> 
-            <div class='alert alert-success w-50 mx-auto d-flex justify-content-between align-items-center'>
+                <?php if (isset($_SESSION['userID'])) : ?>
+                    <div class='alert alert-success w-50 mx-auto d-flex justify-content-between align-items-center'>
 
-                ✅ Your entry was taken into account, it will be verified by an admin before publishing it on the website
+                        ✅ As an admin, Your entry was just published without need for verification. You can find it in the directory.
 
-            </div>
-            
+                    </div>
+                <?php else : ?>
+                    <div class='alert alert-success w-50 mx-auto d-flex justify-content-between align-items-center'>
+
+                        ✅ Your entry was taken into account, it will be verified by an admin before publishing it on the website
+
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
     </div>
 </main>

@@ -4,7 +4,7 @@
     
 ?>
 
-<form action="controllers/addMurder.controller.php" 
+<form action="./../../controllers/addMurder.controller.php" 
         method="POST" enctype="multipart/form-data" 
         id="addVictimForm" class="m-auto p-3"
 >

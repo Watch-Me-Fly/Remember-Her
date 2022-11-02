@@ -7,62 +7,39 @@
     $page_title = "Victim's Directory";
 
     require_once('views/components/pageTopContents.php');
+    require_once('controllers/victims/directory.controller.php');
+
 ?>
 
 <!-- -------------- 📄 page content --------------- -->
-<div class="container d-flex justify-content-between px-5 mt-5 mb-3">
-    <form action="" id="sortDirectoryForm" class="d-flex justify-content-start me-3">
-        <select name="" id="" class="form-select">
+<div class="container w-50 d-flex justify-content-between px-5 mt-5 mb-3 mx-auto">
+    
+    <form id="sortDirectoryForm" class="w-50 mx-auto d-flex justify-content-start" method="POST">
+        <select name="sort" id="" class="form-select">
             <option value="">-- Sort by --</option>
-            <option value="">Name (A --> z)</option>
-            <option value="">Name (Z --> a)</option>
-            <option value="">Date (Desc.)</option>
-            <option value="">Date (Asc.)</option>
-            <option value="">Age (Desc.)</option>
-            <option value="">Age (Asc.)</option>
+            <option value="nameAZ">Name (A --> z)</option>
+            <option value="nameZA">Name (Z --> a)</option>
+            <option value="dateDesc">Date of Death(Desc.)</option>
+            <option value="dateAsc">Date of Death (Asc.)</option>
+            <option value="ageDesc">Age (Desc.)</option>
+            <option value="ageAsc">Age (Asc.)</option>
         </select>
-        <input type="submit" value="Sort" class="ms-5 btn" id="sortDirectoryBtn">
+        <input type="submit" value="Sort" class="ms-5 btn" id="sortDirectoryBtn" name="sortBtn">
     </form>
-
-    <!-- FILTER By country -->
-    <form action="" id="filterDirectoryForm" class="d-flex justify-content-end">
-        <select name="" id="countryDirectoryFilter" class="form-select">
-            <option value="">-- by Country --</option>
-        </select>
-        <input type="submit" value="Filter" class="ms-5 btn" id="filterDirectoryBtn">
-    </form>
-
+    
 </div>
 
 <div id="gallery" class="container-fluid d-flex flex-wrap p-5 justify-content-center">
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/loulouah-althouaini" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/naira.webp" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/loulouah-althouaini" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/naira.webp" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/loulouah-althouaini" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/naira.webp" alt="" title="">
-    </a>
-    <a href="" class="person col-lg-1 col-md-2 col-sm-4">
-        <img src="assets/images/examples/Iman-Arshid.jpg" alt="" title="">
-    </a>
 
+    <?php foreach ($cards as $article) : ?>
+
+        <a href="/victim-story?id=<?= $article->victim_id; ?>" class="person col-lg-1 col-md-2 col-sm-4">
+            <img src="uploads/<?= $article->photo; ?>" 
+            alt="<?= $article->first_name." ".$article->last_name; ?>" 
+            title="read the article" />
+        </a>
+
+    <?php endforeach; ?>
 </div>
 
 <!---------------- 📜 scripts used ---------------->

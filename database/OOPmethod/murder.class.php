@@ -7,7 +7,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/database/OOPmethod/DBConnect.class.php'
 class Murder extends MurderCRUD
 {
     protected function setArticle(
-        // string $postCreationDate,
         string $firstName, 
         string $lastName, 
         int $age, 
@@ -32,10 +31,10 @@ class Murder extends MurderCRUD
     {
         try {
         $this->setSources($source1, $source2, $source3, $source4, $source5, $twitterTag);
+
         $sourceId = $this->findSourceId($source1, $source2, $source3, $source4, $source5, $twitterTag);
 
         $this->setMurderArticle(
-            // $postCreationDate, 
             $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
         );
 
@@ -95,7 +94,6 @@ class Murder extends MurderCRUD
             }   
     }
     protected function setMurderArticle(
-        // $postCreationDate,
         $firstName, $lastName,$age,$countryOfOrigin,$photo, $reasonForCrime, $crimeTool, $countryOfCrime, $dateOfDeath,$killerRelationship, $story, $punishment,$sourceId, $isEnabled, $enabledBy
     )
     {
@@ -106,7 +104,6 @@ class Murder extends MurderCRUD
          *=============================================**/
 
             $article = [
-            // 'post_creation_date'    => $postCreationDate,
             'firstName'             => $firstName,
             'lastName'              => $lastName,
             'age'                   => $age,
@@ -126,16 +123,6 @@ class Murder extends MurderCRUD
 
             $connect = $this->addMurder($article);
 
-            // FIXME : not entering data
-            if ($connect)
-            {
-                echo "✅ Connection to database is established ✅";
-            }
-            else
-            {
-                echo "❌ error occurred";
-            }
-
         }
         catch (PDOException $Exception) 
         {
@@ -146,7 +133,8 @@ class Murder extends MurderCRUD
         }
     }
     public static function updateMurderVictim(
-        Int $adminId,
+        $adminId,
+        $sourceId,
         int $victim_id,
         string $firstName, 
         string $lastName, 
@@ -170,8 +158,6 @@ class Murder extends MurderCRUD
     {
         try
         {
-            // ---------------- get source id
-            $sourceId = MurderCRUD::findSourceId($source1,$source2,$source3,$source4,$source5,$twitterTag);
             // ---------------- update sources
             $sources = [
                 'urlSource1' => $source1, 
@@ -188,18 +174,18 @@ class Murder extends MurderCRUD
             $table = "victims_murder";
 
             $conditions = "
-                `first_name`=':first_name',
-                `last_name`=':last_name',
+                `first_name`= :first_name,
+                `last_name`=:last_name,
                 `age`=:age,
-                `country_origin`=':country_origin',
-                `photo`=':photo',
+                `country_origin`=:country_origin,
+                `photo`=:photo,
                 `reason_group`= $reasonForCrime,
                 `crime_tool`= $crimeTool,
-                `country_crime`=':country_crime',
-                `date_of_death`=':date_of_death',
+                `country_crime`=:country_crime,
+                `date_of_death`=:date_of_death,
                 `perpetrator`=$killerRelationship,
-                `story`=':story',
-                `punishment`=':punishment',
+                `story`=:story,
+                `punishment`=:punishment,
                 `is_enabled`= 1,
                 `enabled_by`= $adminId
             ";
@@ -207,9 +193,9 @@ class Murder extends MurderCRUD
                 ":first_name"       => $firstName,
                 ":last_name"        => $lastName,
                 ":age"              => $age,
-                "country_origin"    => $countryOfOrigin,
+                ":country_origin"    => $countryOfOrigin,
                 ":photo"            => $photo,
-                "country_crime"     => $countryOfCrime,
+                ":country_crime"     => $countryOfCrime,
                 ":date_of_death"    => $dateOfDeath,
                 ":story"            => $story,
                 ":punishment"       => $punishment,

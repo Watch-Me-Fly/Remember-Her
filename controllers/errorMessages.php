@@ -51,6 +51,11 @@ if (isset($_GET['error']))
     {
         $errorMessage = "❌ Wrong Password, please retry";
     }
+    // ----- Other errors
+    if ($getError == 'noPhoto')
+    {
+        $errorMessage = "Please upload a photo, if there aren't any images available for this victim, then please upload the logo of the website";
+    }
 
 }
 else

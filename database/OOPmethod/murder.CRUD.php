@@ -6,48 +6,34 @@
 
     class MurderCRUD
     {
-
         public static function addMurder($article)
         {
             try
             {
-                // FIXME 
-                $sqlStatement = "INSERT INTO `victims_murder`
-                (`post_creation_date`, `victim_id`, 
-                `first_name`, `last_name`, 
-                `age`, `country_origin`, 
-                `photo`, `reason_group`, 
-                `crime_tool`, `country_crime`, 
-                `date_of_death`, `perpetrator`, `
-                story`, `punishment`, 
-                `sources`, 
-                `is_enabled`, `enabled_by`) 
-                VALUES (NOW(), null,
-                :first_name, :last_name,
-                :age, :country_origin,
-                :photo, :reason_group,
-                :crime_tool, :country_crime,
-                :date_of_death, :perpetrator,
-                :story, :punishment, 
-                :sources, 
-                :is_enabled, :enabled_by)";
+                $countryOrigin = $article['countryOfOrigin'];
+                $countryCrime = $article['countryOfCrime'];
+                $reason =  $article['reasonForCrime'];
+                $perpetrator = $article['killer'];
+                $tool = $article['toolUsed'];
 
+                // FIXME 
+                $sqlStatement = "INSERT INTO victims_murder 
+                (`post_creation_date`, `victim_id`, `first_name`, `last_name`, `age`, `country_origin`, 
+                `photo`, `reason_group`, `crime_tool`, `country_crime`, 
+                `date_of_death`, `perpetrator`, `story`, `punishment`, `sources`, `is_enabled`, `enabled_by`) 
+                VALUES (NOW(), NULL, :first_name, :last_name, :age, $countryOrigin, :photo, $reason, $tool, $countryCrime,
+                :date_of_death, $perpetrator, :story, :punishment, 
+                :sources, :is_enabled, :enabled_by)";
 
                 $fields = [
-                    // ":post_creation_date"=> $article['post_creation_date'],
                     ":first_name"       => $article['firstName'], 
                     ":last_name"        => $article['lastName'], 
                     ":age"              => $article['age'],
-                    ":country_origin"   => $article['countryOfOrigin'], 
                     ":photo"            => $article['photo'],
-                    ":reason_group"     => $article['reasonForCrime'], 
-                    ":crime_tool"       => $article['toolUsed'], 
-                    ":country_crime"    => $article['countryOfCrime'], 
                     ":date_of_death"    => $article['dateOfDeath'], 
-                    ":perpetrator"      => $article['killer'], 
                     ":story"            => $article['story'], 
                     ":punishment"       => $article['punishment'],
-                    ":sources"          => $article['sources'], 
+                    ":sources"          => $article['sources'],
                     ":is_enabled"       => $article['is_enabled'],
                     ":enabled_by"       => $article['enabled_by'],
                 ];
@@ -56,6 +42,15 @@
                 $connect = $db->prepare($sqlStatement);
                 $connect->execute($fields);
 
+                // to debug
+                if ($connect)
+                {
+                    echo "✅ Article is supposedly added ✅";
+                }
+                else
+                {
+                    echo "❌ error occurred";
+                }
                 return $connect;
             }
             catch (PDOException $Exception) 
@@ -166,13 +161,13 @@
             try
             {
                 $sqlStatement = "UPDATE `sources` SET 
-                    `source_1`=':source_1',
-                    `source_2`=':source_2',
-                    `source_3`=':source_3',
-                    `source_4`=':source_4',
-                    `source_5`=':source_5',
-                    `twitter_hashtag`=':twitter_hashtag' 
-                    WHERE `sources_id` = :sources_id";
+                    `source_1`=:source_1,
+                    `source_2`=:source_2,
+                    `source_3`=:source_3,
+                    `source_4`=:source_4,
+                    `source_5`=:source_5,
+                    `twitter_hashtag`=:twitter_hashtag 
+                    WHERE `sources_id` = $sourcesId";
 
                 $fields = [
                     ":source_1" => $sources['urlSource1'], 
@@ -180,8 +175,7 @@
                     ":source_3" => $sources['urlSource3'],
                     ":source_4" => $sources['urlSource4'],
                     ":source_5" => $sources['urlSource5'], 
-                    ":twitter_hashtag" => $sources['twitterHash'],
-                    ":sources_id" => $sourcesId,
+                    ":twitter_hashtag" => $sources['twitterHash']
                 ];
 
                 $db = Query::sqlUpdateQuery($sqlStatement, $fields);
@@ -205,7 +199,7 @@
                                 ' WHERE `victim_id` = ' . $victim_id;
                 $db = Query::sqlUpdateQuery($sqlStatement, $fields);
                 
-                return $db; // ANCHOR
+                return $db;
             }
             catch (PDOException $Exception)
             {
@@ -260,15 +254,25 @@
         {
             try
             {
-                $findSourceId = "SELECT sources_id FROM sources WHERE 
-                                source_1 = ('$source1')
-                            AND source_2 = ('$source2')
-                            AND source_3 = ('$source3')
-                            AND source_4 = ('$source4')
-                            AND source_5 = ('$source5')
-                            AND twitter_hashtag = ('$twitterTag')";
+                $findSourceId = "SELECT sources_id FROM `sources` WHERE 
+                                `source_1` = ('$source1')
+                            AND `source_2` = ('$source2')
+                            AND `source_3` = ('$source3')
+                            AND `source_4` = ('$source4')
+                            AND `source_5` = ('$source5')
+                            AND `twitter_hashtag` = ('$twitterTag')";
                 $sourceIdQuery = Query::sqlReadQuery($findSourceId, null);
-                $sourceId = $sourceIdQuery[0]->sources_id;
+                
+                if ($sourceIdQuery != null)
+                {
+                    
+                    $sourceId = $sourceIdQuery[0]->sources_id;
+                }
+                else
+                {
+                    $sourceId = null;
+                }
+
                 return $sourceId;
             }
         
